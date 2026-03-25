@@ -58,8 +58,8 @@ When delivering work for a new sprint you should:
 6. Open the `routes.js` files in the app folder. Copy the last line that should
   look like `require('./routes/v5/routing.js')(router);` and paste it below.
   Update the line to point to the latest routing folder e.g. `…/v6/…`
-7. Open index.html and copy the block of code from the h2 down to the `</ul>` and
-  paste it above, update the header to the new version number, update any links
+7. Open index.html and copy the block of code from the h2 down to the `</ul>`
+  and paste it above, update the header to the new version number, update any links
   to use the new version number. Update any description of the sprints' work and
   links to specific tickets to point to the new work you are doing.
 8. Run the prototype and click on the button/link to the load the latest version
