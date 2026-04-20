@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Content" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Big number</h1>
+      <div class="gem-c-big-number">
+        <span class="gem-c-big-number__value">119</span>
+        <span class="govuk-visually-hidden">&nbsp;</span>
+        <span class="gem-c-big-number__label">Funding opportunities</span>
+      </div>
+      <div class="gem-c-big-number">
+        <a class="govuk-link gem-c-big-number__link" href="#">
+          <span class="gem-c-big-number__value">23</span>
+          <span class="govuk-visually-hidden">&nbsp;</span>
+          <span class="gem-c-big-number__label">Link to thing</span>
+  </a>
+  </div>
+    </div>
+  </div>
+{% endblock %}
