@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Generic status tags" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Generic status tags</h1>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"> Class name </th>
+            <th class="govuk-table__header" scope="col"> Tag </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--grey </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--grey">
+                Not eligible
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--green </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
+                Complete
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--blue </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">
+                Pending
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--purple </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--purple">
+                Received
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--magenta </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--magenta">
+                Requires work
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--red </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--red">
+                Rejected
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--orange </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--orange">
+                Declined
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <code> govuk-tag--yellow </code>
+            </td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--yellow">
+                Delayed
+              </strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+{% endblock %}
