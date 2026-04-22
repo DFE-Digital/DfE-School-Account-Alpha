@@ -7,6 +7,7 @@
 @import 'components/card';
 @import 'components/header-menu';
 @import 'components/moj-filter';
+@import 'components/moj-progress-tracker';
 
 // Add extra styles here
 .govuk-header__link .govuk-header__logotype{
@@ -17,3 +18,4 @@
   content: url(/public/images/department-for-education_black.png);
   height: 30px;
 }
+
