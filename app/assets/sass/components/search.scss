@@ -1,0 +1,22 @@
+.dfe-header__search {
+  #close-search{
+    display: none;
+  }
+}
+
+.govuk-input__search{
+  width: calc( 100% - 44px);
+  float: left;
+}
+
+.search-submit{
+  float: left;
+  background-color: #1d70b8;
+  height: 40px;
+  width: 44px;
+  border:0;
+  color: #fff;
+  svg{
+    fill: #fff;
+  }
+}
