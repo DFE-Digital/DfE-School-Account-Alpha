@@ -1,15 +1,15 @@
-{% extends "layouts/main.html" %} 
+{% extends "layouts/main.html" %}
 
-{% set pageName="Step by step navigation" %} 
+{% set pageName="Step by step navigation" %}
 
-{% block pageScripts %} 
+{% block pageScripts %}
   <script type="text/javascript">
     var $element = document.querySelector('#step-by-step-navigation')
     var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
-  </script> 
-{% endblock %} 
+  </script>
+{% endblock %}
 
-{% block content %} 
+{% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Step by step navigation</h1>
@@ -125,5 +125,5 @@
         </ol>
       </div>
     </div>
-  </div> 
+  </div>
 {% endblock %}
