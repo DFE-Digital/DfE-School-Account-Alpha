@@ -15,12 +15,15 @@
 
 .gem-c-layout-super-navigation-header__button-width-container {
   position: relative;
+  display: block;
+  float: left;
 }
 
 .gem-c-layout-super-navigation-header__button-container {
-  top: -48px;
-  position: absolute;
-  right: 0;
+  //top: -48px;
+  //position: absolute;
+  //right: 0;
+
 }
 
 @media (max-width: 40.0525em) {
@@ -43,7 +46,18 @@
 }
 
 .gem-c-layout-super-navigation-header__content {
-  width: 100%;
+  max-width: 100%;
+  display: block;
+  float: right;
+  margin-top: -16px;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button span {
+  display: inline-block;
+  border-right: 1px solid #f4f8fb;
+    border-right-color: rgb(244, 248, 251);
+  margin: 0;
+  padding: 5px 15px;
 }
 
 .gem-c-layout-super-navigation-header__navigation-item,
@@ -265,16 +279,12 @@
   top: auto;
 }
 
-.gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  display: inline-block;
-  border-right: 1px solid #f4f8fb;
-  margin: 0;
-  padding: 5px 15px;
-}
-
-.gem-c-layout-super-navigation-header__navigation-top-toggle-button:last-child .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-right: none;
-}
+//.gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+//  display: inline-block;
+//  border-right: 1px solid #f4f8fb;
+//  margin: 0 20px 0 0;
+//  padding: 5px 15px;
+//}
 
 @media (min-width: 22.5em) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {

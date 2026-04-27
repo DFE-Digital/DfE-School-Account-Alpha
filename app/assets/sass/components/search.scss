@@ -4,6 +4,23 @@
   }
 }
 
+#dfe-header__search{
+  svg{
+    fill:#fff;
+  }
+  margin-left: -1px;
+}
+
+#dfe-header__search.selected {
+  background-color: #fff;
+  svg{
+    fill:#1d70b8;
+  }
+}
+#dfe-header__search button{
+  padding:0 20px;
+}
+
 .govuk-input__search{
   width: calc( 100% - 44px);
   float: left;
