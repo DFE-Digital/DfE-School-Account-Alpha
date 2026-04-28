@@ -22,15 +22,15 @@
 }
 
 .govuk-input__search{
-  width: calc( 100% - 44px);
+  width: calc( 100% - 50px);
   float: left;
 }
 
 .search-submit{
   float: left;
   background-color: #1d70b8;
-  height: 40px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
   border:0;
   color: #fff;
   svg{
@@ -44,4 +44,8 @@
 
 #close-search.gem-c-layout-super-navigation-header__navigation-top-toggle-button::after {
   background: #1d70b8;
+}
+
+.gem-c-layout-super-navigation-header__navigation-dropdown-menu #search-field {
+  height: 50px;
 }
