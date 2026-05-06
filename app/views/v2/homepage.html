@@ -1,0 +1,146 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Homepage" %}
+
+{% block header %}
+  <header class="govuk-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="#" class="govuk-header__link govuk-header__link--homepage">
+              <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+          </a>
+        </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">My school account</h1>
+    <div class="app-task-list-card">
+      <div class="app-task-list-card__header">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+          Compliance for my school
+        </h2>
+      </div>
+      <div class="app-task-list-card__body">
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status">
+                Compliance item 1
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="compliance-1-status">
+              <strong class="govuk-tag govuk-tag--yellow">
+                In progress
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status">
+                Compliance item 2
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="compliance-2-status">
+              <strong class="govuk-tag govuk-tag--grey">
+                Not started
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status">
+                Compliance item 3
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="compliance-3-status">
+              <strong class="govuk-tag govuk-tag--green">
+                Complete
+              </strong>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="app-task-list-card">
+      <div class="app-task-list-card__header">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+          Funding and cost savings
+        </h2>
+      </div>
+      <div class="app-task-list-card__body">
+        <div class="dfe-grid-container">
+          <div class="dfe-card">
+            <div class="dfe-card-image-wrapper">
+              <img src="/public/images/placeholder-image.png" alt="Sample Image">
+              <strong class="govuk-tag govuk-tag--green dfe-card-tag">
+                  Eligible
+              </strong>
+            </div>
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-s">
+                <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Save up to 38% on energy bills</a>
+              </h3>
+            </div>
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-image-wrapper">
+              <img src="/public/images/placeholder-image.png" alt="Sample Image">
+              <strong class="govuk-tag govuk-tag--yellow dfe-card-tag">
+                  Possibly eligible
+              </strong>
+            </div>
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-s">
+                <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Apply for the SEND spaces grant</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="app-task-list-card">
+      <div class="app-task-list-card__header">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+          Guidance for my school
+        </h2>
+      </div>
+      <div class="app-task-list-card__body">
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status">
+                Guidance item 1
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="compliance-1-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                New
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status">
+                Guidance item 2
+              </a>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status">
+                Guidance item 3
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
