@@ -23,10 +23,13 @@
   gap: 30px;
   .dfe-card {
     border: 1px solid #b1b4b6;
-    background: white;
+    background-color: #ffffff;
     width: 100%;
     max-width: none;
     margin: 0;
+      &:focus-within, &:hover {
+        background-color: #003a69;
+      }
   }
   .dfe-card-image-wrapper {
     position: relative;
@@ -48,10 +51,10 @@
       margin-bottom: 0;
     }
   }
-  @media (max-width: 640px) {
-    .dfe-grid-container {
-      grid-template-columns: 1fr;
-    }
+}
+@media (max-width: 640px) {
+  .dfe-grid-container {
+    grid-template-columns: 1fr;
   }
 }
 
