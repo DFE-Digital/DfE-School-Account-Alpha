@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Homepage" %}
+{% set pageName="My school account" %}
 
 {% block header %}
   <header class="govuk-header" data-module="govuk-header">
@@ -139,7 +139,7 @@
           </ul>
         </div>
       </div>
-      <p class="govuk-body-s">Last updated: [date]</p>
+      <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
     </div>
   </div>
 {% endblock %}

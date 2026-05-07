@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="My schools overview" %}
+
+{% block header %}
+  <header class="govuk-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="#" class="govuk-header__link govuk-header__link--homepage">
+              <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+          </a>
+        </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">My schools overview</h1>
+      <div class="dfe-grid-container">
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <div class="gem-c-big-number">
+              <a class="govuk-link gem-c-big-number__link" href="#foo">
+                <span class="gem-c-big-number__value">5</span>
+                <span class="govuk-visually-hidden">&nbsp;</span>
+                <span class="gem-c-big-number__label">Schools have compliance tasks
+                  due this week</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <div class="gem-c-big-number">
+              <a class="govuk-link gem-c-big-number__link" href="#fee">
+                <span class="gem-c-big-number__value">2</span>
+                <span class="govuk-visually-hidden">&nbsp;</span>
+                <span class="gem-c-big-number__label">New funding opportunities</span>
+               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app-task-list-card">
+        <div class="app-task-list-card__header">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+            Census submission status
+          </h2>
+        </div>
+        <div class="app-task-list-card__body">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Submitted</th>
+                <td class="govuk-table__cell govuk-!-width-two-thirds"><div class="progress-bar progress-bar__green" style="width: 70%;">70%</div></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Not submitted</th>
+                <td class="govuk-table__cell govuk-!-width-two-thirds"><div class="progress-bar progress-bar__yellow" style="width: 30%;">30%</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
+    </div>
+  </div>
+{% endblock %}
