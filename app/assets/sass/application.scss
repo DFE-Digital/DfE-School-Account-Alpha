@@ -11,11 +11,12 @@
 @import 'components/moj-filter';
 @import 'components/search';
 @import 'components/homepage.scss';
-@import 'components/compliance.scss';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'components/govuk-task-list.scss';
+@import 'components/step-by-step.scss';
+@import 'components/sidebar.scss';
 
 // Add extra styles here
-*, body {
+* {
   font-family: 'Inter', sans-serif!important;
 }
 
