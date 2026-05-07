@@ -11,8 +11,14 @@
 @import 'components/moj-filter';
 @import 'components/search';
 @import 'components/homepage.scss';
+@import 'components/compliance.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 // Add extra styles here
+*, body {
+  font-family: 'Inter', sans-serif!important;
+}
+
 .govuk-header__link .govuk-header__logotype{
   height: 30px;
 }

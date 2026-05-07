@@ -1,0 +1,29 @@
+.govuk-task-list__item {
+  display: grid;
+  grid-template-columns: calc(100% - 180px) 180px;
+}
+.govuk-task-list__hint {
+  p {
+    margin-bottom: 5px;
+    color: #484949;
+    &.due-date {
+      color: #000000;
+    }
+  }
+}
+
+.app-step-nav--large {
+  .app-step-nav__button--title {
+    font-size: 19px;
+  }
+}
+
+aside {
+  border-top: 5px solid #1d70b8;
+  padding-top: 15px;
+  .govuk-list {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
