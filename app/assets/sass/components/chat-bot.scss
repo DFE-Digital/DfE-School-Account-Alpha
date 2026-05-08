@@ -9,6 +9,7 @@
   border: 2px solid govuk-colour("blue");
   box-shadow: 6px 6px 12px #999999;
   border-radius: 12px;
+  height: calc(100% - 160px);
   .chatbot-header{
     background-color: govuk-colour("blue");
     text-align: center;
@@ -34,6 +35,7 @@
   }
   &.chatbot-container__small{
     width: 12rem;
+    height: auto;
     cursor: pointer;
     &:hover .chatbot-header{
       background-color: #003a69;
@@ -50,7 +52,7 @@
   .chatbot-main{
     padding: govuk-spacing(4);
     padding-bottom: 150px;
-    height: 600px;
+    height: calc(100% - 220px);
     position: relative;
     .chatbot-message{
       padding: govuk-spacing(2) govuk-spacing(4);
