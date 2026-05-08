@@ -1,0 +1,117 @@
+.chatbot-container{
+  font-family: "Inter", sans-serif;
+  position: absolute;
+  bottom: govuk-spacing(9);
+  right: govuk-spacing(9);
+  background-color: govuk-colour("white");
+  width: 40rem;
+  z-index: 9999;
+  border: 2px solid govuk-colour("blue");
+  box-shadow: 6px 6px 12px #999999;
+  border-radius: 12px;
+  height: calc(100% - 160px);
+  .chatbot-header{
+    background-color: govuk-colour("blue");
+    text-align: center;
+    color: govuk-colour("white");
+    padding: govuk-spacing(2) govuk-spacing(4);
+    border-radius: 8px 8px 0 0;
+    h1, h2, h3, h4, h5, h6 {
+      color: govuk-colour("white");
+      margin-bottom: 0;
+    }
+    svg{
+      fill: govuk-colour("white");
+      height: 2rem;
+    }
+
+    .chatbot-close{
+      float: right;
+      cursor: pointer;
+      &:hover{
+        border-bottom: 2px solid govuk-colour("white");
+      }
+    }
+  }
+  &.chatbot-container__small{
+    width: 12rem;
+    height: auto;
+    cursor: pointer;
+    &:hover .chatbot-header{
+      background-color: #003a69;
+      color: white;
+    }
+    .chatbot-header{
+      border-radius: 8px;
+    }
+    .chatbot-main, .chatbot-close{
+      display: none;
+      visibility:hidden;
+    }
+  }
+  .chatbot-main{
+    padding: govuk-spacing(4);
+    padding-bottom: 150px;
+    height: calc(100% - 220px);
+    position: relative;
+    .chatbot-message{
+      padding: govuk-spacing(2) govuk-spacing(4);
+      border: 2px solid #cecece;
+      margin: govuk-spacing(4) 0;
+      float:left;
+      max-width: 80%;
+      border-radius: 12px;
+      position: relative;
+      &.chatbot-message__bot{
+        background-color: #fef8f5;
+        border-color: #b7592a;
+        &::before{
+          content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path fill="%23b7592a" d="m22.5,9h-.5v-1c0-2.757-2.243-5-5-5h-4V1c0-.552-.447-1-1-1s-1,.448-1,1v2h-4c-2.757,0-5,2.243-5,5v1h-.5c-.827,0-1.5.673-1.5,1.5v3c0,.827.673,1.5,1.5,1.5h.5v1c0,2.757,2.243,5,5,5h7.697l3.963,2.642c.36.24.775.361,1.191.361.348,0,.696-.084,1.015-.255.699-.375,1.134-1.1,1.134-1.894v-6.855h.5c.827,0,1.5-.673,1.5-1.5v-3c0-.827-.673-1.5-1.5-1.5Zm-14-1c.828,0,1.5.672,1.5,1.5s-.672,1.5-1.5,1.5-1.5-.672-1.5-1.5.672-1.5,1.5-1.5Zm8.031,7.573c-1.037.651-2.666,1.427-4.531,1.427s-3.494-.776-4.531-1.427c-.468-.293-.609-.911-.315-1.378.294-.467.911-.609,1.378-.316.815.512,2.079,1.121,3.469,1.121s2.653-.609,3.469-1.121c.466-.294,1.085-.152,1.378.316.294.468.152,1.085-.315,1.378Zm-1.031-4.573c-.828,0-1.5-.672-1.5-1.5s.672-1.5,1.5-1.5,1.5.672,1.5,1.5-.672,1.5-1.5,1.5Z"/></svg>');
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: -30px;
+          left: 0px;
+        }
+      }
+      &.chatbot-message__human{
+        &::before{
+          content: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path fill="%23158187" d="M20,0H4C1.79,0,0,1.79,0,4v12c0,2.21,1.79,4,4,4h2.92l3.75,3.16c.38,.34,.86,.51,1.34,.51s.93-.16,1.29-.49l3.85-3.18h2.85c2.21,0,4-1.79,4-4V4c0-2.21-1.79-4-4-4Zm-4.5,6c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5-1.5-.67-1.5-1.5,.67-1.5,1.5-1.5Zm-7,0c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5-1.5-.67-1.5-1.5,.67-1.5,1.5-1.5Zm9.17,6.75c-.1,.09-2.56,2.25-5.67,2.25s-5.56-2.16-5.67-2.25c-.41-.37-.45-1-.08-1.41,.37-.41,1-.45,1.41-.08,.02,.02,2,1.75,4.33,1.75s4.32-1.73,4.34-1.75c.41-.37,1.05-.33,1.41,.08,.37,.41,.33,1.04-.08,1.41Z"/></svg>');
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: -30px;
+          right: 0px;
+        }
+        background-color: #f3f9f9;
+        border-color: #158187;
+        float:right;
+      }
+    }
+    .chatbot-main__input{
+      position: absolute;
+      bottom:0;
+      width: calc(100% - 40px);
+      textarea {
+        float: left;
+        width: calc(100% - 82px);
+      }
+      .chatbot-send{
+        float: left;
+        padding:18px 19px 19px 19px;
+        background-color: #f3f2f1;
+        border-radius: 0 12px 12px 0;
+        border: 2px solid #000;
+        border-left:0 none;
+        cursor: pointer;
+        &:hover{
+          background-color: #003a69;
+          fill:#fff;
+        }
+        svg{
+          width:40px;
+        }
+    }
+    }
+  }
+}
