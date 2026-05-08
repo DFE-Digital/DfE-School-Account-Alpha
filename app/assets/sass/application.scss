@@ -11,8 +11,15 @@
 @import 'components/moj-filter';
 @import 'components/search';
 @import 'components/homepage.scss';
+@import 'components/govuk-task-list.scss';
+@import 'components/step-by-step.scss';
+@import 'components/sidebar.scss';
 
 // Add extra styles here
+* {
+  font-family: 'Inter', sans-serif!important;
+}
+
 .govuk-header__link .govuk-header__logotype{
   height: 30px;
 }

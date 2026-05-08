@@ -1,0 +1,13 @@
+.govuk-task-list__item {
+  display: grid;
+  grid-template-columns: calc(100% - 180px) 180px;
+}
+.govuk-task-list__hint {
+  p {
+    margin-bottom: 5px;
+    color: #484949;
+    &.due-date {
+      color: #000000;
+    }
+  }
+}
