@@ -63,6 +63,19 @@
                 Funding and cost savings</a>
             </li>
           {% endif %}
+          {% if (data['navSelected'] == 'Services')   %}
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+              <a class="govuk-service-navigation__link" href="services?navSelected=Services">
+                <strong class="govuk-service-navigation__active-fallback">
+                  Services</strong>
+              </a>
+            </li>
+          {% else %}
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="services?navSelected=Services">
+                Services</a>
+            </li>
+          {% endif %}
         </ul>
       </nav>
     </div>

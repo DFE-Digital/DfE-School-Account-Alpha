@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="My schools overview" %}
+{% set pageName="My school account" %}
 
 {% block header %}
   <header class="govuk-header gem-c-layout-super-navigation-header" data-module="govuk-header">
@@ -103,55 +103,39 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">My schools overview</h1>
-      <div class="dfe-grid-container">
-        <div class="dfe-card">
-          <div class="dfe-card-container">
-            <div class="gem-c-big-number">
-              <a class="govuk-link gem-c-big-number__link" href="#foo">
-                <span class="gem-c-big-number__value">5</span>
-                <span class="govuk-visually-hidden">&nbsp;</span>
-                <span class="gem-c-big-number__label">Schools have compliance tasks
-                  due this week</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="dfe-card">
-          <div class="dfe-card-container">
-            <div class="gem-c-big-number">
-              <a class="govuk-link gem-c-big-number__link" href="#fee">
-                <span class="gem-c-big-number__value">2</span>
-                <span class="govuk-visually-hidden">&nbsp;</span>
-                <span class="gem-c-big-number__label">New funding opportunities</span>
-               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="app-task-list-card">
-        <div class="app-task-list-card__header">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            Census submission status
-          </h2>
-        </div>
-        <div class="app-task-list-card__body">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Submitted</th>
-                <td class="govuk-table__cell govuk-!-width-two-thirds"><div class="progress-bar progress-bar__green" style="width: 70%;">70%</div></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Not submitted</th>
-                <td class="govuk-table__cell govuk-!-width-two-thirds"><div class="progress-bar progress-bar__yellow" style="width: 30%;">30%</div></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <h1 class="govuk-heading-l">Services</h1>
       <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
     </div>
   </div>
   {% include "./includes/chat-bot.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var toggleSearch = document.getElementById("toggle-search");
+      var closeSearch = document.getElementById("close-search");
+      var searchBox = document.getElementById("search-box");
+      var dfeHeaderSearch = document.getElementById("dfe-header__search");
+
+      if (!toggleSearch || !closeSearch || !searchBox || !dfeHeaderSearch) {
+        alert("Cannot find an element")
+        return;
+      }
+
+      toggleSearch.addEventListener("click", function () {
+        toggleSearch.style.display = "none";
+        closeSearch.style.display = "block";
+        searchBox.style.display = "block";
+        dfeHeaderSearch.classList.add("selected");
+      });
+
+      closeSearch.addEventListener("click", function (){
+        toggleSearch.style.display = "block";
+        closeSearch.style.display = "none";
+        searchBox.style.display = "none";
+        dfeHeaderSearch.classList.remove("selected");
+      })
+    });
+  </script>
 {% endblock %}
