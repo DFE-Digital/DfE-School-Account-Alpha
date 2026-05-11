@@ -9,4 +9,4 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 require('./routes/v1/test-routes.js')(router);
-require('./routes/v2/test-routes.js')(router);
+require('./routes/v2/dfe-sign-in.js')(router);
