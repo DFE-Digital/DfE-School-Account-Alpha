@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "My school account" %}
+{% set pageName = "My preferences" %}
 
 {% set navSelected = "" %}
 
@@ -84,7 +84,7 @@
                   <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Access personal details associated with your account.</p>
                 </li>
                 <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="../my-preferences.html">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="my-preferences.html">
                     My preferences</a>
                   <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Manage your communication preferences.</p>
                 </li>
@@ -110,129 +110,155 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">My school account</h1>
+      <h1 class="govuk-heading-l">My preferences</h1>
       <div class="app-task-list-card">
         <div class="app-task-list-card__header">
           <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            Compliance for my school
+            My responsibilities
           </h2>
         </div>
         <div class="app-task-list-card__body">
-          <ul class="govuk-task-list">
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status">
-                  Compliance item 1
-                </a>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">What are your responsibilities?</h2>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="funding" name="funding" type="checkbox" value="Funding"/>
+                  <label class="govuk-label govuk-checkboxes__label" for="funding">Funding</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="compliance" name="compliance" type="checkbox" value="Compliance"/>
+                  <label class="govuk-label govuk-checkboxes__label" for="compliance">Compliance</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="estates" name="estates" type="checkbox" value="Estates"/>
+                  <label class="govuk-label govuk-checkboxes__label" for="estates">Estates</label>
+                </div>
               </div>
-              <div class="govuk-task-list__status" id="compliance-1-status">
-                <strong class="govuk-tag govuk-tag--yellow">
-                  In progress
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="compliance/census-details.html" aria-describedby="compliance-2-status">
-                  Summer school census return
-                </a>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-2-status">
-                <strong class="govuk-tag govuk-tag--grey">
-                  Not started
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status">
-                  Compliance item 3
-                </a>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-3-status">
-                <strong class="govuk-tag govuk-tag--green">
-                  Complete
-                </strong>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="app-task-list-card">
-        <div class="app-task-list-card__header">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            Funding and cost savings
-          </h2>
-        </div>
-        <div class="app-task-list-card__body">
-          <div class="dfe-grid-container">
-            <div class="dfe-card">
-              <div class="dfe-card-image-wrapper">
-                <img src="/public/images/energy-for-schools.jpg" alt="Energy for schools">
-                <strong class="govuk-tag govuk-tag--green dfe-card-tag">
-                    Eligible
-                </strong>
-              </div>
-              <div class="dfe-card-container">
-                <h3 class="govuk-heading-s">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Save up to 38% on energy bills</a>
-                </h3>
-              </div>
-            </div>
-            <div class="dfe-card">
-              <div class="dfe-card-image-wrapper">
-                <img src="/public/images/s300_classroom_of_happy_students.jpg" alt="Classroom of happy students">
-                <strong class="govuk-tag govuk-tag--yellow dfe-card-tag">
-                    Possibly eligible
-                </strong>
-              </div>
-              <div class="dfe-card-container">
-                <h3 class="govuk-heading-s">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Apply for the SEND spaces grant</a>
-                </h3>
-              </div>
-            </div>
+            </fieldset>
           </div>
         </div>
       </div>
       <div class="app-task-list-card">
         <div class="app-task-list-card__header">
           <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            Guidance for my school
+            Communication preferences
           </h2>
         </div>
         <div class="app-task-list-card__body">
-          <ul class="govuk-task-list">
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status">
-                  Guidance item 1
-                </a>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-1-status">
-                <strong class="govuk-tag govuk-tag--blue">
-                  New
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status">
-                  Guidance item 2
-                </a>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status">
-                  Guidance item 3
-                </a>
-              </div>
-            </li>
-          </ul>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  How often would you like to receive updates?
+                </h2>
+              </legend>
+              <table class="govuk-table preferences-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"></th>
+                    <th scope="col" class="govuk-table__header">Daily</th>
+                    <th scope="col" class="govuk-table__header">Weekly</th>
+                    <th scope="col" class="govuk-table__header">None</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">New guidance</th>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="newGuidDaily" name="newGuid" type="radio" value="daily">
+                        <label class="govuk-label govuk-radios__label" for="newGuidDaily">Daily</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="newGuidWeekly" name="newGuid" type="radio" value="weekly">
+                        <label class="govuk-label govuk-radios__label" for="newGuidWeekly">Weekly</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="newGuidNone" name="newGuid" type="radio" value="none">
+                        <label class="govuk-label govuk-radios__label" for="newGuidNone">None</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Changes to guidance</th>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changeGuidDaily" name="changeGuid" type="radio" value="daily">
+                        <label class="govuk-label govuk-radios__label" for="changeGuidDaily">Daily</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changeGuidWeekly" name="changeGuid" type="radio" value="weekly">
+                        <label class="govuk-label govuk-radios__label" for="changeGuidWeekly">Weekly</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changeGuidNone" name="changeGuid" type="radio" value="none">
+                        <label class="govuk-label govuk-radios__label" for="changeGuidNone">None</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding opportunities</th>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="fundOppDaily" name="fundOpp" type="radio" value="daily">
+                        <label class="govuk-label govuk-radios__label" for="fundOppDaily">Daily</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="fundOppWeekly" name="fundOpp" type="radio" value="weekly">
+                        <label class="govuk-label govuk-radios__label" for="fundOppWeekly">Weekly</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="fundOppNone" name="fundOpp" type="radio" value="none">
+                        <label class="govuk-label govuk-radios__label" for="fundOppNone">None</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">News and events</th>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="newsEventsDaily" name="newsEvents" type="radio" value="daily">
+                        <label class="govuk-label govuk-radios__label" for="newsEventsDaily">Daily</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="newsEventsWeekly" name="newsEvents" type="radio" value="weekly">
+                        <label class="govuk-label govuk-radios__label" for="newsEventsWeekly">Weekly</label>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="newsEventsNone" name="newsEvents" type="radio" value="none">
+                        <label class="govuk-label govuk-radios__label" for="newsEventsNone">None</label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </div>
         </div>
       </div>
-      <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Save</button>
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
     </div>
   </div>
   {% include "./includes/chat-bot.html" %}

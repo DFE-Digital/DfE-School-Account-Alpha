@@ -2,7 +2,7 @@
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <span class="govuk-service-navigation__service-name">
-        <a href="single-school?navSelected=SchoolAccount" class="govuk-service-navigation__link">
+        <a href="/v2/single-school" class="govuk-service-navigation__link">
           School Account
         </a>
       </span>
@@ -11,69 +11,79 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          {% if (data['navSelected'] == 'Overview')   %}
+          {% if (navSelected == 'Overview') %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="overview?navSelected=Overview">
+              <a class="govuk-service-navigation__link" href="/v2/overview">
                 <strong class="govuk-service-navigation__active-fallback">
-                  Overview</strong>
+                  Overview
+                </strong>
               </a>
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="overview?navSelected=Overview">
-                Overview</a>
+              <a class="govuk-service-navigation__link" href="/v2/overview">
+                Overview
+              </a>
             </li>
           {% endif %}
-          {% if (data['navSelected'] == 'Compliance')   %}
+          {% if (navSelected == 'Compliance') %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="compliance?navSelected=Compliance">
+              <a class="govuk-service-navigation__link" href="/v2/compliance">
                 <strong class="govuk-service-navigation__active-fallback">
-                  Compliance</strong>
+                  Compliance
+                </strong>
               </a>
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="compliance?navSelected=Compliance">
-                Compliance</a>
+              <a class="govuk-service-navigation__link" href="/v2/compliance">
+                Compliance
+              </a>
             </li>
           {% endif %}
-          {% if (data['navSelected'] == 'Guidance')   %}
+          {% if (navSelected == 'Guidance') %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="guidance?navSelected=Guidance">
+              <a class="govuk-service-navigation__link" href="/v2/guidance">
                 <strong class="govuk-service-navigation__active-fallback">
-                  Guidance</strong>
+                  Guidance
+                </strong>
               </a>
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="guidance?navSelected=Guidance">
-                Guidance</a>
+              <a class="govuk-service-navigation__link" href="/v2/guidance">
+                Guidance
+              </a>
             </li>
           {% endif %}
-          {% if (data['navSelected'] == 'Funding')   %}
+          {% if (navSelected == 'Funding') %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="funding?navSelected=Funding">
+              <a class="govuk-service-navigation__link" href="/v2/funding">
                 <strong class="govuk-service-navigation__active-fallback">
-                  Funding and cost savings</strong>
+                  Funding and cost savings
+                </strong>
               </a>
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="funding?navSelected=Funding">
-                Funding and cost savings</a>
+              <a class="govuk-service-navigation__link" href="/v2/funding">
+                Funding and cost savings
+              </a>
             </li>
           {% endif %}
-          {% if (data['navSelected'] == 'Services')   %}
+          {% if (navSelected == 'Services') %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="services?navSelected=Services">
+              <a class="govuk-service-navigation__link" href="/v2/services">
                 <strong class="govuk-service-navigation__active-fallback">
-                  Services</strong>
+                  Services
+                </strong>
               </a>
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="services?navSelected=Services">
-                Services</a>
+              <a class="govuk-service-navigation__link" href="/v2/services">
+                Services
+              </a>
             </li>
           {% endif %}
         </ul>

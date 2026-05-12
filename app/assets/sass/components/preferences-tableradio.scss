@@ -1,0 +1,36 @@
+.preferences-table {
+  td,th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  th:first-child {
+    text-align: left;
+  }
+  .govuk-table__header {
+    font-weight: 400;
+  }
+  .govuk-radios__item {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0;
+    min-height: auto;
+  }
+  .govuk-radios__input {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+  .govuk-radios__label {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+
+    &::before, &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
