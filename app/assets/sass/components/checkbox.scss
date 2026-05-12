@@ -1,0 +1,7 @@
+.govuk-checkboxes--two-column {
+  column-count: 2;
+  column-gap: 40px;
+  .govuk-checkboxes__item {
+    break-inside: avoid;
+  }
+}
