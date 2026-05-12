@@ -1,5 +1,5 @@
 .preferences-table {
-  td,th {
+  td, th {
     text-align: center;
     vertical-align: middle;
   }
@@ -11,8 +11,8 @@
   }
   .govuk-radios__item {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     margin: 0 auto;
     padding: 0;
     min-height: auto;
@@ -26,8 +26,19 @@
     padding: 0;
     margin: 0;
     font-size: 0;
-
-    &::before, &::after {
+    cursor: pointer;
+    &::before {
+      width: 30px;
+      height: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::after {
+      width: 14px;
+      height: 14px;
+      border: 0;
+      border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);

@@ -109,158 +109,185 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">My preferences</h1>
-      <div class="app-task-list-card">
-        <div class="app-task-list-card__header">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            My responsibilities
-          </h2>
-        </div>
-        <div class="app-task-list-card__body">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <h2 class="govuk-fieldset__heading">What are your responsibilities?</h2>
-              </legend>
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="funding" name="funding" type="checkbox" value="Funding"/>
-                  <label class="govuk-label govuk-checkboxes__label" for="funding">Funding</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="compliance" name="compliance" type="checkbox" value="Compliance"/>
-                  <label class="govuk-label govuk-checkboxes__label" for="compliance">Compliance</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="estates" name="estates" type="checkbox" value="Estates"/>
-                  <label class="govuk-label govuk-checkboxes__label" for="estates">Estates</label>
-                </div>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">My preferences</h1>
+    <div class="app-task-list-card">
+      <div class="app-task-list-card__header">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-0">My responsibilities</h2>
+      </div>
+      <div class="app-task-list-card__body">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="responsibilities-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">What are your responsibilities?</h2>
+            </legend>
+            <div id="responsibilities-hint" class="govuk-hint"> Select all that apply. </div>
+            <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes--two-column" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="buildings" name="responsibilities" type="checkbox" value="Buildings">
+                <label class="govuk-label govuk-checkboxes__label" for="buildings">Buildings</label>
               </div>
-            </fieldset>
-          </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="compliance" name="responsibilities" type="checkbox" value="Compliance">
+                <label class="govuk-label govuk-checkboxes__label" for="compliance">Compliance</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="finance" name="responsibilities" type="checkbox" value="Finance">
+                <label class="govuk-label govuk-checkboxes__label" for="finance">Finance</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="funding" name="responsibilities" type="checkbox" value="Funding">
+                <label class="govuk-label govuk-checkboxes__label" for="funding">Funding</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="governance" name="responsibilities" type="checkbox" value="Governance">
+                <label class="govuk-label govuk-checkboxes__label" for="governance">Governance</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="health-safety" name="responsibilities" type="checkbox" value="Health and safety">
+                <label class="govuk-label govuk-checkboxes__label" for="health-safety">Health and safety</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="human-resources" name="responsibilities" type="checkbox" value="Human resources">
+                <label class="govuk-label govuk-checkboxes__label" for="human-resources">Human resources</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="it" name="responsibilities" type="checkbox" value="IT">
+                <label class="govuk-label govuk-checkboxes__label" for="it">IT</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="procurement" name="responsibilities" type="checkbox" value="Procurement">
+                <label class="govuk-label govuk-checkboxes__label" for="procurement">Procurement</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="pupils" name="responsibilities" type="checkbox" value="Pupils">
+                <label class="govuk-label govuk-checkboxes__label" for="pupils">Pupils</label>
+              </div>
+              <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                <input class="govuk-checkboxes__input" id="safeguarding" name="responsibilities" type="checkbox" value="Safeguarding">
+                <label class="govuk-label govuk-checkboxes__label" for="safeguarding">Safeguarding</label>
+              </div>
+            </div>
+          </fieldset>
         </div>
-      </div>
-      <div class="app-task-list-card">
-        <div class="app-task-list-card__header">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            Communication preferences
-          </h2>
-        </div>
-        <div class="app-task-list-card__body">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <h2 class="govuk-fieldset__heading">
-                  How often would you like to receive updates?
-                </h2>
-              </legend>
-              <table class="govuk-table preferences-table">
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header"></th>
-                    <th scope="col" class="govuk-table__header">Daily</th>
-                    <th scope="col" class="govuk-table__header">Weekly</th>
-                    <th scope="col" class="govuk-table__header">None</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">New guidance</th>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="newGuidDaily" name="newGuid" type="radio" value="daily">
-                        <label class="govuk-label govuk-radios__label" for="newGuidDaily">Daily</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="newGuidWeekly" name="newGuid" type="radio" value="weekly">
-                        <label class="govuk-label govuk-radios__label" for="newGuidWeekly">Weekly</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="newGuidNone" name="newGuid" type="radio" value="none">
-                        <label class="govuk-label govuk-radios__label" for="newGuidNone">None</label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Changes to guidance</th>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changeGuidDaily" name="changeGuid" type="radio" value="daily">
-                        <label class="govuk-label govuk-radios__label" for="changeGuidDaily">Daily</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changeGuidWeekly" name="changeGuid" type="radio" value="weekly">
-                        <label class="govuk-label govuk-radios__label" for="changeGuidWeekly">Weekly</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changeGuidNone" name="changeGuid" type="radio" value="none">
-                        <label class="govuk-label govuk-radios__label" for="changeGuidNone">None</label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Funding opportunities</th>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="fundOppDaily" name="fundOpp" type="radio" value="daily">
-                        <label class="govuk-label govuk-radios__label" for="fundOppDaily">Daily</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="fundOppWeekly" name="fundOpp" type="radio" value="weekly">
-                        <label class="govuk-label govuk-radios__label" for="fundOppWeekly">Weekly</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="fundOppNone" name="fundOpp" type="radio" value="none">
-                        <label class="govuk-label govuk-radios__label" for="fundOppNone">None</label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">News and events</th>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="newsEventsDaily" name="newsEvents" type="radio" value="daily">
-                        <label class="govuk-label govuk-radios__label" for="newsEventsDaily">Daily</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="newsEventsWeekly" name="newsEvents" type="radio" value="weekly">
-                        <label class="govuk-label govuk-radios__label" for="newsEventsWeekly">Weekly</label>
-                      </div>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="newsEventsNone" name="newsEvents" type="radio" value="none">
-                        <label class="govuk-label govuk-radios__label" for="newsEventsNone">None</label>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </fieldset>
-          </div>
-        </div>
-      </div>
-      <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">Save</button>
-        <a class="govuk-link" href="#">Cancel</a>
       </div>
     </div>
+    <div class="app-task-list-card">
+      <div class="app-task-list-card__header">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Communication preferences</h2>
+      </div>
+      <div class="app-task-list-card__body">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">How often would you like to receive updates?</h2>
+            </legend>
+            <table class="govuk-table preferences-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header">Daily</th>
+                  <th scope="col" class="govuk-table__header">Weekly</th>
+                  <th scope="col" class="govuk-table__header">None</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">New guidance</th>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="newGuidDaily" name="newGuid" type="radio" value="daily">
+                      <label class="govuk-label govuk-radios__label" for="newGuidDaily">Daily</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="newGuidWeekly" name="newGuid" type="radio" value="weekly">
+                      <label class="govuk-label govuk-radios__label" for="newGuidWeekly">Weekly</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="newGuidNone" name="newGuid" type="radio" value="none">
+                      <label class="govuk-label govuk-radios__label" for="newGuidNone">None</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Changes to guidance</th>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changeGuidDaily" name="changeGuid" type="radio" value="daily">
+                      <label class="govuk-label govuk-radios__label" for="changeGuidDaily">Daily</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changeGuidWeekly" name="changeGuid" type="radio" value="weekly">
+                      <label class="govuk-label govuk-radios__label" for="changeGuidWeekly">Weekly</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changeGuidNone" name="changeGuid" type="radio" value="none">
+                      <label class="govuk-label govuk-radios__label" for="changeGuidNone">None</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Funding opportunities</th>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="fundOppDaily" name="fundOpp" type="radio" value="daily">
+                      <label class="govuk-label govuk-radios__label" for="fundOppDaily">Daily</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="fundOppWeekly" name="fundOpp" type="radio" value="weekly">
+                      <label class="govuk-label govuk-radios__label" for="fundOppWeekly">Weekly</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="fundOppNone" name="fundOpp" type="radio" value="none">
+                      <label class="govuk-label govuk-radios__label" for="fundOppNone">None</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">News and events</th>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="newsEventsDaily" name="newsEvents" type="radio" value="daily">
+                      <label class="govuk-label govuk-radios__label" for="newsEventsDaily">Daily</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="newsEventsWeekly" name="newsEvents" type="radio" value="weekly">
+                      <label class="govuk-label govuk-radios__label" for="newsEventsWeekly">Weekly</label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="newsEventsNone" name="newsEvents" type="radio" value="none">
+                      <label class="govuk-label govuk-radios__label" for="newsEventsNone">None</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">Save</button>
+      <a class="govuk-link" href="#">Cancel</a>
+    </div>
   </div>
+</div>
   {% include "./includes/chat-bot.html" %}
 {% endblock %}
 
