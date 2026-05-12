@@ -102,8 +102,297 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-third">
+      <div class="moj-filter-layout__filter">
+          <div class="moj-filter" data-module="moj-filter">
+            <div class="moj-filter__header">
+              <div class="moj-filter__header-title">
+                <h2 class="govuk-heading-m">Filter</h2>
+              </div>
+              <div class="moj-filter__header-action">
+              </div>
+            </div>
+            <div class="moj-filter__content">
+              <div class="moj-filter__selected">
+                <div class="moj-filter__selected-heading">
+                  <div class="moj-filter__heading-title">
+                    <h2 class="govuk-heading-s">Selected filters</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="moj-filter__options">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--s" for="keywords">
+                    Keywords
+                  </label>
+                  <input class="govuk-input" id="keywords" name="keywords" type="text">
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Status
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                        <label class="govuk-label govuk-checkboxes__label" for="status">
+                          Complete (3)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                          In progress (3)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                          Not started (3)
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Apply filters
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Compliance</h1>
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item moj-sub-navigation__item--active">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#" onclick="showComplianceTab('school', this)">Compliance for my school</a>
+          </li>
+          <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#" onclick="showComplianceTab('all', this)">All compliance</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="school-compliance">
+        <div class="app-task-list-card">
+        <div class="app-task-list-card__header">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+            Compliance for my school
+          </h2>
+        </div>
+        <div class="app-task-list-card__body">
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status compliance-1-hint">
+                  <strong>Summer school census return</strong>
+                </a>
+                <div id="compliance-1-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">You should complete your return on school census day or as close to school census day as possible.</p>
+                  <p class="govuk-body-s due-date"><strong>Due 17 Jun 2026</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-1-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status compliance-2-hint">
+                  <strong>Compliance item 2</strong>
+                </a>
+                <div id="compliance-2-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-2-status">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  In progress
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status compliance-3-hint">
+                  <strong>Compliance item 3</strong>
+                </a>
+                <div id="compliance-3-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-3-status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Complete
+                </strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div id="all-compliance" style="display:none;">
+        <div class="app-task-list-card">
+        <div class="app-task-list-card__header">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+            All compliance
+          </h2>
+        </div>
+        <div class="app-task-list-card__body">
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status compliance-1-hint">
+                  <strong>Compliance item 1</strong>
+                </a>
+                <div id="compliance-1-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-1-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status compliance-2-hint">
+                  <strong>Compliance item 2</strong>
+                </a>
+                <div id="compliance-2-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-2-status">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  In progress
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status compliance-3-hint">
+                  <strong>Compliance item 3</strong>
+                </a>
+                <div id="compliance-3-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-3-status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Complete
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-4-status">
+                <strong>Compliance item 4</strong>
+              </a>
+              <div id="compliance-4-hint" class="govuk-task-list__hint">
+                <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+              </div>
+            </div>
+            <div class="govuk-task-list__status" id="compliance-4-status">
+              <strong class="govuk-tag govuk-tag--grey">
+                Not started
+              </strong>
+            </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-5-status">
+                  <strong>Compliance item 5</strong>
+                </a>
+                <div id="compliance-5-hint" class="govuk-task-list__hint">
+                <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+              </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-5-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-6-status">
+                  <strong>Compliance item 6</strong>
+                </a>
+                <div id="compliance-6-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-6-status">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  In progress
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-7-status">
+                  <strong>Compliance item 7</strong>
+                </a>
+                <div id="compliance-7-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-7-status">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  In progress
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-8-status">
+                  <strong>Compliance item 8</strong>
+                </a>
+                <div id="compliance-8-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-8-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-9-status">
+                  <strong>Compliance item 9</strong>
+                </a>
+                <div id="compliance-9-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s">Compliance item description. Compliance item description.</p>
+                  <p class="govuk-body-s due-date"><strong>Due [date]</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-9-status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Complete
+                </strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
       <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
     </div>
   </div>
@@ -137,5 +426,23 @@
         dfeHeaderSearch.classList.remove("selected");
       })
     });
+  </script>
+  <script>
+  function showComplianceTab(tab, element) {
+    event.preventDefault();
+
+    document.getElementById('school-compliance').style.display =
+      tab === 'school' ? 'block' : 'none';
+
+    document.getElementById('all-compliance').style.display =
+      tab === 'all' ? 'block' : 'none';
+
+    document.querySelectorAll('.moj-sub-navigation__link')
+      .forEach(link => {
+        link.removeAttribute('aria-current');
+      });
+
+    element.setAttribute('aria-current', 'page');
+    }
   </script>
 {% endblock %}
