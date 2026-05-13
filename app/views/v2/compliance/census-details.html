@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "Compliance - census details" %}
+{% set pageName = "Compliance - Summer school census" %}
 
 {% set navSelected = "" %}
 
@@ -111,18 +111,18 @@
         </div>
       </div>
     </header>
-    {% include "../includes/service-navigation" %}
+    {% include "../includes/service-navigation.html" %}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-l">Complete the school census</h1>
-      <p class="govuk-body">Guidance is based on your profile, school information and Census task.</p>
+      <h1 class="govuk-heading-l">Summer school census return</h1>
+      <p class="govuk-body">Guidance is based on your profile, school information and census task.</p>
       <div class="app-task-list-card">
         <div class="app-task-list-card__header">
           <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            2025 to 2026 census dates
+            2025 to 2026 summer census compliance
           </h2>
         </div>
         <div class="app-task-list-card__body">
@@ -130,43 +130,11 @@
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status compliance-2-hint">
-                  <strong>Autumn school census return</strong>
+                  Complete the summer school census return
                 </a>
                 <div id="compliance-2-hint" class="govuk-task-list__hint">
                   <p class="govuk-body-s">You should complete your return on school census day or as close to school census day as possible.</p>
-                  <p class="govuk-body-s due-date"><strong>Due 29 Oct 2026</strong></p>
-                </div>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-2-status">
-                <strong class="govuk-tag govuk-tag--green">
-                  Complete
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status compliance-1-hint">
-                  <strong>Spring school census return</strong>
-                </a>
-                <div id="compliance-1-hint" class="govuk-task-list__hint">
-                  <p class="govuk-body-s">You should complete your return on school census day or as close to school census day as possible.</p>
-                  <p class="govuk-body-s due-date"><strong>Due 11 Feb 2026</strong></p>
-                </div>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-1-status">
-                <strong class="govuk-tag govuk-tag--green">
-                  Complete
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status compliance-2-hint">
-                  <strong>Summer school census return</strong>
-                </a>
-                <div id="compliance-2-hint" class="govuk-task-list__hint">
-                  <p class="govuk-body-s">You should complete your return on school census day or as close to school census day as possible.</p>
-                  <p class="govuk-body-s due-date"><strong>Due 17 Jun 2026</strong></p>
+                  <p class="govuk-body-s due-date"><strong>Available 21 May 2026. Due 17 June 2026.</strong></p>
                 </div>
               </div>
               <div class="govuk-task-list__status" id="compliance-2-status">
@@ -193,11 +161,11 @@
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Step 1</span>
+                <span class="js-step-title">Extract data from your management information system (MIS) </span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
-              <p class="app-step-nav__paragraph">Step 1 information.</p>
+              <p class="app-step-nav__paragraph">Run the census in your MIS, resolve any errors, then export the return and save it as an XML file.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
@@ -210,11 +178,11 @@
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Step 2</span>
+                <span class="js-step-title">Access DfE COLLECT and upload the XML file</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
-              <p class="app-step-nav__paragraph">Step 2 information.</p>
+              <p class="app-step-nav__paragraph">Navigate to DfE COLLECT and under ‘My data collections’, select the type of collection you’re submitting. On your school's ‘Source’ page, select ‘Upload return from file’ and upload your XML file.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
@@ -227,11 +195,11 @@
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Step 3</span>
+                <span class="js-step-title">Check for errors and submit</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
-              <p class="app-step-nav__paragraph">Step 3 information.</p>
+              <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’ list for any queries or errors. You’ll need to correct or explain queries and errors, before submitting the return.</p>
             </div>
           </li>
         </ol>
