@@ -29,17 +29,18 @@
 }
 .dfe-card>picture,
 .dfe-card>picture>img {
-  max-width:100%
+  max-width:100%;
 }
 .dfe-card-container {
   padding:24px;
   display:flex;
   flex-grow:1;
-  flex-direction:column
+  flex-direction:column;
+  .govuk-tag{
+    margin-bottom: govuk-spacing(3);
+  }
 }
-.dfe-card-container :last-child {
-  margin-top:auto
-}
+
 .dfe-card-container h2+p:last-child,
 .dfe-card-container h3+p:last-child {
   margin-top:0
