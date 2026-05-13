@@ -47,6 +47,9 @@
   }
   .dfe-card-container {
     padding: 16px 20px;
+    .govuk-tag {
+      width: max-content;
+    }
   }
 }
 @media (max-width: 640px) {
