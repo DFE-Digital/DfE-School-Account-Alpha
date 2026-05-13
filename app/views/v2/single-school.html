@@ -118,44 +118,47 @@
           </h2>
         </div>
         <div class="app-task-list-card__body">
-          <ul class="govuk-task-list">
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status">
-                  Compliance item 1
-                </a>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-1-status">
-                <strong class="govuk-tag govuk-tag--yellow">
-                  In progress
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="compliance/census-details.html" aria-describedby="compliance-2-status">
-                  Summer school census return
-                </a>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-2-status">
-                <strong class="govuk-tag govuk-tag--grey">
-                  Not started
-                </strong>
-              </div>
-            </li>
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status">
-                  Compliance item 3
-                </a>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-3-status">
-                <strong class="govuk-tag govuk-tag--green">
-                  Complete
-                </strong>
-              </div>
-            </li>
-          </ul>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header">Due</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status">
+                    Submit school account return
+                  </a>
+                </th>
+                <td class="govuk-table__cell">{{ "today" | duration(13) | govukDate }}</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+                  Not started</strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a class="govuk-link govuk-link--no-visited-state" href="compliance/census-details.html" aria-describedby="compliance-2-status">
+                    Summer school census return
+                  </a>
+                </th>
+                <td class="govuk-table__cell">{{ "today" | duration(16) | govukDate }}</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
+                  In progress</strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status">
+                    Teaching internships programme
+                  </a>
+                </th>
+                <td class="govuk-table__cell">{{ "today" | duration(37) | govukDate }}</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Complete</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <div class="app-task-list-card">
