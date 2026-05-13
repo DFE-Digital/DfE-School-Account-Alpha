@@ -104,7 +104,99 @@
       </div>
     </div>
   </header>
-  {% include "./includes/service-navigation.html" %}
+  <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+          <a href="/v2/single-school" class="govuk-service-navigation__link">
+            School Account
+          </a>
+        </span>
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">
+            Menu
+          </button>
+          <ul class="govuk-service-navigation__list" id="navigation">
+            {% if (navSelected == 'Overview') %}
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                <a class="govuk-service-navigation__link" href="/v2/overview">
+                  <strong class="govuk-service-navigation__active-fallback">
+                    Overview
+                  </strong>
+                </a>
+              </li>
+            {% else %}
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="/v2/overview">
+                  Overview
+                </a>
+              </li>
+            {% endif %}
+            {% if (navSelected == 'Compliance') %}
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                <a class="govuk-service-navigation__link" href="/v2/compliance">
+                  <strong class="govuk-service-navigation__active-fallback">
+                    Compliance
+                  </strong>
+                </a>
+              </li>
+            {% else %}
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="/v2/compliance">
+                  Compliance
+                </a>
+              </li>
+            {% endif %}
+            {% if (navSelected == 'Guidance') %}
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                <a class="govuk-service-navigation__link" href="/v2/guidance">
+                  <strong class="govuk-service-navigation__active-fallback">
+                    Guidance
+                  </strong>
+                </a>
+              </li>
+            {% else %}
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="/v2/guidance">
+                  Guidance
+                </a>
+              </li>
+            {% endif %}
+            {% if (navSelected == 'Funding') %}
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                <a class="govuk-service-navigation__link" href="/v2/funding">
+                  <strong class="govuk-service-navigation__active-fallback">
+                    Funding and cost savings
+                  </strong>
+                </a>
+              </li>
+            {% else %}
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="/v2/funding">
+                  Funding and cost savings
+                </a>
+              </li>
+            {% endif %}
+            {% if (navSelected == 'Services') %}
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                <a class="govuk-service-navigation__link" href="/v2/services">
+                  <strong class="govuk-service-navigation__active-fallback">
+                    Services
+                  </strong>
+                </a>
+              </li>
+            {% else %}
+              <li class="govuk-service-navigation__item">
+                <a class="govuk-service-navigation__link" href="/v2/services">
+                  Services
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 {% block content %}

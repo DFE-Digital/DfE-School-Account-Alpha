@@ -11,21 +11,6 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          {% if (navSelected == 'Overview') %}
-            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="/v2/overview">
-                <strong class="govuk-service-navigation__active-fallback">
-                  Overview
-                </strong>
-              </a>
-            </li>
-          {% else %}
-            <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="/v2/overview">
-                Overview
-              </a>
-            </li>
-          {% endif %}
           {% if (navSelected == 'Compliance') %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
               <a class="govuk-service-navigation__link" href="/v2/compliance">
