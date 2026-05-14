@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Content" %}
+
+{% block header %}
+  <header class="govuk-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="#" class="govuk-header__link govuk-header__link--homepage">
+              <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+          </a>
+        </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Contents</h1>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="components/big-number" class="govuk-link">Big number</a></li>
+      <li><a href="components/card" class="govuk-link">Card</a></li>
+      <li><a href="components/checkboxes" class="govuk-link">Checkboxes</a></li>
+      <li><a href="components/dates" class="govuk-link">Date input</a></li>
+      <li><a href="components/generic-status-tags" class="govuk-link">Generic status tags</a></li>
+      <li><a href="components/get-notifications" class="govuk-link">Get notifications</a></li>
+      <li><a href="components/header-menu" class="govuk-link">Header menu</a></li>
+      <li><a href="components/header-menu-and-search" class="govuk-link">Header menu and search</a></li>
+      <li><a href="components/moj-filter-list" class="govuk-link">MoJ filter list</a></li>
+      <li><a href="components/moj-notification-badge" class="govuk-link">MoJ notification badge</a></li>
+      <li><a href="components/moj-timeline" class="govuk-link">MoJ timeline</a></li>
+      <li><a href="components/nested-task-list/parent-task-list" class="govuk-link">Nested task list</a></li>
+      <li><a href="components/notification-banner" class="govuk-link">Notification banner</a></li>
+      <li><a href="components/pagination" class="govuk-link">Pagination</a></li>
+      <li><a href="components/radios" class="govuk-link">Radios</a></li>
+      <li><a href="components/service-navigation" class="govuk-link">Service navigation</a></li>
+      <li><a href="components/text-input" class="govuk-link">Text input</a></li>
+      <li><a href="components/textarea" class="govuk-link">Textarea</a></li>
+      <li><a href="components/step-by-step/step-parent" class="govuk-link">Step by step navigation</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
