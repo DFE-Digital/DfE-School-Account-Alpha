@@ -1,117 +1,443 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="My school account" %}
+{% set pageName="Compliance" %}
 
 {% set navSelected = "Compliance" %}
 
 {% block header %}
   <header class="govuk-header gem-c-layout-super-navigation-header" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
-      <div class="govuk-header__logo">
-        <a href="/" class="govuk-header__link govuk-header__link--homepage">
-            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype"/>
-        </a>
-        <nav aria-labelledby="super-navigation-menu-heading" class="gem-c-layout-super-navigation-header__content govuk-!-display-none-print js-module-initialised" data-module="super-navigation-mega-menu" data-super-navigation-mega-menu-module-started="true">
-          <h2 id="super-navigation-menu-heading" class="govuk-visually-hidden">
-            Navigation menu</h2>
-          <div class="gem-c-layout-super-navigation-header__navigation-item gem-c-layout-super-navigation-header__button-width-container">
-            <div class="gem-c-layout-super-navigation-header__button-container">
-              <span>
-                <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/browse" hidden="hidden">
-                  <span class="gem-c-layout-super-navigation-header__navigation-item-link-inner">
-                    Oakview Secondary School</span></a>
-                  <button aria-controls="super-navigation-menu" aria-expanded="false" aria-label="Show navigation menu" class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu" data-toggle-desktop-group="top" data-toggle-mobile-group="top" id="super-navigation-menu-toggle" type="button">
-                    <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">
-                      Oakview Secondary School</span>
-                  </button>
-                </a>
-              </span>
+        <div class="govuk-header__logo">
+          <a href="/" class="govuk-header__link govuk-header__link--homepage">
+              <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype"/>
+          </a>
+          <nav aria-labelledby="super-navigation-menu-heading" class="gem-c-layout-super-navigation-header__content govuk-!-display-none-print js-module-initialised" data-module="super-navigation-mega-menu" data-super-navigation-mega-menu-module-started="true">
+            <h2 id="super-navigation-menu-heading" class="govuk-visually-hidden">
+              Navigation menu</h2>
+            <div class="gem-c-layout-super-navigation-header__navigation-item gem-c-layout-super-navigation-header__button-width-container">
+              <div class="gem-c-layout-super-navigation-header__button-container">
+                <span>
+                  <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/browse" hidden="hidden">
+                    <span class="gem-c-layout-super-navigation-header__navigation-item-link-inner">
+                      Oakview Secondary School</span></a>
+                    <button aria-controls="super-navigation-menu" aria-expanded="false" aria-label="Show navigation menu" class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu" data-toggle-desktop-group="top" data-toggle-mobile-group="top" id="super-navigation-menu-toggle" type="button">
+                      <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">
+                        Oakview Secondary School</span>
+                    </button>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div id="dfe-header__search" class="gem-c-layout-super-navigation-header__navigation-item">
+              <div class="dfe-header__search">
+                <button class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" id="toggle-search">
+                    <svg class="dfe-icon dfe-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                        <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+                    </svg>
+                    <span class="govuk-visually-hidden">Open search</span>
+                </button>
+                <button class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" id="close-search">
+                    <svg class="dfe-icon dfe-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                        <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+                    </svg>
+                    <span class="govuk-visually-hidden">Close search</span>
+                </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div id="search-box" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" style="display: none;">
+        <div class="govuk-width-container">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="search-field">Search school account</label>
+            <input class="govuk-input govuk-input__search" id="search-field" type="search" autocomplete="off" value="">
+            <button class="search-submit" type="submit">
+              <svg class="dfe-icon dfe-icon__search top-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+              </svg>
+              <span class="govuk-visually-hidden">Search</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="super-navigation-menu" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" hidden>
+        <div class="govuk-width-container">
+          <div class="govuk-grid-row gem-c-layout-super-navigation-header__navigation-items">
+            <div class="govuk-grid-column-two-thirds-from-desktop gem-c-layout-super-navigation-header__column--services-and-information">
+              <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
+                Oakview Secondary School</h3>
+              <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--services-and-information">
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                      <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">
+                        Change my view</a>
+                        <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Switch to other schools within your trust.</p>
+                  </li>
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                      <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">
+                        My organisations</a>
+                        <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">View organisations linked to your account and permission level.</p>
+                  </li>
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                    <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="https://service-assessments.education.gov.uk/">
+                      My profile</a>
+                    <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Access personal details associated with your account.</p>
+                  </li>
+              </ul>
+          </div>
+          <div class="govuk-grid-column-one-third-from-desktop gem-c-layout-super-navigation-header__column--government-activity">
+              <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
+                Support</h3>
+              <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--government-activity">
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                    <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="https://service-assessments.education.gov.uk/">
+                      Contact us</a>
+                  </li>
+              </ul>
             </div>
           </div>
-          <div id="dfe-header__search" class="gem-c-layout-super-navigation-header__navigation-item">
-            <div class="dfe-header__search">
-              <button class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" id="toggle-search">
-                  <svg class="dfe-icon dfe-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
-                      <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
-                  </svg>
-                  <span class="govuk-visually-hidden">Open search</span>
-              </button>
-              <button class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" id="close-search">
-                  <svg class="dfe-icon dfe-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
-                      <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
-                  </svg>
-                  <span class="govuk-visually-hidden">Close search</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div id="search-box" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" style="display: none;">
-      <div class="govuk-width-container">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="search-field">Search school account</label>
-          <input class="govuk-input govuk-input__search" id="search-field" type="search" autocomplete="off" value="">
-          <button class="search-submit" type="submit">
-            <svg class="dfe-icon dfe-icon__search top-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
-              <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
-            </svg>
-            <span class="govuk-visually-hidden">Search</span>
-          </button>
         </div>
       </div>
-    </div>
-    <div id="super-navigation-menu" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" hidden>
-      <div class="govuk-width-container">
-        <div class="govuk-grid-row gem-c-layout-super-navigation-header__navigation-items">
-          <div class="govuk-grid-column-two-thirds-from-desktop gem-c-layout-super-navigation-header__column--services-and-information">
-            <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
-              Oakview Secondary School</h3>
-            <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--services-and-information">
-                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                    <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">
-                      Change my view</a>
-                      <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Switch to other schools within your trust.</p>
-                </li>
-                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                    <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">
-                      My organisations</a>
-                      <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">View organisations linked to your account and permission level.</p>
-                </li>
-                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="https://service-assessments.education.gov.uk/">
-                    My profile</a>
-                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Access personal details associated with your account.</p>
-                </li>
-                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="my-preferences.html">
-                    My preferences</a>
-                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Manage your communication preferences.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="govuk-grid-column-one-third-from-desktop gem-c-layout-super-navigation-header__column--government-activity">
-            <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
-              Support</h3>
-            <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--government-activity">
-                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="https://service-assessments.education.gov.uk/">
-                    Contact us</a>
-                </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  {% include "./includes/service-navigation.html" %}
+    </header>
+    {% include "./includes/service-navigation" %}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-l">Compliance</h1>
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item moj-sub-navigation__item--active">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#" onclick="showComplianceTab('school', this)">Compliance for my school</a>
+          </li>
+          <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#" onclick="showComplianceTab('all', this)">All compliance</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="school-compliance">
+        <div class="app-task-list-card">
+        <div class="app-task-list-card__header">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+            Compliance for my school
+          </h2>
+        </div>
+        <div class="app-task-list-card__body">
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status compliance-1-hint">
+                  Accounts return
+                </a>
+                <div id="compliance-1-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due {{ "today" | duration(13) | govukDate }}.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-1-status">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  In progress
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="./compliance/census-details.html" aria-describedby="compliance-2-status compliance-2-hint">
+                  Summer school census return
+                </a>
+                <div id="compliance-2-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Available 21 May 2026. Due 17 June 2026.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-2-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status compliance-3-hint">
+                  Budget forecast return
+                </a>
+                <div id="compliance-3-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due {{ "today" | duration(37) | govukDate }}.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-3-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-4-status compliance-4-hint">
+                  Related party transactions
+                </a>
+                <div id="compliance-4-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due {{ "today" | duration(45) | govukDate }}.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-4-status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Complete
+                </strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div id="all-compliance" style="display:none;">
+        <div class="app-task-list-card">
+        <div class="app-task-list-card__header">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+            All compliance
+          </h2>
+        </div>
+        <div class="app-task-list-card__body">
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-1-status compliance-1-hint">
+                  Financial benchmarking
+                </a>
+                <div id="compliance-1-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due 20 May 2026.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-1-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status compliance-2-hint">
+                  Accounts return
+                </a>
+                <div id="compliance-2-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due {{ "today" | duration(13) | govukDate }}.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-2-status">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  In progress
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-3-status compliance-3-hint">
+                  Procurement policy
+                </a>
+                <div id="compliance-3-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due 6 June 2026.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-3-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-4-status">
+                Audited financial statements
+              </a>
+              <div id="compliance-4-hint" class="govuk-task-list__hint">
+                <p class="govuk-body-s due-date"><strong>Due 14 June 2026.</strong></p>
+              </div>
+            </div>
+            <div class="govuk-task-list__status" id="compliance-4-status">
+              <strong class="govuk-tag govuk-tag--grey">
+                Not started
+              </strong>
+            </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="./compliance/census-details.html" aria-describedby="compliance-5-status compliance-5-hint">
+                  Summer school census return
+                </a>
+                <div id="compliance-5-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Available 21 May 2026. Due 17 June 2026.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-5-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-6-status compliance-6-hint">
+                  Budget forecast return
+                </a>
+                <div id="compliance-6-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due {{ "today" | duration(37) | govukDate }}.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-6-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-7-status compliance-7-hint">
+                  Related party transactions
+                </a>
+                <div id="compliance-7-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due {{ "today" | duration(45) | govukDate }}.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-7-status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Complete
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-8-status compliance-8-hint">
+                  School resource management self-assessment checklist (SRMSAC)
+                </a>
+                <div id="compliance-8-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Available October 2025. No due date.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-8-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-9-status compliance-9-hint">
+                  Pupil premium
+                </a>
+                <div id="compliance-9-hint" class="govuk-task-list__hint">
+                  <p class="govuk-body-s due-date"><strong>Due 31 December 2026.</strong></p>
+                </div>
+              </div>
+              <div class="govuk-task-list__status" id="compliance-9-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
       <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div class="moj-filter-layout__filter">
+          <div class="moj-filter" data-module="moj-filter">
+            <div class="moj-filter__header">
+              <div class="moj-filter__header-title">
+                <h2 class="govuk-heading-m">Filter</h2>
+              </div>
+              <div class="moj-filter__header-action">
+              </div>
+            </div>
+            <div class="moj-filter__content">
+              <div class="moj-filter__selected">
+                <div class="moj-filter__selected-heading">
+                  <div class="moj-filter__heading-title">
+                    <h2 class="govuk-heading-s">Selected filters</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="moj-filter__options">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--s" for="keywords">
+                    Keywords
+                  </label>
+                  <input class="govuk-input" id="keywords" name="keywords" type="text">
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Status
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                        <label class="govuk-label govuk-checkboxes__label" for="status">
+                          Complete
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                          In progress
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                          Not started
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Type
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                        <label class="govuk-label govuk-checkboxes__label" for="type">
+                          Academy Trust Handbook
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-2" name="type-2" type="checkbox" value="2">
+                        <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                          Funding
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-3" name="type-3" type="checkbox" value="3">
+                        <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                          Finance
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-4" name="type-4" type="checkbox" value="4">
+                        <label class="govuk-label govuk-checkboxes__label" for="type-4">
+                          Procurement
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-5" name="type-5" type="checkbox" value="5">
+                        <label class="govuk-label govuk-checkboxes__label" for="type-5">
+                          Pupils
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Apply filters
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 {% endblock %}
@@ -143,5 +469,23 @@
         dfeHeaderSearch.classList.remove("selected");
       })
     });
+  </script>
+  <script>
+  function showComplianceTab(tab, element) {
+    event.preventDefault();
+
+    document.getElementById('school-compliance').style.display =
+      tab === 'school' ? 'block' : 'none';
+
+    document.getElementById('all-compliance').style.display =
+      tab === 'all' ? 'block' : 'none';
+
+    document.querySelectorAll('.moj-sub-navigation__link')
+      .forEach(link => {
+        link.removeAttribute('aria-current');
+      });
+
+    element.setAttribute('aria-current', 'page');
+    }
   </script>
 {% endblock %}
