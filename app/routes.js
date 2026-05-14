@@ -10,3 +10,4 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 require('./routes/v1/test-routes.js')(router);
 require('./routes/v2/dfe-sign-in.js')(router);
+require('./routes/v3/dfe-sign-in.js')(router);
