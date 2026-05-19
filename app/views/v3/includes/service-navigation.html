@@ -2,7 +2,7 @@
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <span class="govuk-service-navigation__service-name">
-        <a href="/v3/single-school" class="govuk-service-navigation__link">
+        <a href="/v3/single-school?navSelected=SchoolAccount" class="govuk-service-navigation__link">
           School Account
         </a>
       </span>
@@ -11,9 +11,9 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          {% if (navSelected == 'Compliance') %}
+          {% if data['navSelected'] == 'Compliance' %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="/v3/compliance">
+              <a class="govuk-service-navigation__link" href="/v3/compliance?navSelected=Compliance&pageSelected=now">
                 <strong class="govuk-service-navigation__active-fallback">
                   Compliance
                 </strong>
@@ -21,14 +21,14 @@
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="/v3/compliance">
+              <a class="govuk-service-navigation__link" href="/v3/compliance?navSelected=Compliance&pageSelected=now">
                 Compliance
               </a>
             </li>
           {% endif %}
-          {% if (navSelected == 'Guidance') %}
+          {% if data['navSelected'] == 'Guidance' %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="/v3/guidance">
+              <a class="govuk-service-navigation__link" href="/v3/guidance?navSelected=Guidance&pageSelected=now">
                 <strong class="govuk-service-navigation__active-fallback">
                   Guidance
                 </strong>
@@ -36,14 +36,14 @@
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="/v3/guidance">
+              <a class="govuk-service-navigation__link" href="/v3/guidance?navSelected=Guidance&pageSelected=now">
                 Guidance
               </a>
             </li>
           {% endif %}
-          {% if (navSelected == 'Funding') %}
+          {% if data['navSelected'] == 'Funding' %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="/v3/funding">
+              <a class="govuk-service-navigation__link" href="/v3/funding?navSelected=Funding&pageSelected=now">
                 <strong class="govuk-service-navigation__active-fallback">
                   Funding and cost savings
                 </strong>
@@ -51,14 +51,14 @@
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="/v3/funding">
+              <a class="govuk-service-navigation__link" href="/v3/funding?navSelected=Funding&pageSelected=now">
                 Funding and cost savings
               </a>
             </li>
           {% endif %}
-          {% if (navSelected == 'Services') %}
+          {% if data['navSelected'] == 'Services' %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-              <a class="govuk-service-navigation__link" href="/v3/services">
+              <a class="govuk-service-navigation__link" href="/v3/services?navSelected=Services&pageSelected=now">
                 <strong class="govuk-service-navigation__active-fallback">
                   Services
                 </strong>
@@ -66,7 +66,7 @@
             </li>
           {% else %}
             <li class="govuk-service-navigation__item">
-              <a class="govuk-service-navigation__link" href="/v3/services">
+              <a class="govuk-service-navigation__link" href="/v3/services?navSelected=Services&pageSelected=now">
                 Services
               </a>
             </li>

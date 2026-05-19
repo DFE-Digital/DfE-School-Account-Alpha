@@ -2,8 +2,6 @@
 
 {% set pageName="My school account" %}
 
-{% set navSelected = "Funding" %}
-
 {% block header %}
   <header class="govuk-header gem-c-layout-super-navigation-header" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
@@ -104,7 +102,7 @@
       </div>
     </div>
   </header>
-  {% include "./includes/service-navigation.html" %}
+  {% include "./includes/service-navigation.html.html" %}
 {% endblock %}
 
 {% block content %}
