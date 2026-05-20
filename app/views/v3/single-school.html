@@ -161,10 +161,20 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="cost-saving/energy-for-schools" class="govuk-link">
               Energy for schools</a></td>
-            <td class="govuk-table__cell" data-sort-value="9999999">N/A</td>
+            {% if data['efsStatus'] == 'Applied' %}
+              <td class="govuk-table__cell" data-sort-value="999">
+                {{ "today" | duration(42) | govukDate }}</td>
+            {% else %}
+              <td class="govuk-table__cell" data-sort-value="9999999">N/A</td>
+            {% endif %}
             <td class="govuk-table__cell">Cost savings</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
-              Eligible</strong></td>
+            {% if data['efsStatus'] == 'Applied' %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--teal">
+                Onboarding due {{ "today" | duration(42) | govukDate }}</strong></td>
+            {% else %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
+                Eligible</strong></td>
+            {% endif %}
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#" class="govuk-link">Apply
