@@ -129,10 +129,24 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <div class="govuk-error-summary__body">
+            <p class="govuk-body">
+                  There are errors in your summer school census return submission.
+                </p>
+                <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Go to the COLLECT portal (opens in a new tab)</a>
+        </li>
+      </ul>
+          </div>
+        </div>
+      </div>
       <div class="header-row">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
-        <strong class="govuk-tag govuk-tag--grey status-tag">
-          Not started
+        <strong class="govuk-tag govuk-tag--red status-tag">
+          Action required
         </strong>
       </div>
       <p class="govuk-body">Available 21 May 2026. Due 17 June 2026.</p>

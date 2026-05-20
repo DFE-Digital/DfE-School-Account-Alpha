@@ -129,10 +129,17 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">
+            You have submitted your census return and should expect to hear back from DfE in a few days.
+          </p>
+        </div>
+      </div>
       <div class="header-row">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
-        <strong class="govuk-tag govuk-tag--grey status-tag">
-          Not started
+        <strong class="govuk-tag govuk-tag--yellow status-tag">
+          In review
         </strong>
       </div>
       <p class="govuk-body">Available 21 May 2026. Due 17 June 2026.</p>
