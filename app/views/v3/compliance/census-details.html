@@ -117,25 +117,51 @@
 {% block beforeContent %}
   <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
     <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="../single-school.html">Home</a>
+      <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../single-school.html">
+        Home</a>
       </li>
-      <li class="govuk-breadcrumbs__list-item">
-        Summer school census return
-      </li>
+      <li class="govuk-breadcrumbs__list-item">Summer school census return</li>
     </ol>
   </nav>
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+      {% if data['schoolCensusDetails'] == 'Action required' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <div class="govuk-error-summary__body">
+              <p class="govuk-body">You have actions to complete in your summer school census return submission.</p>
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#">Go to DfE COLLECT (opens in new tab)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% elseif data['schoolCensusDetails'] == 'In review' %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">
+              You've submitted your census return. You can expect to hear back from DfE in 10 days.
+            </p>
+          </div>
+        </div>
+      {% else %}
+      {% endif %}
       <div class="header-row">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
-        <strong class="govuk-tag govuk-tag--grey status-tag">
-          Not started
-        </strong>
+        {% if data['schoolCensusDetails'] == 'Action required' %}
+          <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
+        {% elseif data['schoolCensusDetails'] == 'In review' %}
+          <strong class="govuk-tag govuk-tag--grey status-tag">In review</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
+        {% endif %}
       </div>
-      <p class="govuk-body">Available 21 May 2026.</p> 
+      <br> {{data['schoolCensusDetails']}}<br>
+      <p class="govuk-body">Available 21 May 2026.</p>
       <p class="govuk-body">Due 17 June 2026.</p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
@@ -201,7 +227,7 @@
           Go to DfE COLLECT (opens in new tab)
         </button>
         <a class="govuk-link govuk-link--no-visited-state" href="../single-school.html">Return to school account homepage</a>
-      </div>  
+      </div>
       <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
     </div>
     <div class="govuk-grid-column-one-quarter pull-right">
