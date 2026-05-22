@@ -114,14 +114,58 @@
     {% include "../includes/service-navigation.html" %}
 {% endblock %}
 
+{% block beforeContent %}
+  <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../single-school.html">
+        Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">Summer school census return</li>
+    </ol>
+  </nav>
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-l">Summer school census return</h1>
-      <p class="govuk-body">Guidance is based on your profile, school information and census task.</p>
-
+      {% if data['schoolCensusDetails'] == 'Action required' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <div class="govuk-error-summary__body">
+              <p class="govuk-body">You have actions to complete in your summer school census return submission.</p>
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#">Go to DfE COLLECT (opens in new tab)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% elseif data['schoolCensusDetails'] == 'In review' %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">
+              You've submitted your census return. You can expect to hear back from DfE in 10 days.
+            </p>
+          </div>
+        </div>
+      {% else %}
+      {% endif %}
+      <div class="header-row">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
+        {% if data['schoolCensusDetails'] == 'Action required' %}
+          <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
+        {% elseif data['schoolCensusDetails'] == 'In review' %}
+          <strong class="govuk-tag govuk-tag--grey status-tag">In review</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
+        {% endif %}
+      </div>
+      <br> {{data['schoolCensusDetails']}}<br>
+      <p class="govuk-body">Available 21 May 2026.</p>
+      <p class="govuk-body">Due 17 June 2026.</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-        Summer school census return: key steps
+        Key steps
       </h2>
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
@@ -178,32 +222,11 @@
           </li>
         </ol>
       </div>
-            <div class="app-task-list-card">
-        <div class="app-task-list-card__header">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-            2025 to 2026 summer census compliance
-          </h2>
-        </div>
-        <div class="app-task-list-card__body">
-          <ul class="govuk-task-list">
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="#" aria-describedby="compliance-2-status compliance-2-hint">
-                  Complete the summer school census return
-                </a>
-                <div id="compliance-2-hint" class="govuk-task-list__hint">
-                  <p class="govuk-body-s">You should complete your return on school census day or as close to school census day as possible.</p>
-                  <p class="govuk-body-s due-date"><strong>Available 21 May 2026. Due 17 June 2026.</strong></p>
-                </div>
-              </div>
-              <div class="govuk-task-list__status" id="compliance-2-status">
-                <strong class="govuk-tag govuk-tag--grey">
-                  Not started
-                </strong>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Go to DfE COLLECT (opens in new tab)
+        </button>
+        <a class="govuk-link govuk-link--no-visited-state" href="../single-school.html">Return to school account homepage</a>
       </div>
       <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
     </div>
@@ -212,11 +235,6 @@
         <h2 class="govuk-heading-m">Useful links</h2>
         <nav aria-label="Useful links">
           <ul class="govuk-list">
-            <li>
-              <a class="govuk-link govuk-link--no-visited-state" href="#">
-              DfE Collect Portal
-              </a>
-            </li>
             <li>
               <a href="https://www.gov.uk/guidance/complete-the-school-census" class="govuk-link govuk-link--no-visited-state">
                 Full school census guidance
