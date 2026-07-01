@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Service navigation" %}
+
+{% block govukServiceNavigation %}
+  {{ govukServiceNavigation({
+    serviceName: serviceName,
+    navigation: [
+      {
+        href: "#",
+        text: "Dashboard",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Navigation item 2"
+      },
+      {
+        href: "#",
+        text: "Navigation item 3"
+      },
+      {
+        href: "#",
+        text: "Navigation item 4"
+      },
+      {
+        href: "#",
+        text: "Navigation item 5"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Service navigation</h1>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,78 @@
+<section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <span class="govuk-service-navigation__service-name">
+        <a href="/v3/single-school?navSelected=SchoolAccount" class="govuk-service-navigation__link">
+          School Account
+        </a>
+      </span>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          {% if data['navSelected'] == 'Compliance' %}
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+              <a class="govuk-service-navigation__link" href="/v3/compliance?navSelected=Compliance&pageSelected=now">
+                <strong class="govuk-service-navigation__active-fallback">
+                  Compliance
+                </strong>
+              </a>
+            </li>
+          {% else %}
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="/v3/compliance?navSelected=Compliance&pageSelected=now">
+                Compliance
+              </a>
+            </li>
+          {% endif %}
+          {% if data['navSelected'] == 'Guidance' %}
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+              <a class="govuk-service-navigation__link" href="/v3/guidance?navSelected=Guidance&pageSelected=now">
+                <strong class="govuk-service-navigation__active-fallback">
+                  Guidance
+                </strong>
+              </a>
+            </li>
+          {% else %}
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="/v3/guidance?navSelected=Guidance&pageSelected=now">
+                Guidance
+              </a>
+            </li>
+          {% endif %}
+          {% if data['navSelected'] == 'Funding' %}
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+              <a class="govuk-service-navigation__link" href="/v3/funding?navSelected=Funding&pageSelected=now">
+                <strong class="govuk-service-navigation__active-fallback">
+                  Funding and cost savings
+                </strong>
+              </a>
+            </li>
+          {% else %}
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="/v3/funding?navSelected=Funding&pageSelected=now">
+                Funding and cost savings
+              </a>
+            </li>
+          {% endif %}
+          {% if data['navSelected'] == 'Services' %}
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+              <a class="govuk-service-navigation__link" href="/v3/services?navSelected=Services&pageSelected=now">
+                <strong class="govuk-service-navigation__active-fallback">
+                  Services
+                </strong>
+              </a>
+            </li>
+          {% else %}
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="/v3/services?navSelected=Services&pageSelected=now">
+                Services
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
