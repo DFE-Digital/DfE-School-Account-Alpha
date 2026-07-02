@@ -1,5 +1,38 @@
-.app-step-nav--large {
-  .app-step-nav__button--title {
-    font-size: 19px;
+.login-page {
+  margin-top: 0;
+  .login-panel {
+    padding: 60px 60px 60px 0;
+  }
+  .login-title {
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+  .login-button {
+    margin-top: 20px;
+  }
+  .benefits-panel {
+    background: #dfeaf8;
+    padding: 60px;
+  }
+  .benefits-title {
+    margin-bottom: 40px;
+  }
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .benefit-icon {
+    width: 72px;
+    height: 72px;
+    background: white;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .benefit-text {
+    font-weight: bold;
+    margin-bottom: 0;
+    max-width: 280px;
   }
 }

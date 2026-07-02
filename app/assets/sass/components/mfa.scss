@@ -1,0 +1,72 @@
+.simple-header {
+  height: 64px;
+  background: #0b0c0c;
+}
+
+.custom-footer {
+  height: 120px;
+  background: #f3f2f1;
+  border-top: 1px solid #b1b4b6;
+}
+
+.govuk-main-wrapper {
+  padding-top: 40px;
+  background: #ffffff;
+  min-height: calc(100vh - 184px);
+}
+
+.signin-wrapper {
+  display: flex;
+  justify-content: center;
+  .signin-card {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    > *:not(.signin-footer) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+  .signin-label {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .email-address {
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  .signin-title {
+    margin-bottom: 30px;
+  }
+  .intro-text {
+    max-width: 420px;
+    margin-bottom: 30px;
+  }
+  .govuk-input {
+    width: 100%;
+    max-width: 100%;
+  }
+  .govuk-link {
+    color: #1D72B8;
+  }
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    .govuk-button {
+      padding: 10px 30px;
+    }
+  }
+  .signin-footer {
+    background: #f3f2f1;
+    padding: 40px 60px;
+    .govuk-body:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

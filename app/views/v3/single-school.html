@@ -108,124 +108,187 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl" id="plannerTable">My school planner</h1>
+      <span class="govuk-caption-l">Welcome name</span>
+      <h1 class="govuk-heading-xl">School account</h1>
     </div>
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Due</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">
-              Accounts return</a></td>
-            <td class="govuk-table__cell" data-sort-value="27052026">27 May 2026</td>
-            <td class="govuk-table__cell">Compliance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
-              In progress</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="compliance/census-details" class="govuk-link">
-              Summer school census return</a></td>
-            <td class="govuk-table__cell" data-sort-value="17062026">17 June
-              2026</td>
-            <td class="govuk-table__cell">Compliance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
-              Not started</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Budget
-              forecast return</a></td>
-            <td class="govuk-table__cell" data-sort-value="20062026">20 June
-              2026</td>
-            <td class="govuk-table__cell">Compliance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
-              Not started</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Related
-              party transactions</a></td>
-            <td class="govuk-table__cell" data-sort-value="28062026">28 June
-              2026</td>
-            <td class="govuk-table__cell">Compliance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-              Complete</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="cost-saving/energy-for-schools" class="govuk-link">
-              Energy for schools</a></td>
-            {% if data['efsStatus'] == 'Applied' %}
-              <td class="govuk-table__cell" data-sort-value="999">
-                {{ "today" | duration(42) | govukDate }}</td>
-            {% else %}
-              <td class="govuk-table__cell" data-sort-value="9999999">N/A</td>
-            {% endif %}
-            <td class="govuk-table__cell">Cost savings</td>
-            {% if data['efsStatus'] == 'Applied' %}
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--teal">
-                Onboarding due {{ "today" | duration(42) | govukDate }}</strong></td>
-            {% else %}
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
-                Eligible</strong></td>
-            {% endif %}
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Apply
-              for the SEND spaces grant</a></td>
-            <td class="govuk-table__cell" data-sort-value="9999999">N/A</td>
-            <td class="govuk-table__cell">Funding</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">
-              May be eligible</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Mobile
-              phones in schools legislation</a></td>
-            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
-            <td class="govuk-table__cell">Guidance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-              Unread</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Plans
-              for wider school reforms: 2026 white paper</a></td>
-            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
-            <td class="govuk-table__cell">Guidance</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Keeping
-              children safe in education 2026: draft for consultation</a></td>
-            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
-            <td class="govuk-table__cell">Guidance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-              Unread</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Improve
-              allergy safety in schools</a></td>
-            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
-            <td class="govuk-table__cell">Guidance</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-              Unread</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">
-              Relationships and sex education (RSE) and health education</a></td>
-            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
-            <td class="govuk-table__cell">Guidance</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
-        </tbody>
-      </table>
-      {% include "./includes/pagination.html" %}
-      <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
+      <section class="dashboard-section govuk-body">
+        <div class="section-header govuk-!-margin-bottom-0">
+          <h2 class="govuk-heading-l">Summary</h2>
+        </div>
+        <div class="dashboard-summary govuk-!-margin-bottom-7">
+          <div class="summary-pill urgent">
+            <strong>1 urgent action</strong>
+          </div>
+          <div class="summary-pill">
+            <strong>2 returns due this month</strong>
+          </div>
+          <div class="summary-pill">
+            <strong>3 guidance updates</strong>
+          </div>
+          <div class="summary-pill">
+            <strong>2 opportunities and cost savings</strong>
+          </div>
+        </div>
+      </section>
+      <section class="dashboard-section govuk-body">
+        <div class="section-header govuk-!-margin-bottom-0">
+          <h2 class="govuk-heading-l"> Priority actions </h2>
+        </div>
+        <div class="dfe-grid-container govuk-!-margin-bottom-6">
+          <div class="dfe-card">
+            <div class="dfe-card-container govuk-body urgent">
+              <strong class="govuk-tag govuk-tag--red">Urgent</strong>
+              <h3 class="govuk-heading-m"><a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">Summer school census return</a></h3>
+              <p class="govuk-body">Due in 3 days</p>
+              <p class="govuk-body-s recommendation-reason">You are seeing this because your role includes compliance reporting.</p>
+            </div>
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container govuk-body">
+              <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+              <h3 class="govuk-heading-m"><a class="govuk-link govuk-link--no-visited-state" href="#">Accounts return</a></h3>
+              <p class="govuk-body">Due in 10 days</p>
+              <p class="govuk-body-s recommendation-reason">You are seeing this because it's relevant to schools with academy trust finance obligations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="dashboard-section govuk-body">
+        <div class="section-header govuk-!-margin-bottom-0">
+          <h2 class="govuk-heading-l">Compliance, guidance and opportunities</h2>
+        </div>
+        <div class="card-grid">
+          <div class="summary-card">
+            <h3 class="govuk-heading-m">Compliance over next 60 days</h3>
+            <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Due</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Status</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Budget forecast return</a>
+                  </td>
+                  <td class="govuk-table__cell">27 June 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--yellow">In progress</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Related party transactions</a>
+                  </td>
+                  <td class="govuk-table__cell">5 July 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Land and buildings collection tool (LBCT)</a>
+                  </td>
+                  <td class="govuk-table__cell">20 July 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">View all compliance</a>
+          </div>
+          <div class="summary-card">
+            <h3 class="govuk-heading-m">Guidance</h3>
+            <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Last updated</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Status</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Mobile phones in schools legislation</a>
+                  </td>
+                  <td class="govuk-table__cell">Statutory</td>
+                  <td class="govuk-table__cell">21 May 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--teal">New</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Plans for wider school reforms: 2026 white paper</a>
+                  </td>
+                  <td class="govuk-table__cell">Consulation</td>
+                  <td class="govuk-table__cell">16 May 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--blue">Updated</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Keeping children safe in education 2026: draft for consultation</a>
+                  </td>
+                  <td class="govuk-table__cell">Consulation</td>
+                  <td class="govuk-table__cell">12 May 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--teal">New</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Improve Allergy Safety in Schools</a>
+                  </td>
+                  <td class="govuk-table__cell">Statutory</td>
+                  <td class="govuk-table__cell">8 May 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--blue">Updated</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Relationships and sex education (RSE) and health education 2025</a>
+                  </td>
+                  <td class="govuk-table__cell">Statutory</td>
+                  <td class="govuk-table__cell">20 April 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--blue">Updated</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">View all guidance</a>
+          </div>
+          <div class="summary-card">
+            <h3 class="govuk-heading-m">Opportunities and cost savings</h3>
+            <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Name and details</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Apply by</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Status</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="./cost-saving/energy-for-schools.html">Save up to 38% on energy bills</a>
+                    <div id="details-1-hint" class="govuk-task-list__hint">
+                      Energy for Schools helps state-funded schools and trusts switch to the same energy contract used by the DfE.
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Open all year</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--purple">Eligible</strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for the SEND spaces grant</a>
+                    <div id="details-1-hint" class="govuk-task-list__hint">
+                      Understand eligibility and apply for the 2026/2027 grant.
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">30 May 2026</td>
+                  <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--green">Possibly eligible</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </div>
     <div class="govuk-grid-column-one-quarter">
       <div class="moj-filter-layout__filter">
@@ -255,31 +318,84 @@
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      Type
+                      Category
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="buildings" name="responsibilities" type="checkbox" value="Buildings">
+                        <label class="govuk-label govuk-checkboxes__label" for="buildings">Buildings</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="compliance" name="responsibilities" type="checkbox" value="Compliance">
+                        <label class="govuk-label govuk-checkboxes__label" for="compliance">Compliance</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="finance" name="responsibilities" type="checkbox" value="Finance">
+                        <label class="govuk-label govuk-checkboxes__label" for="finance">Finance</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="funding" name="responsibilities" type="checkbox" value="Funding">
+                        <label class="govuk-label govuk-checkboxes__label" for="funding">Funding</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="governance" name="responsibilities" type="checkbox" value="Governance">
+                        <label class="govuk-label govuk-checkboxes__label" for="governance">Governance</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="health-safety" name="responsibilities" type="checkbox" value="Health and safety">
+                        <label class="govuk-label govuk-checkboxes__label" for="health-safety">Health and safety</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="human-resources" name="responsibilities" type="checkbox" value="Human resources">
+                        <label class="govuk-label govuk-checkboxes__label" for="human-resources">Human resources</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="it" name="responsibilities" type="checkbox" value="IT">
+                        <label class="govuk-label govuk-checkboxes__label" for="it">IT</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="procurement" name="responsibilities" type="checkbox" value="Procurement">
+                        <label class="govuk-label govuk-checkboxes__label" for="procurement">Procurement</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="pupils" name="responsibilities" type="checkbox" value="Pupils">
+                        <label class="govuk-label govuk-checkboxes__label" for="pupils">Pupils</label>
+                      </div>
+                      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                        <input class="govuk-checkboxes__input" id="safeguarding" name="responsibilities" type="checkbox" value="Safeguarding">
+                        <label class="govuk-label govuk-checkboxes__label" for="safeguarding">Safeguarding</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Compliance status
                     </legend>
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
-                        <label class="govuk-label govuk-checkboxes__label" for="type">
-                          Compliance
+                        <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                        <label class="govuk-label govuk-checkboxes__label" for="status">
+                          Complete
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                        <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                          Cost saving
+                        <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                          In progress
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                        <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                          Funding
+                        <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                          Not started
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-4" name="type" type="checkbox" value="4">
-                        <label class="govuk-label govuk-checkboxes__label" for="type-4">
-                          Guidance
+                        <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-4">
+                          Urgent
                         </label>
                       </div>
                     </div>
@@ -288,33 +404,30 @@
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      Status
+                      Guidance status
                     </legend>
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
-                        <label class="govuk-label govuk-checkboxes__label" for="status">
-                          In progress
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-                        <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                        <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
+                        <label class="govuk-label govuk-checkboxes__label" for="status-4">
                           New
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
-                        <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                          Planning needed
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
                         <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                          Requires actions
+                          Updated
                         </label>
                       </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Opportunities and cost savings status
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
                         <label class="govuk-label govuk-checkboxes__label" for="status-4">
@@ -324,13 +437,7 @@
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
                         <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                          May be eligible
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                        <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                          Not eligible
+                          Possibly eligible
                         </label>
                       </div>
                     </div>
@@ -347,34 +454,4 @@
         </div>
     </div>
   </div>
-{% endblock %}
-
-{% block pageScripts %}
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggleSearch = document.getElementById("toggle-search");
-      var closeSearch = document.getElementById("close-search");
-      var searchBox = document.getElementById("search-box");
-      var dfeHeaderSearch = document.getElementById("dfe-header__search");
-
-      if (!toggleSearch || !closeSearch || !searchBox || !dfeHeaderSearch) {
-        alert("Cannot find an element")
-        return;
-      }
-
-      toggleSearch.addEventListener("click", function () {
-        toggleSearch.style.display = "none";
-        closeSearch.style.display = "block";
-        searchBox.style.display = "block";
-        dfeHeaderSearch.classList.add("selected");
-      });
-
-      closeSearch.addEventListener("click", function (){
-        toggleSearch.style.display = "block";
-        closeSearch.style.display = "none";
-        searchBox.style.display = "none";
-        dfeHeaderSearch.classList.remove("selected");
-      })
-    });
-  </script>
 {% endblock %}
