@@ -15,6 +15,14 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/password', function (req, res) {
+    res.redirect('/' + version + '/mfa')
+  })
+
+  router.get('/' + version + '/mfa', function (req, res) {
+    res.render(version + '/mfa', {})
+  })
+
+  router.post('/' + version + '/mfa', function (req, res) {
     if (req.session.data['singleHome'] == 'priority') {
       res.redirect('/' + version + '/single-priority-home')
     } else {
