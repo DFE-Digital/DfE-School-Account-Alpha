@@ -1,4 +1,4 @@
-# DfE-School-Account-Alpha DRAFT
+# DfE-School-Account-Alpha
 
 ## About
 This documentation is opinionated and speaks to how we would want to maintain a
@@ -100,3 +100,9 @@ of truth.
 Generally speaking the prototype is accurate as of the last update, and we are
 moving to make the whole codebase accurate after the prototype was brought back
 to life.
+
+### Prerequisists
+
+The prototype needs the following to run:
+- node
+- xgov filters (npm install @x-govuk/govuk-prototype-filters)
