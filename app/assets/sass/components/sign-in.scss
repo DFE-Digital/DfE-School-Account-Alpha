@@ -1,0 +1,38 @@
+.sign-in-page {
+  margin-top: 0;
+  .signin-panel {
+    padding: 60px 60px 60px 0;
+  }
+  .sign-in-title {
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+  .sign-in-button {
+    margin-top: 20px;
+  }
+  .benefits-panel {
+    background: #dfeaf8;
+    padding: 60px;
+  }
+  .benefits-title {
+    margin-bottom: 40px;
+  }
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .benefit-icon {
+    width: 72px;
+    height: 72px;
+    background: white;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .benefit-text {
+    font-weight: bold;
+    margin-bottom: 0;
+    max-width: 280px;
+  }
+}
