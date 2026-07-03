@@ -15,7 +15,11 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/password', function (req, res) {
-    res.redirect('/' + version + '/single-school')
+    if (req.session.data['singleHome'] == 'priority') {
+      res.redirect('/' + version + '/single-priority-home')
+    } else {
+      res.redirect('/' + version + '/single-combined-home')
+    }
   })
 
 }
