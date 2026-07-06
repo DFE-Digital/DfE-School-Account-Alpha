@@ -455,3 +455,33 @@
     </div>
   </div>
 {% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var toggleSearch = document.getElementById("toggle-search");
+      var closeSearch = document.getElementById("close-search");
+      var searchBox = document.getElementById("search-box");
+      var dfeHeaderSearch = document.getElementById("dfe-header__search");
+
+      if (!toggleSearch || !closeSearch || !searchBox || !dfeHeaderSearch) {
+        alert("Cannot find an element")
+        return;
+      }
+
+      toggleSearch.addEventListener("click", function () {
+        toggleSearch.style.display = "none";
+        closeSearch.style.display = "block";
+        searchBox.style.display = "block";
+        dfeHeaderSearch.classList.add("selected");
+      });
+
+      closeSearch.addEventListener("click", function (){
+        toggleSearch.style.display = "block";
+        closeSearch.style.display = "none";
+        searchBox.style.display = "none";
+        dfeHeaderSearch.classList.remove("selected");
+      })
+    });
+  </script>
+{% endblock %}
