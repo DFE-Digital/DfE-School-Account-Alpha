@@ -8,17 +8,18 @@
 @import 'components/card';
 @import 'components/charts';
 @import 'components/chat-bot';
-@import 'components/get-notifications';
-@import 'components/header-menu';
-@import 'components/moj-filter';
-@import 'components/search';
-@import 'components/homepage.scss';
-@import 'components/govuk-task-list.scss';
-@import 'components/step-by-step.scss';
-@import 'components/sidebar.scss';
-@import 'components/preferences-tableradio.scss';
 @import 'components/checkbox.scss';
+@import 'components/get-notifications';
+@import 'components/govuk-task-list.scss';
 @import 'components/guidance-header.scss';
+@import 'components/header-menu';
+@import 'components/homepage.scss';
+@import 'components/moj-filter';
+@import 'components/preferences-tableradio.scss';
+@import 'components/search';
+@import 'components/sign-in.scss';
+@import 'components/sidebar.scss';
+@import 'components/step-by-step.scss';
 
 // Add extra styles here
 * {
