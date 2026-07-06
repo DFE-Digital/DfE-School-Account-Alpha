@@ -10,7 +10,7 @@
     "@ministryofjustice/frontend": "^9.0.0",
     "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "govuk-frontend": "^6.1.0",
-    "govuk-prototype-kit": "13.20.1",
+    "govuk-prototype-kit": "13.20.2",
     "moment": "^2.30.1"
   }
 }
