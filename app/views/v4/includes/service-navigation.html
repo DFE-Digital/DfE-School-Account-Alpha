@@ -11,6 +11,21 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
+          {% if data['navSelected'] == 'MyOverview' %}
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+              <a class="govuk-service-navigation__link" href="?navSelected=MyOverview&pageSelected=now">
+                <strong class="govuk-service-navigation__active-fallback">
+                  My overview
+                </strong>
+              </a>
+            </li>
+          {% else %}
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="?navSelected=MyOverview&pageSelected=now">
+                My overview
+              </a>
+            </li>
+          {% endif %}
           {% if data['navSelected'] == 'Compliance' %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
               <a class="govuk-service-navigation__link" href="/v3/compliance?navSelected=Compliance&pageSelected=now">
