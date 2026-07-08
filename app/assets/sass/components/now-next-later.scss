@@ -5,6 +5,9 @@
   margin-bottom: govuk-spacing(3);
   margin-right: govuk-spacing(3);
   box-sizing: border-box;
+  &.govuk-grid-column-one-quarter{
+    width: calc(25% - 12px);
+  }
   &:last-of-type{
     margin-right: 0;
   }
@@ -46,6 +49,7 @@
     padding: govuk-spacing(3);
     border-left-width: 6px;
     border-left-style: solid;
+    border-left-color: transparent;
     margin-bottom: govuk-spacing(3);
     > p, > *:last-child, .app-step-nav__steps p{
       margin-bottom: 0;
@@ -61,6 +65,9 @@
     }
     &.orange{
       border-left-color: #f7996a;
+    }
+    &.red{
+      border-left-color: #d4351c;
     }
     .app-step-nav__header{
       border-top:none;
