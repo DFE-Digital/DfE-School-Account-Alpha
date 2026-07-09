@@ -7,6 +7,8 @@ module.exports = function (router) {
       res.redirect('/' + version + '/single-priority-home')
     } else if (req.session.data['singleHome'] == 'nowNextLater'){
       res.redirect('/' + version + '/single-now-next-later-home')
+    } else if (req.session.data['singleHome'] == 'roleLed'){
+      res.redirect('/' + version + '/single-role-led-home')
     } else {
       res.redirect('/' + version + '/single-combined-home')
     }
@@ -17,6 +19,8 @@ module.exports = function (router) {
       res.redirect('/' + version + '/single-priority-home')
     } else if (req.session.data['singleHome'] == 'nowNextLater'){
       res.redirect('/' + version + '/single-now-next-later-home')
+    } else if (req.session.data['singleHome'] == 'roleLed'){
+      res.redirect('/' + version + '/single-role-led-home')
     } else {
       res.redirect('/' + version + '/single-combined-home')
     }
