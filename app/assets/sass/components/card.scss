@@ -36,9 +36,31 @@
   display:flex;
   flex-grow:1;
   flex-direction:column;
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-left-color: transparent;
   .govuk-tag{
     margin-bottom: govuk-spacing(3);
   }
+  &.yellow{
+    border-left-color: govuk-colour("yellow");
+  }
+  &.green{
+    border-left-color: #87bca8;
+  }
+  &.grey{
+    border-left-color: #cecece;
+  }
+  &.orange{
+    border-left-color: #f7996a;
+  }
+  &.red{
+    border-left-color: #d4351c;
+  }
+}
+
+.dfe-card--white-background{
+  background-color: govuk-colour("white");
 }
 
 .dfe-card-container h2+p:last-child,
