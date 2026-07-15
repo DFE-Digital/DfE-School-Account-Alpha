@@ -13,3 +13,5 @@ require('./routes/v2/dfe-sign-in.js')(router);
 require('./routes/v3/dfe-sign-in.js')(router);
 require('./routes/v4/common.js')(router);
 require('./routes/v4/dfe-sign-in.js')(router);
+require('./routes/v5/common.js')(router);
+require('./routes/v5/dfe-sign-in.js')(router);
