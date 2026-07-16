@@ -23,10 +23,10 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/mfa', function (req, res) {
-    if (req.session.data['singleHome'] == 'priority') {
-      res.redirect('/' + version + '/single-priority-home')
+    if (req.session.data['singleHome'] == 'thinLine') {
+      res.redirect('/' + version + '/compliance/census-details')
     } else {
-      res.redirect('/' + version + '/single-combined-home')
+      res.redirect('/' + version + '/single-school')
     }
   })
 
