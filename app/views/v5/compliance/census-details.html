@@ -149,10 +149,10 @@
       {% endif %}
       <span class="govuk-caption-xl">Census day 12 August 2026</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
-      {% if data['schoolCensusDetails'] == 'Action required' %}
+      {% if data['censusStatus'] == 'Action required' %}
         <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
-      {% elseif data['schoolCensusDetails'] == 'In review' %}
-        <strong class="govuk-tag govuk-tag--grey status-tag">In review</strong>
+      {% elseif data['censusStatus'] == 'DfE Review' %}
+        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
       {% endif %}
@@ -208,7 +208,13 @@
                     </span>
                   </span>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">Due 26 August 2026</strong>
+                {% if data['censusStatus'] == 'Action required' %}
+                  <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
+                {% elseif data['censusStatus'] == 'DfE Review' %}
+                  <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">Due {{ "today" | duration(13) | govukDate }}</strong>
+                {% endif %}
                 <span class="js-step-title">Upload census XML file</span>
               </h2>
             </div>
