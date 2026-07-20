@@ -26,4 +26,12 @@ module.exports = function (router) {
     }
   })
 
+  router.get('/' + version + '/compliance/census-details', function (req, res) {
+    res.render('/' + version + '/compliance/census-details', {})
+  })
+
+  router.post('/' + version + '/compliance/census-details', function (req, res) {
+    req.session.data['censusStatus'] = 'DfE review'
+    res.redirect('/' + version + '/compliance/census-details')
+  })
 }

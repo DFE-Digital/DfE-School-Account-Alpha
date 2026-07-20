@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-  <form action="sign-in" method="post">
+  <form action="mfa" method="post">
     <div class="signin-wrapper">
       <div class="signin-card">
         <p class="govuk-body-s signin-label">DFE SIGN-IN</p>
@@ -19,7 +19,7 @@
         </div>
         <div class="button-group">
           <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">Cancel</a>
-          <a href="single-school.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Verify</a>
+          <button type="submit" class="govuk-button" data-module="govuk-button">Verify</button>
         </div>
         <div class="signin-footer">
           <p class="govuk-body">By signing in you accept <a href="#" class="govuk-link">DfE Sign-in terms and conditions</a>.</p>
