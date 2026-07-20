@@ -123,140 +123,178 @@
   </nav>
 {% endblock %}
 {% block content %}
-  <form action="census-details" method="post">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-        {% if data['schoolCensusDetails'] == 'Action required' %}
-          <div class="govuk-error-summary" data-module="govuk-error-summary">
-            <div role="alert">
-              <div class="govuk-error-summary__body">
-                <p class="govuk-body">You have actions to complete in your summer school census return submission.</p>
-                <ul class="govuk-list govuk-error-summary__list">
-                  <li>
-                    <a href="#">Go to DfE COLLECT (opens in new tab)</a>
-                  </li>
-                </ul>
-              </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['schoolCensusDetails'] == 'Action required' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <div class="govuk-error-summary__body">
+              <p class="govuk-body">You have actions to complete in your summer school census return submission.</p>
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#">Go to DfE COLLECT (opens in new tab)</a>
+                </li>
+              </ul>
             </div>
           </div>
-        {% elseif data['schoolCensusDetails'] == 'In review' %}
-          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-            <div class="govuk-notification-banner__content">
-              <p class="govuk-body">
-                You've submitted your census return. You can expect to hear back from DfE in 10 days.
-              </p>
-            </div>
+        </div>
+      {% elseif data['schoolCensusDetails'] == 'In review' %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">
+              You've submitted your census return. You can expect to hear back from DfE in 10 days.
+            </p>
           </div>
-        {% endif %}
-        <div class="header-row">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
-          {% if data['schoolCensusDetails'] == 'Action required' %}
-            <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
-          {% elseif data['schoolCensusDetails'] == 'In review' %}
-            <strong class="govuk-tag govuk-tag--grey status-tag">In review</strong>
-          {% else %}
-            <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
-          {% endif %}
         </div>
-        <br> {{data['schoolCensusDetails']}}<br>
-        <p class="govuk-body">Available 21 May 2026.</p>
-        <p class="govuk-body">Due 17 June 2026.</p>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-          Key steps
-        </h2>
-        <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
-          <ol class="app-step-nav__steps">
-            <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
-              <div class="app-step-nav__header js-toggle-panel" data-position="1">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
+      {% endif %}
+      <span class="govuk-caption-xl">Census day 12 August 2026</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
+      {% if data['schoolCensusDetails'] == 'Action required' %}
+        <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
+      {% elseif data['schoolCensusDetails'] == 'In review' %}
+        <strong class="govuk-tag govuk-tag--grey status-tag">In review</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
+      {% endif %}
+      <br> {{data['schoolCensusDetails']}}<br>
+      <p class="govuk-body">Available 21 May 2026.</p>
+      <p class="govuk-body">Due 17 June 2026.</p>
+      <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
                     </span>
                   </span>
-                  <span class="js-step-title">Extract data from your management information system (MIS) </span>
-                </h2>
-              </div>
-              <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
-                <p class="app-step-nav__paragraph">Run the census in your MIS, resolve any errors, then export the return and save it as an XML file.</p>
-              </div>
-            </li>
-            <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
-              <div class="app-step-nav__header js-toggle-panel" data-position="2">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
+                </span>
+                <span class="js-step-title">Read guidance on census</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
+              <p class="app-step-nav__paragraph">Run the census in your MIS, resolve any errors,
+                then export the return and save it as an XML file.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
                     </span>
                   </span>
-                  <span class="js-step-title">Access DfE COLLECT and upload the XML file</span>
-                </h2>
-              </div>
-              <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
-                <p class="app-step-nav__paragraph">Navigate to DfE COLLECT and under ‘My data collections’, select the type of collection you’re submitting. On your school's ‘Source’ page, select ‘Upload return from file’ and upload your XML file.</p>
-              </div>
-            </li>
-            <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
-              <div class="app-step-nav__header js-toggle-panel" data-position="3">
-                <h2 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
+                </span>
+                <span class="js-step-title">Test your XML file on your management information system</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
+              <p class="app-step-nav__paragraph">Navigate to DfE COLLECT and under ‘My data
+                collections’, select the type of collection you’re submitting. On your school's
+                ‘Source’ page, select ‘Upload return from file’ and upload your XML file.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
                     </span>
                   </span>
-                  <span class="js-step-title">Check for errors and submit</span>
-                </h2>
-              </div>
-              <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
-                <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’ list for any queries or errors. You’ll need to correct or explain queries and errors, before submitting the return.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">Due 26 August 2026</strong>
+                <span class="js-step-title">Upload census XML file</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
+              <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’
+                list for any queries or errors. You’ll need to correct or explain queries and
+                errors, before submitting the return.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+            <div class="app-step-nav__header js-toggle-panel" data-position="4">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Work with DfE to check and resolve issues</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-4">
+              <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’
+                list for any queries or errors. You’ll need to correct or explain queries and
+                errors, before submitting the return.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+            <div class="app-step-nav__header js-toggle-panel" data-position="5">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Census data accepted</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-5">
+              <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’
+                list for any queries or errors. You’ll need to correct or explain queries and
+                errors, before submitting the return.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <form action="census-details" method="post">
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Go to DfE COLLECT (opens in new tab)
+            Go to Summer Census 2026
           </button>
-          <a class="govuk-link govuk-link--no-visited-state" href="../single-school.html">Return to school account homepage</a>
         </div>
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
-      </div>
-      <div class="govuk-grid-column-one-quarter pull-right">
-        <aside>
-          <h2 class="govuk-heading-m">Related content</h2>
-          <nav aria-label="Useful links">
-            <ul class="govuk-list">
-              <li>
-                <a href="https://www.gov.uk/guidance/complete-the-school-census" class="govuk-link govuk-link--no-visited-state">
-                  DfE census guidance guidance 2025
-                </a>
-              </li>
-              <li>
-                <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" class="govuk-link govuk-link--no-visited-state">
-                  Find a school census code
-                </a>
-              </li>
-              <li>
-                <a href="https://www.osmis.co.uk/acceptable-notepad-entries" class="govuk-link govuk-link--no-visited-state">
-                  OMSIS - acceptable notepad entries
-                </a>
-              </li>
-              <li>
-                <a href="https://support.arbor-education.com/hc/en-us/sections/360005559177-School-census-error-and-query-codes" class="govuk-link govuk-link--no-visited-state">
-                  Arbor - School census error and query codes
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
+      </form>
     </div>
-  </form>
+    <div class="govuk-grid-column-one-third">
+      <aside>
+        <h2 class="govuk-heading-m">Related content</h2>
+        <nav aria-label="Useful links">
+          <ul class="govuk-list">
+            <li>
+              <a href="https://www.gov.uk/guidance/complete-the-school-census" class="govuk-link govuk-link--no-visited-state">
+                DfE census guidance guidance 2025
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" class="govuk-link govuk-link--no-visited-state">
+                Find a school census code
+              </a>
+            </li>
+            <li>
+              <a href="https://www.osmis.co.uk/acceptable-notepad-entries" class="govuk-link govuk-link--no-visited-state">
+                OMSIS - acceptable notepad entries
+              </a>
+            </li>
+            <li>
+              <a href="https://support.arbor-education.com/hc/en-us/sections/360005559177-School-census-error-and-query-codes" class="govuk-link govuk-link--no-visited-state">
+                Arbor - School census error and query codes
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
 {% endblock %}
