@@ -125,7 +125,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['schoolCensusDetails'] == 'Action required' %}
+      {% if data['censusStatus'] == 'Action required' %}
         <div class="govuk-error-summary" data-module="govuk-error-summary">
           <div role="alert">
             <div class="govuk-error-summary__body">
@@ -138,12 +138,15 @@
             </div>
           </div>
         </div>
-      {% elseif data['schoolCensusDetails'] == 'In review' %}
+      {% elseif data['censusStatus'] == 'DfE reviewing' %}
         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
           <div class="govuk-notification-banner__content">
-            <p class="govuk-body">
-              You've submitted your census return. You can expect to hear back from DfE in 10 days.
-            </p>
+            <p class="govuk-notification-banner__heading">DfE has your census return and is currently checking it. We'll notify you when there's an update.</p>
           </div>
         </div>
       {% endif %}
