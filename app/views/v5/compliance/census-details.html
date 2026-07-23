@@ -147,7 +147,7 @@
           </div>
         </div>
       {% endif %}
-      <span class="govuk-caption-xl">Census day 12 August 2026</span>
+      <span class="govuk-caption-xl">Census day {{ "today" | duration(7) | govukDate }}</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
       {% if data['censusStatus'] == 'Action required' %}
         <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
@@ -157,8 +157,8 @@
         <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
       {% endif %}
       <br> {{data['schoolCensusDetails']}}<br>
-      <p class="govuk-body">Available 21 May 2026.</p>
-      <p class="govuk-body">Due 17 June 2026.</p>
+      <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
+      <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
