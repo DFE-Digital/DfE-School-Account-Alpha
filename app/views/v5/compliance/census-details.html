@@ -159,6 +159,8 @@
       <br> {{data['schoolCensusDetails']}}<br>
       <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
       <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
+      <p class="govuk-body"> The school census is aute irure dolor in reprehenderit in voluptate velit esse 
+        cillum dolore eu fugiat nulla pariatur.</p>
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
@@ -213,7 +215,8 @@
                 {% elseif data['censusStatus'] == 'DfE Review' %}
                   <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
                 {% else %}
-                  <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">Due {{ "today" | duration(13) | govukDate }}</strong>
+                  <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
+                  Due {{ "today" | duration(13) | govukDate }}</strong>
                 {% endif %}
                 <span class="js-step-title">Upload census XML file</span>
               </h2>
