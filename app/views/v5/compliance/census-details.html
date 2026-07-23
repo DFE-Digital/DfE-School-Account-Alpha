@@ -125,7 +125,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['schoolCensusDetails'] == 'Action required' %}
+      {% if data['censusStatus'] == 'Action required' %}
         <div class="govuk-error-summary" data-module="govuk-error-summary">
           <div role="alert">
             <div class="govuk-error-summary__body">
@@ -138,27 +138,32 @@
             </div>
           </div>
         </div>
-      {% elseif data['schoolCensusDetails'] == 'In review' %}
+      {% elseif data['censusStatus'] == 'DfE reviewing' %}
         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
           <div class="govuk-notification-banner__content">
-            <p class="govuk-body">
-              You've submitted your census return. You can expect to hear back from DfE in 10 days.
-            </p>
+            <p class="govuk-notification-banner__heading">DfE has your census return and is currently checking it. We'll notify you when there's an update.</p>
           </div>
         </div>
       {% endif %}
-      <span class="govuk-caption-xl">Census day 12 August 2026</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census return</h1>
+      <span class="govuk-caption-xl">Census day {{ "today" | duration(7) | govukDate }}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census: step by step</h1>
       {% if data['censusStatus'] == 'Action required' %}
         <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
-      {% elseif data['censusStatus'] == 'DfE review' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
+      {% elseif data['censusStatus'] == 'DfE reviewing' %}
+        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE reviewing</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
       {% endif %}
       <br> {{data['schoolCensusDetails']}}<br>
-      <p class="govuk-body">Available 21 May 2026.</p>
-      <p class="govuk-body">Due 17 June 2026.</p>
+      <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
+      <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
+      <p class="govuk-body"> The school census is aute irure dolor in reprehenderit in voluptate velit esse 
+        cillum dolore eu fugiat nulla pariatur.</p>
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
@@ -213,7 +218,8 @@
                 {% elseif data['censusStatus'] == 'DfE Review' %}
                   <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
                 {% else %}
-                  <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">Due {{ "today" | duration(13) | govukDate }}</strong>
+                  <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
+                  Due {{ "today" | duration(13) | govukDate }}</strong>
                 {% endif %}
                 <span class="js-step-title">Upload census XML file</span>
               </h2>
@@ -273,35 +279,6 @@
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
       </form>
     </div>
-    <div class="govuk-grid-column-one-third">
-      <aside>
-        <h2 class="govuk-heading-m">Related content</h2>
-        <nav aria-label="Useful links">
-          <ul class="govuk-list">
-            <li>
-              <a href="https://www.gov.uk/guidance/complete-the-school-census" class="govuk-link govuk-link--no-visited-state">
-                DfE census guidance guidance 2025
-              </a>
-            </li>
-            <li>
-              <a href="https://www.gov.uk/guidance/complete-the-school-census/find-a-school-census-code" class="govuk-link govuk-link--no-visited-state">
-                Find a school census code
-              </a>
-            </li>
-            <li>
-              <a href="https://www.osmis.co.uk/acceptable-notepad-entries" class="govuk-link govuk-link--no-visited-state">
-                OMSIS - acceptable notepad entries
-              </a>
-            </li>
-            <li>
-              <a href="https://support.arbor-education.com/hc/en-us/sections/360005559177-School-census-error-and-query-codes" class="govuk-link govuk-link--no-visited-state">
-                Arbor - School census error and query codes
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
   </div>
 {% endblock %}
 
@@ -343,8 +320,8 @@
               </a>
             </li>
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="?censusStatus=DfE review">
-                Status DfE review
+              <a class="govuk-footer__link" href="?censusStatus=DfE reviewing">
+                Status DfE reviewing
               </a>
             </li>
           </ul>

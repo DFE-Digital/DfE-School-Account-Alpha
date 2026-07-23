@@ -31,7 +31,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/compliance/census-details', function (req, res) {
-    req.session.data['censusStatus'] = 'DfE review'
+    req.session.data['censusStatus'] = 'DfE reviewing'
     res.redirect('/' + version + '/compliance/census-details')
   })
 }
