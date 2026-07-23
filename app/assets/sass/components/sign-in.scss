@@ -1,27 +1,24 @@
 .sign-in-page {
   margin-top: 0;
   .signin-panel {
-    padding: 60px 60px 60px 0;
+    @include govuk-responsive-padding(9);
+    @include govuk-responsive-padding(0, bottom);
   }
   .sign-in-title {
-    margin-bottom: 40px;
-    max-width: 500px;
-  }
-  .sign-in-button {
-    margin-top: 20px;
+    @include govuk-responsive-padding(7, bottom);
   }
   .benefits-panel {
     background: #dfeaf8;
-    padding: 60px;
+    @include govuk-responsive-padding(9);
   }
   .benefits-title {
-    margin-bottom: 40px;
+    @include govuk-responsive-padding(7, bottom);
   }
   .benefit-item {
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    margin-bottom: 40px;
+    @include govuk-responsive-padding(7, bottom);
   }
   .benefit-icon {
     width: 72px;
@@ -39,7 +36,8 @@
 
 .simple-header {
   height: 64px;
-  background: #0b0c0c;
+  background: govuk-colour("black");
+
 }
 
 .custom-footer {
@@ -49,7 +47,7 @@
 }
 
 .govuk-main-wrapper {
-  padding-top: 40px;
+  @include govuk-responsive-padding(7, top);
   background: #ffffff;
   min-height: calc(100vh - 184px);
 }
@@ -60,29 +58,29 @@
   .signin-card {
     width: 100%;
     max-width: 600px;
-    background: #ffffff;
+    background: govuk-colour("white");
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     > *:not(.signin-footer) {
-      padding-left: 60px;
-      padding-right: 60px;
+      @include govuk-responsive-padding(9, left);
+      @include govuk-responsive-padding(9, right);
     }
   }
   .signin-label {
     font-weight: bold;
     letter-spacing: 1px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    @include govuk-responsive-margin(8, top);
+    @include govuk-responsive-margin(4, bottom);
   }
   .email-address {
-    font-weight: bold;
-    margin-bottom: 30px;
+    @include govuk-font($size: 19, $weight: bold);
+    @include govuk-responsive-margin(6, bottom);
   }
   .signin-title {
-    margin-bottom: 30px;
+    @include govuk-responsive-margin(6, bottom);
   }
   .intro-text {
     max-width: 420px;
-    margin-bottom: 30px;
+    @include govuk-responsive-margin(6, bottom);
   }
   .govuk-input {
     width: 100%;
@@ -95,17 +93,21 @@
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    @include govuk-responsive-margin(6, top);
+    @include govuk-responsive-margin(8, bottom);
     .govuk-button {
-      padding: 10px 30px;
+      @include govuk-responsive-padding(2);
+      @include govuk-responsive-padding(4, left);
+      @include govuk-responsive-padding(4, right);
     }
   }
   .signin-footer {
     background: #f3f2f1;
-    padding: 40px 60px;
+    @include govuk-responsive-padding(7);
+    @include govuk-responsive-padding(9, left);
+    @include govuk-responsive-padding(9, right);
     .govuk-body:last-child {
-      margin-bottom: 0;
+      @include govuk-responsive-margin(0, bottom);
     }
   }
 }
