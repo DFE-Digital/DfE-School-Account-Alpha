@@ -151,8 +151,8 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census: step by step</h1>
       {% if data['censusStatus'] == 'Action required' %}
         <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
-      {% elseif data['censusStatus'] == 'DfE review' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
+      {% elseif data['censusStatus'] == 'DfE reviewing' %}
+        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE reviewing</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
       {% endif %}
@@ -317,8 +317,8 @@
               </a>
             </li>
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="?censusStatus=DfE review">
-                Status DfE review
+              <a class="govuk-footer__link" href="?censusStatus=DfE reviewing">
+                Status DfE reviewing
               </a>
             </li>
           </ul>
