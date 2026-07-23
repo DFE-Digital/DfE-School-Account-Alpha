@@ -1,9 +1,11 @@
 aside {
-  border-top: 5px solid #1d70b8;
-  padding-top: 15px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-color: govuk-colour("blue");
+  @include govuk-responsive-padding(3, top);
   .govuk-list {
     li {
-      margin-bottom: 10px;
+      @include govuk-responsive-margin(2, bottom);
     }
   }
 }
