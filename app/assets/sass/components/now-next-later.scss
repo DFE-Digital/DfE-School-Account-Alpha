@@ -15,9 +15,9 @@
 
 .govuk-grid-column-group-header{
   padding: govuk-spacing(3);
-  background-color: #dfe3e8;
+  background-color: govuk-colour("black", $variant: "tint-95");
   &.govuk-grid-column-group-header--blue{
-    background-color: #1d70b8;
+    background-color: govuk-colour("blue");
     h1,h2,h3,h4,h5,h6{
       color: govuk-colour("white");
     }
@@ -36,7 +36,7 @@
 
 .govuk-grid-column-group-content{
   flex: 1 1 0;
-  background-color: #f4f8fb;
+  background-color: govuk-colour("blue", $variant: "tint-95");
   padding: govuk-spacing(3);
 }
 
@@ -58,16 +58,16 @@
       border-left-color: govuk-colour("yellow");
     }
     &.green{
-      border-left-color: #87bca8;
+      border-left-color: govuk-colour("green", $variant: "tint-50");
     }
     &.grey{
-      border-left-color: #cecece;
+      border-left-color: govuk-colour("black", $variant: "tint-80");
     }
     &.orange{
-      border-left-color: #f7996a;
+      border-left-color: govuk-colour("orange", $variant: "tint-25");
     }
     &.red{
-      border-left-color: #d4351c;
+      border-left-color: govuk-colour("red", $variant: "tint-25");
     }
     .app-step-nav__header{
       border-top:none;
