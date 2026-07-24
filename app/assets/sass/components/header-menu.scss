@@ -1,6 +1,6 @@
 .gem-c-layout-super-navigation-header {
-  background: #1d70b8;
-  border-top: 1px solid #1d70b8;
+  background: govuk-colour("blue");
+  border-top: 1px solid govuk-colour("blue");
   margin-top: -1px;
   position: relative;
 }
@@ -17,13 +17,6 @@
   position: relative;
   display: block;
   float: left;
-}
-
-.gem-c-layout-super-navigation-header__button-container {
-  //top: -48px;
-  //position: absolute;
-  //right: 0;
-
 }
 
 @media (max-width: 40.0525em) {
@@ -54,28 +47,31 @@
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button span {
   display: inline-block;
-  border-right: 1px solid #f4f8fb;
-    border-right-color: rgb(244, 248, 251);
-  margin: 0;
-  padding: 5px 15px;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: govuk-colour("black", $variant: "tint-80");
+  @include govuk-responsive-margin(0);
+  @include govuk-responsive-padding(1);
+  @include govuk-responsive-padding(3, right);
+  @include govuk-responsive-padding(3, left);
 }
 
 .gem-c-layout-super-navigation-header__navigation-item,
 .gem-c-layout-super-navigation-header__search-item {
   display: block;
   float: left;
-  margin: 0;
-  padding: 0;
+  @include govuk-responsive-margin(0);
+  @include govuk-responsive-padding(0);
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link,
 .gem-c-layout-super-navigation-header__search-item-link {
-  color: #fff;
+  color: govuk-colour("white");
   display: inline-block;
-  font-size: 19px;
-  font-size: 1.1875rem;
-  font-weight: bold;
-  padding: 20px 0;
+  @include govuk-font($size: 19, $weight: bold);
+  @include govuk-responsive-padding(0);
+  @include govuk-responsive-padding(4, top);
+  @include govuk-responsive-padding(4, bottom);
   position: relative;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -100,10 +96,10 @@
 
 .gem-c-layout-super-navigation-header__navigation-item-link:focus,
 .gem-c-layout-super-navigation-header__search-item-link:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govukcolour("black");
+  background-color: govukcolour("yellow");
+  box-shadow: 0 -2px govukcolour("yellow"), 0 4px govukcolour("black");
   text-decoration: none;
 }
 
@@ -116,13 +112,10 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link:link,
-.gem-c-layout-super-navigation-header__search-item-link:link {
-  color: #1d70b8;
-}
-
+.gem-c-layout-super-navigation-header__search-item-link:link,
 .gem-c-layout-super-navigation-header__navigation-item-link:visited,
 .gem-c-layout-super-navigation-header__search-item-link:visited {
-  color: #1d70b8;
+  color: govukcolour("blue");
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link:hover,
@@ -132,12 +125,12 @@
 
 .gem-c-layout-super-navigation-header__navigation-item-link:active,
 .gem-c-layout-super-navigation-header__search-item-link:active {
-  color: #0b0c0c;
+  color: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link:focus,
 .gem-c-layout-super-navigation-header__search-item-link:focus {
-  color: #0b0c0c;
+  color: govuk-colour("black");
 }
 
 @media (min-width: 48.0625em) {
@@ -171,7 +164,7 @@
 
 .gem-c-layout-super-navigation-header__navigation-item-link:hover::after,
 .gem-c-layout-super-navigation-header__search-item-link:hover::after {
-  background: #fff;
+  background: govuk-colour("white");
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link,
@@ -180,7 +173,7 @@
 .gem-c-layout-super-navigation-header__search-item-link,
 .gem-c-layout-super-navigation-header__search-item-link:link,
 .gem-c-layout-super-navigation-header__search-item-link:visited {
-  color: #fff;
+  color: govuk-colour("white");
   float: left;
   font-size: 16px;
   font-size: 1rem;
@@ -195,7 +188,7 @@
 .gem-c-layout-super-navigation-header__search-item-link:link:focus,
 .gem-c-layout-super-navigation-header__search-item-link:visited:focus {
   box-shadow: none;
-  color: #0b0c0c;
+  color: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link:focus::after,
@@ -204,12 +197,14 @@
 .gem-c-layout-super-navigation-header__search-item-link:focus::after,
 .gem-c-layout-super-navigation-header__search-item-link:link:focus::after,
 .gem-c-layout-super-navigation-header__search-item-link:visited:focus::after {
-  background: #0b0c0c;
+  background: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link .gem-c-layout-super-navigation-header__navigation-item-link-inner {
   padding: 5px 15px;
-  border-right: 1px solid #f4f8fb;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: govuk-colour("blue", $variant: "tint-95");
 }
 
 @media (min-width: 22.5em) {
@@ -219,7 +214,7 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link:focus .gem-c-layout-super-navigation-header__navigation-item-link-inner {
-  border-right-color: #fd0;
+  border-right-color: govukcolour("yellow");
 }
 
 .gem-c-layout-super-navigation-header__search-item-link {
@@ -250,7 +245,7 @@
   background: none;
   border: 0;
   box-sizing: border-box;
-  color: #fff;
+  color: govuk-colour("white");
   cursor: pointer;
   height: 61px;
   padding: 0;
@@ -281,7 +276,7 @@
 
 //.gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
 //  display: inline-block;
-//  border-right: 1px solid #f4f8fb;
+//  border-right: 1px solid govuk-colour("blue", $variant: "tint-95");
 //  margin: 0 20px 0 0;
 //  padding: 5px 15px;
 //}
@@ -294,8 +289,8 @@
       -webkit-transform: translateY(-35%) rotate(45deg) scale(1);
       -ms-transform: translateY(-35%) rotate(45deg) scale(1);
       transform: translateY(-35%) rotate(45deg) scale(1);
-      border-bottom: 2px solid #fff;
-      border-right: 2px solid #fff;
+      border-bottom: 2px solid govuk-colour("white");
+      border-right: 2px solid govuk-colour("white");
       content: "";
       display: inline-block;
       height: 8px;
@@ -307,19 +302,19 @@
 
 @media (hover:hover) and ( pointer:fine) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover::after {
-      background: #fff;
+      background: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #fff;
-      border-right-color: #fff;
+      border-bottom-color: govuk-colour("white");
+      border-right-color: govuk-colour("white");
   }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
   box-shadow: none;
 }
@@ -332,36 +327,36 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus::after {
-  background-color: #0b0c0c;
+  background-color: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-right-color: #fd0;
+  border-right-color: govuk-colour("yellow");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-  border-bottom-color: #fff;
-  border-right-color: #fff;
+  border-bottom-color: govuk-colour("white");
+  border-right-color: govuk-colour("white");
 }
 
 @media (hover: hover) and ( pointer: fine) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:hover::after {
-      background-color: #0b0c0c;
+      background-color: govuk-colour("black");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      color: #0b0c0c;
+      color: govuk-colour("black");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #1d70b8;
-      border-right-color: #1d70b8;
+      border-bottom-color: govuk-colour("blue");
+      border-right-color: govuk-colour("blue");
   }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
   box-shadow: none;
 }
@@ -374,35 +369,35 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible::after {
-  background-color: #0b0c0c;
+  background-color: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-right-color: #fd0;
+  border-right-color: govuk-colour("yellow");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-  border-bottom-color: #0b0c0c;
-  border-right-color: #0b0c0c;
+  border-bottom-color: govuk-colour("black");
+  border-right-color: govuk-colour("black");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible:hover::after {
-      background-color: #0b0c0c;
+      background-color: govuk-colour("black");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      color: #0b0c0c;
+      color: govuk-colour("black");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #0b0c0c;
-      border-right-color: #0b0c0c;
+      border-bottom-color: govuk-colour("black");
+      border-right-color: govuk-colour("black");
   }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
   background: none;
   box-shadow: none;
-  color: #fff;
+  color: govuk-colour("white");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button::after {
@@ -410,33 +405,33 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-right-color: #f4f8fb;
+  border-right-color: govuk-colour("blue", $variant: "tint-95");
 }
 
 @media (min-width: 22.5em) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #fff;
-      border-right-color: #fff;
+      border-bottom-color: govuk-colour("white");
+      border-right-color: govuk-colour("white");
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover::after {
-      background: #fff;
+      background: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      color: #fff;
+      color: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #fff;
-      border-right-color: #fff;
+      border-bottom-color: govuk-colour("white");
+      border-right-color: govuk-colour("white");
   }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible) {
   background: none;
   box-shadow: none;
-  color: #fff;
+  color: govuk-colour("white");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible)::after {
@@ -444,26 +439,26 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-right-color: #f4f8fb;
+  border-right-color: govuk-colour("blue", $variant: "tint-95");
 }
 
 @media (min-width: 22.5em) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #fff;
-      border-right-color: #fff;
+      border-bottom-color: govuk-colour("white");
+      border-right-color: govuk-colour("white");
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible):hover::after {
-      background: #fff;
+      background: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible):hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      color: #fff;
+      color: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible):hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #fff;
-      border-right-color: #fff;
+      border-bottom-color: govuk-colour("white");
+      border-right-color: govuk-colour("white");
   }
 }
 
@@ -476,10 +471,10 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
   box-shadow: none;
 }
@@ -492,27 +487,27 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus::after {
-  background-color: #0b0c0c;
+  background-color: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  color: #0b0c0c;
-  border-right-color: #fd0;
+  color: govuk-colour("black");
+  border-right-color: govuk-colour("yellow");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-  border-bottom-color: #1d70b8;
-  border-right-color: #1d70b8;
+  border-bottom-color: govuk-colour("blue");
+  border-right-color: govuk-colour("blue");
   -webkit-transform: translateY(1px) rotate(225deg) scale(1);
   -ms-transform: translateY(1px) rotate(225deg) scale(1);
   transform: translateY(1px) rotate(225deg) scale(1);
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
   box-shadow: none;
 }
@@ -525,39 +520,39 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible::after {
-  background-color: #0b0c0c;
+  background-color: govuk-colour("black");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  color: #0b0c0c;
-  border-right-color: #fd0;
+  color: govuk-colour("black");
+  border-right-color: govuk-colour("yellow");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-  border-bottom-color: #0b0c0c;
-  border-right-color: #0b0c0c;
+  border-bottom-color: govuk-colour("black");
+  border-right-color: govuk-colour("black");
   -webkit-transform: translateY(1px) rotate(225deg) scale(1);
   -ms-transform: translateY(1px) rotate(225deg) scale(1);
   transform: translateY(1px) rotate(225deg) scale(1);
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button {
-  background: #fff;
+  background: govuk-colour("white");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button::after {
-  background-color: #1d70b8;
+  background-color: govuk-colour("blue");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  color: #1d70b8;
-  border-right-color: #f4f8fb;
+  color: govuk-colour("blue");
+  border-right-color: govuk-colour("blue", $variant: "tint-95");
 }
 
 @media (min-width: 22.5em) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #1d70b8;
-      border-right-color: #1d70b8;
+      border-bottom-color: govuk-colour("blue");
+      border-right-color: govuk-colour("blue");
       -webkit-transform: translateY(1px) rotate(225deg) scale(1);
       -ms-transform: translateY(1px) rotate(225deg) scale(1);
       transform: translateY(1px) rotate(225deg) scale(1);
@@ -565,22 +560,22 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible) {
-  background: #f4f8fb;
+  background: govuk-colour("blue", $variant: "tint-95");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible)::after {
-  background-color: #1d70b8;
+  background-color: govuk-colour("blue");
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  color: #1d70b8;
-  border-right-color: #f4f8fb;
+  color: govuk-colour("blue");
+  border-right-color: govuk-colour("blue", $variant: "tint-95");
 }
 
 @media (min-width: 22.5em) {
   .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
-      border-bottom-color: #1d70b8;
-      border-right-color: #1d70b8;
+      border-bottom-color: govuk-colour("blue");
+      border-right-color: govuk-colour("blue");
       -webkit-transform: translateY(1px) rotate(225deg) scale(1);
       -ms-transform: translateY(1px) rotate(225deg) scale(1);
       transform: translateY(1px) rotate(225deg) scale(1);
@@ -590,7 +585,7 @@
 .gem-c-layout-super-navigation-header__search-toggle-button {
   background: none;
   border: 0;
-  color: #fff;
+  color: govuk-colour("white");
   cursor: pointer;
   height: 61px;
   padding: 20px 15px;
@@ -637,17 +632,17 @@
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button:hover::after {
-      background: #fff;
+      background: govuk-colour("white");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
-  border-color: #fd0;
+  border-color: govuk-colour("yellow");
   box-shadow: none;
   z-index: 11;
 }
@@ -660,25 +655,25 @@
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button:focus::after {
-  background: #0b0c0c;
+  background: govuk-colour("black");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button:focus:hover {
-      color: #0b0c0c;
+      color: govuk-colour("black");
   }
   .gem-c-layout-super-navigation-header__search-toggle-button:focus:hover::after {
-      background: #0b0c0c;
+      background: govuk-colour("black");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button:focus-visible {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
-  border-color: #fd0;
+  border-color: govuk-colour("yellow");
   box-shadow: none;
   z-index: 11;
 }
@@ -691,67 +686,65 @@
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button:focus-visible::after {
-  background: #0b0c0c;
+  background: govuk-colour("black");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button:focus-visible:hover {
-      color: #0b0c0c;
+      color: govuk-colour("black");
   }
   .gem-c-layout-super-navigation-header__search-toggle-button:focus-visible:hover::after {
-      background: #0b0c0c;
+      background: govuk-colour("black");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button {
   background: none;
   box-shadow: none;
-  color: #fff;
-}
-
-.gem-c-layout-super-navigation-header__search-toggle-button::after {
-  background: none;
+  color: govuk-colour("white");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button:hover {
-      color: #fff;
+      color: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__search-toggle-button:hover::after {
-      background: #fff;
+      background: govuk-colour("white");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button:focus:not( :focus-visible) {
   background: none;
   box-shadow: none;
-  color: #fff;
+  color: govuk-colour("white");
 }
 
-.gem-c-layout-super-navigation-header__search-toggle-button:focus:not( :focus-visible)::after {
+.gem-c-layout-super-navigation-header__search-toggle-button:focus:not( :focus-visible)::after,
+.gem-c-layout-super-navigation-header__search-toggle-button::after{
   background: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button:focus:not( :focus-visible):hover {
-      color: #fff;
+      color: govuk-colour("white");
   }
   .gem-c-layout-super-navigation-header__search-toggle-button:focus:not( :focus-visible):hover::after {
-      background: #fff;
+      background: govuk-colour("white");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button {
-  color: #1d70b8;
+  color: govuk-colour("blue");
 }
 
-.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus,
+.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
+  outline: 3px solid govuk-colour("black");
+  color: govuk-colour("black");
+  background-color: govuk-colour("yellow");
+  box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
   text-decoration: none;
-  border-color: #fd0;
+  border-color: govuk-colour("yellow");
   box-shadow: none;
 }
 
@@ -763,24 +756,16 @@
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus::after {
-  background: #0b0c0c;
+  background: govuk-colour("black");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:hover::after {
-      background: #0b0c0c;
+      background: govuk-colour("black");
   }
 }
 
-.gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
-  text-decoration: none;
-  border-color: #fd0;
-  box-shadow: none;
-}
+
 
 @supports not (text-wrap: balance) {
   .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
@@ -790,51 +775,50 @@
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible::after {
-  background: #0b0c0c;
+  background: govuk-colour("black");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible:hover::after {
-      background: #0b0c0c;
+      background: govuk-colour("black");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button {
-  background: #f4f8fb;
-  outline: 1px solid #f4f8fb;
-  color: #1d70b8;
+  background: govuk-colour("blue", $variant: "tint-95");
+  outline: 1px solid govuk-colour("blue", $variant: "tint-95");
+  color: govuk-colour("blue");
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button::after {
-  background: #1d70b8;
+  background: govuk-colour("blue");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:hover::after {
-      background: #1d70b8;
+      background: govuk-colour("blue");
   }
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible) {
-  background: #f4f8fb;
-  outline: 1px solid #f4f8fb;
-  color: #1d70b8;
+  background: govuk-colour("blue", $variant: "tint-95");
+  outline: 1px solid govuk-colour("blue", $variant: "tint-95");
+  color: govuk-colour("blue");
 }
 
 .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible)::after {
-  background: #1d70b8;
+  background: govuk-colour("blue");
 }
 
 @media (hover: hover) and (pointer: fine) {
   .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not( :focus-visible):hover::after {
-      background: #1d70b8;
+      background: govuk-colour("blue");
   }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
   display: none;
-  font-size: 36px;
-  font-weight: normal;
+  @include govuk-font($size: 36);
   left: 0;
   line-height: 22px;
   pointer-events: none;
@@ -848,13 +832,13 @@
 }
 
 .gem-c-layout-super-navigation-header__search-container {
-  padding-bottom: 40px;
+  @include govuk-responsive-padding(7, bottom);
 }
 
 .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
-  background: #f4f8fb;
+  background: govuk-colour("blue", $variant: "tint-95");
   border-bottom: 1px #b1b4b6 solid;
-  padding-top: 30px;
+  @include govuk-responsive-padding(6, top);
 }
 
 @media (max-width: 18.75em) {
@@ -878,7 +862,6 @@
 
 @media (min-width: 48.0625em) {
   .gem-c-layout-super-navigation-header__dropdown-list-item {
-      padding: 0 0 15px 0;
       margin: 0 15px 0px 15px;
   }
 }
@@ -988,10 +971,9 @@
   }
 }
 
-.gem-c-layout-super-navigation-header__navigation-second-item-link {
-  font-size: 16px;
-  font-size: 1rem;
-  font-weight: bold;
+.gem-c-layout-super-navigation-header__navigation-second-item-link,
+.gem-c-layout-super-navigation-header__navigation-second-item-link--with-description{
+  @include govuk-font($size: 16, $weight: bold);
 }
 
 .gem-c-layout-super-navigation-header__navigation-second-item-link::after {
@@ -1006,23 +988,8 @@
 
 @media (min-width: 48.0625em) {
   .gem-c-layout-super-navigation-header__navigation-second-item-link {
-      padding: 0;
+    @include govuk-responsive-padding(0);
   }
-  .gem-c-layout-super-navigation-header__navigation-second-item-link::after {
-      background: none;
-      bottom: 0;
-      content: "";
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-  }
-}
-
-.gem-c-layout-super-navigation-header__navigation-second-item-link--with-description {
-  font-size: 16px;
-  font-size: 1rem;
-  font-weight: bold;
 }
 
 .gem-c-layout-super-navigation-header__navigation-second-item-link--with-description::after {
@@ -1037,9 +1004,7 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-second-item-description {
-  font-size: 16px;
-  font-size: 1rem;
-  font-weight: normal;
+  @include govuk-font($size: 16);
   margin: 5px 0 0 0;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -1053,7 +1018,7 @@
 }
 
 .gem-c-layout-super-navigation-header__search-form {
-  padding: 0;
+  @include govuk-responsive-padding(0);
 }
 
 @media (min-width: 48.0625em) {
@@ -1063,7 +1028,7 @@
 }
 
 .gem-c-layout-super-navigation-header__column-header {
-  font-size: 24px;
+  @include govuk-font($size: 24);
 }
 
 @media (max-width: 40.0525em) {
@@ -1074,8 +1039,7 @@
 
 @media (max-width: 40.0525em) {
   .gem-c-layout-super-navigation-header__search-label--large-navbar {
-      font-size: 24px;
-      font-size: 1.5rem;
+    @include govuk-font($size: 24);
   }
 }
 
@@ -1117,7 +1081,7 @@
 }
 
 .training-signout-link:not(:only-child) {
-  border-right: 1px solid #f4f8fb;
+  border-right: 1px solid govuk-colour("blue", $variant: "tint-95");
 }
 
 @media (min-width: 40.0625em) {
