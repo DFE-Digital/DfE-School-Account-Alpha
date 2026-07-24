@@ -4,8 +4,8 @@
 }
 .govuk-task-list__hint {
   p {
-    margin-bottom: 5px;
-    color: #484949;
+    @include govuk-responsive-margin(1, bottom);
+    color: govuk-colour("black", $variant: "tint-25");
     &.due-date {
       color: #000000;
     }
