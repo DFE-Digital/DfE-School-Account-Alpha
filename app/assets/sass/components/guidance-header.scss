@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
-  margin-bottom: 20px;
+  @include govuk-responsive-margin(4, bottom);
   .status-tag {
     white-space: nowrap;
     flex-shrink: 0;
