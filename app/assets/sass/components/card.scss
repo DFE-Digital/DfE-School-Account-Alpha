@@ -7,7 +7,7 @@
     position:relative;
     display:flex;
     flex-direction:column;
-    background-color:#fff;
+    background-color:govuk-colour("white");
     border:1px solid #b1b4b6;
     max-width:400px;
     &:hover {
@@ -40,19 +40,19 @@
   border-left-style: solid;
   border-left-color: transparent;
   .govuk-tag{
-    margin-bottom: govuk-spacing(3);
+    @include govuk-responsive-margin(3, bottom);
   }
   &.yellow{
     border-left-color: govuk-colour("yellow");
   }
   &.green{
-    border-left-color: #87bca8;
+    border-left-color: govuk-colour("green", $variant: "tint-50");
   }
   &.grey{
-    border-left-color: #cecece;
+    border-left-color: govuk-colour("black", $variant: "tint-80");
   }
   &.orange{
-    border-left-color: #f7996a;
+    border-left-color: govuk-colour("orange", $variant: "tint-25");
   }
   &.red{
     border-left-color: #d4351c;
@@ -77,14 +77,14 @@
 .dfe-card:hover .govuk-heading-m,
 .dfe-card:hover a,
 .dfe-card:hover p {
-  color:#fff
+  color:govuk-colour("white")
 }
 .dfe-card:focus-within {
-  outline:3px solid #fd0
+  outline:3px solid govuk-colour("yellow");
 }
 .dfe-card-container .dfe-card-link--header:focus,
 .dfe-card-container .dfe-card-link--retake:focus {
-  color:#0b0c0c
+  color: govuk-colour("black");
 }
 .dfe-card-link--retake {
   position:relative;
