@@ -110,11 +110,123 @@
       {% else %}
         <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
       {% endif %}
-      <br> {{data['schoolCensusDetails']}}<br>
       <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
       <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
       <p class="govuk-body"> The school census is aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur.</p>
+      {% if data['userType'] == 'localAuthority' %}
+      <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Due</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">
+              Accounts return</a></td>
+            <td class="govuk-table__cell" data-sort-value="27052026">27 May 2026</td>
+            <td class="govuk-table__cell">Compliance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
+              In progress</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="compliance/census-details" class="govuk-link">
+              Summer school census return</a></td>
+            <td class="govuk-table__cell" data-sort-value="17062026">17 June
+              2026</td>
+            <td class="govuk-table__cell">Compliance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+              Not started</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Budget
+              forecast return</a></td>
+            <td class="govuk-table__cell" data-sort-value="20062026">20 June
+              2026</td>
+            <td class="govuk-table__cell">Compliance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+              Not started</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Related
+              party transactions</a></td>
+            <td class="govuk-table__cell" data-sort-value="28062026">28 June
+              2026</td>
+            <td class="govuk-table__cell">Compliance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+              Complete</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="cost-saving/energy-for-schools" class="govuk-link">
+              Energy for schools</a></td>
+            {% if data['efsStatus'] == 'Applied' %}
+              <td class="govuk-table__cell" data-sort-value="999">
+                {{ "today" | duration(42) | govukDate }}</td>
+            {% else %}
+              <td class="govuk-table__cell" data-sort-value="9999999">N/A</td>
+            {% endif %}
+            <td class="govuk-table__cell">Cost savings</td>
+            {% if data['efsStatus'] == 'Applied' %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--teal">
+                Onboarding due {{ "today" | duration(42) | govukDate }}</strong></td>
+            {% else %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
+                Eligible</strong></td>
+            {% endif %}
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Apply
+              for the SEND spaces grant</a></td>
+            <td class="govuk-table__cell" data-sort-value="9999999">N/A</td>
+            <td class="govuk-table__cell">Funding</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">
+              May be eligible</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Mobile
+              phones in schools legislation</a></td>
+            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
+            <td class="govuk-table__cell">Guidance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+              Unread</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Plans
+              for wider school reforms: 2026 white paper</a></td>
+            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
+            <td class="govuk-table__cell">Guidance</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Keeping
+              children safe in education 2026: draft for consultation</a></td>
+            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
+            <td class="govuk-table__cell">Guidance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+              Unread</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Improve
+              allergy safety in schools</a></td>
+            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
+            <td class="govuk-table__cell">Guidance</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+              Unread</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">
+              Relationships and sex education (RSE) and health education</a></td>
+            <td class="govuk-table__cell" data-sort-value="99999999">N/A</td>
+            <td class="govuk-table__cell">Guidance</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+      {% endif %}
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
