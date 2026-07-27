@@ -46,14 +46,20 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button span {
-  display: inline-block;
   border-right-width: 1px;
   border-right-style: solid;
   border-right-color: govuk-colour("black", $variant: "tint-80");
+  display: inline-block;
   @include govuk-responsive-margin(0);
   @include govuk-responsive-padding(1);
   @include govuk-responsive-padding(3, right);
   @include govuk-responsive-padding(3, left);
+}
+
+nav > div:last-of-type .gem-c-layout-super-navigation-header__navigation-top-toggle-button span{
+  border-right-width: 0px;
+  border-right-style: solid;
+  border-right-color: govuk-colour("black", $variant: "tint-80");
 }
 
 .gem-c-layout-super-navigation-header__navigation-item,
