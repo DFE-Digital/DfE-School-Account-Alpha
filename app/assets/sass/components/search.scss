@@ -6,19 +6,21 @@
 
 #dfe-header__search{
   svg{
-    fill:#fff;
+    fill:govuk-colour("white");
   }
   margin-left: -1px;
 }
 
 #dfe-header__search.selected {
-  background-color: #fff;
+  background-color: govuk-colour("white");
   svg{
-    fill:#1d70b8;
+    fill: govuk-colour("blue");
   }
 }
 #dfe-header__search button{
-  padding:0 20px;
+  padding:0;
+  padding-right: govuk-spacing(4);
+  padding-left: govuk-spacing(4);
 }
 
 .govuk-input__search{
@@ -28,22 +30,24 @@
 
 .search-submit{
   float: left;
-  background-color: #1d70b8;
+  background-color: govuk-colour("blue");
   height: 50px;
   width: 50px;
   border:0;
-  color: #fff;
+  color: govuk-colour("white");
   svg{
-    fill: #fff;
+    fill: govuk-colour("white");
   }
 }
 
 #search-box.gem-c-layout-super-navigation-header__navigation-dropdown-menu{
-  padding: 50px 0 30px;
+  padding:0;
+  padding-top: govuk-spacing(8);
+  padding-bottom: govuk-spacing(6);
 }
 
 #close-search.gem-c-layout-super-navigation-header__navigation-top-toggle-button::after {
-  background: #1d70b8;
+  background: govuk-colour("blue");
 }
 
 .gem-c-layout-super-navigation-header__navigation-dropdown-menu #search-field {

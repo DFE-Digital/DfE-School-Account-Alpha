@@ -1,7 +1,7 @@
 .progress-bar {
   background-color: govuk-colour("blue");
   width: 100%;
-  padding: govuk-spacing(2);
+  @include govuk-responsive-padding(2);
 }
 
 .progress-bar__green {

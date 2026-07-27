@@ -1,5 +1,6 @@
 .gem-c-single-page-notification-button__submit {
-  padding:10px;
+  @include govuk-responsive-padding(2);
+  @include govuk-responsive-margin(0);
   margin:0;
   border:1px solid #505a5f;
   color:#1d70b8;
@@ -26,9 +27,9 @@
 .gem-c-single-page-notification-button__submit:focus {
   border-color:rgba(0,0,0,0);
   outline:3px solid rgba(0,0,0,0);
-  color:#0b0c0c;
-  background-color:#fd0;
-  box-shadow:0 -2px #fd0,0 4px #0b0c0c;
+  color:govuk-colour("black");
+  background-color:govuk-colour("yellow");
+  box-shadow:0 -2px govuk-colour("yellow"),0 4px govuk-colour("black");
   text-decoration:none
 }
 @supports not (text-wrap: balance) {
@@ -42,13 +43,13 @@
   color:#003078
 }
 .gem-c-single-page-notification-button__submit:hover:focus {
-  color:#0b0c0c;
-  box-shadow:0 3px #0b0c0c
+  color:govuk-colour("black");
+  box-shadow:0 3px govuk-colour("black")
 }
 .gem-c-single-page-notification-button__icon {
-  color:#0b0c0c;
+  color:govuk-colour("black");
   vertical-align:top;
-  margin-right:5px
+  @include govuk-responsive-margin(1, right);
 }
 .govuk-frontend-supported .gem-c-single-page-notification-button.js-personalisation-enhancement {
   opacity:0

@@ -1,13 +1,19 @@
 .app-task-list-card {
-  border: 1px solid #b1b4b6;
-  margin-bottom: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: govuk-colour("black", $variant: "tint-50");
+  @include govuk-responsive-margin(6, bottom);
   &__header {
-    background: #f3f2f1;
-    padding: 15px 20px;
-    border-bottom: 1px solid #b1b4b6;
+    background-color: govuk-colour("black", $variant: "tint-95");
+    @include govuk-responsive-padding(3);
+    @include govuk-responsive-padding(4, right);
+    @include govuk-responsive-padding(4, left);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: govuk-colour("black", $variant: "tint-50");
   }
   &__body {
-    padding: 20px;
+    @include govuk-responsive-padding(4);
     .dfe-grid-container {
       margin: 0;
     }
@@ -25,8 +31,10 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .dfe-card {
-    border: 1px solid #b1b4b6;
-    background-color: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: govuk-colour("black", $variant: "tint-50");
+    background-color: govukcolour("white");
     width: 100%;
     max-width: none;
     margin: 0;
@@ -49,7 +57,9 @@
     right: 15px;
   }
   .dfe-card-container {
-    padding: 16px 20px;
+    @include govuk-responsive-padding(3);
+    @include govuk-responsive-padding(4, top);
+    @include govuk-responsive-padding(4, bottom);
     .govuk-tag {
       width: max-content;
     }
@@ -76,11 +86,17 @@
     flex-wrap: wrap;
     gap: 12px;
     .summary-pill {
-      padding: 10px 16px;
-      background: #f3f2f1;
-      border: 1px solid #d8d8d8;
-      &.urgent {
-        border-left: 5px solid #d4351c;
+      @include govuk-responsive-padding(2);
+      @include govuk-responsive-padding(3, right);
+      @include govuk-responsive-padding(3, left);
+      background-color: govuk-colour("black", $variant: "tint-95");
+      border-width: 1px;
+      border-style: solid;
+      border-color: govuk-colour("black", $variant: "tint-80");
+      &.red {
+        border-left-width: 5px;
+        border-left-style: solid;
+        border-color: govuk-colour("red");
       }
     }
   }
@@ -90,11 +106,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  @include govuk-responsive-margin(4, bottom);
 }
 
 .dfe-card-container {
-  margin-bottom: 0;
+  @include govuk-responsive-margin(0);
 }
 
 .card-grid {
@@ -104,9 +120,11 @@
 }
 
 .summary-card {
-  border: 1px solid #b1b4b6;
-  padding: 30px;
-  background: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: govuk-colour("black", $variant: "tint-80");
+  @include govuk-responsive-padding(4);
+  background: govukcolour("white");
 }
 
 table {
