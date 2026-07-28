@@ -79,11 +79,13 @@
       {% if data['censusStatus'] == 'actionRequired' %}
         <div class="govuk-error-summary" data-module="govuk-error-summary">
           <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
             <div class="govuk-error-summary__body">
-              <p class="govuk-body">You have actions to complete in your summer school census return submission.</p>
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#">Go to DfE COLLECT (opens in new tab)</a>
+                  <a href="#ValeOfCatmoseCollege">Go to Summer School Census and resolve the error for Vale of Catmose College</a>
                 </li>
               </ul>
             </div>
@@ -209,22 +211,42 @@
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Belaire School</td>
-              <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
-                In progress</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
-              </td>
+              {% if data['censusStatus'] == 'actionRequired' %}
+                <td class="govuk-table__cell">Belaire School</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Complete</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% else %}
+                <td class="govuk-table__cell">Belaire School</td>
+                <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
+                  In progress</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% endif %}
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Vale of Catmose College</td>
-              <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
-                Not started</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
-              </td>
+              {% if data['censusStatus'] == 'actionRequired' %}
+                <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Vale of Catmose College</td>
+                <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
+                  Error</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% else %}
+                <td class="govuk-table__cell">Vale of Catmose College</td>
+                <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
+                  Not started</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% endif %}
             </tr>
           </tbody>
         </table>
