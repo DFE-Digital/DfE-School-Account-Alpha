@@ -32,6 +32,11 @@ module.exports = function (router) {
 
   router.post('/' + version + '/compliance/census-details', function (req, res) {
     req.session.data['censusStatus'] = 'DfE reviewing'
-    res.redirect('/' + version + '/compliance/census-details')
+
+    if (req.session.data['userType'] == 'localAuthority') {
+      res.redirect('/' + version + '/emails/local-authority-census-action-required')
+    } else {
+      res.redirect('/' + version + '/compliance/census-details')
+    }
   })
 }
