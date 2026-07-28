@@ -112,6 +112,7 @@
       {% endif %}
       <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
       <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
+      <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
       {% if data['userType'] == 'localAuthority' %}
         <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
@@ -227,9 +228,7 @@
           </tbody>
         </table>
       {% endif %}
-      {% if data['userType'] == 'localAuthority' %}
-       <h2 class="govuk-heading-m">Step by step</h2>
-      {% endif %}
+      <h2 class="govuk-heading-m">Step by step</h2>
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
