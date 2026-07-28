@@ -2,6 +2,14 @@ module.exports = function (router) {
 
   var version = "v5";
 
+  router.get('/' + version + '/emails/local-authority-census-open', function (req, res) {
+    res.render(version + '/emails/local-authority-census-open', {})
+  })
+
+  router.post('/' + version + '/emails/local-authority-census-open', function (req, res) {
+    res.redirect('/' + version + '/sign-in')
+  })
+
   router.get('/' + version + '/sign-in', function (req, res) {
     res.render(version + '/sign-in', {})
   })
@@ -24,6 +32,8 @@ module.exports = function (router) {
 
   router.post('/' + version + '/mfa', function (req, res) {
     if (req.session.data['singleHome'] == 'thinLine') {
+      res.redirect('/' + version + '/compliance/census-details')
+    } else if (req.session.data['userType'] == 'localAuthority') {
       res.redirect('/' + version + '/compliance/census-details')
     } else {
       res.redirect('/' + version + '/single-school')
