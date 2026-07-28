@@ -1,35 +1,24 @@
 {% extends "layouts/govuk-notify.html" %}
 
-{% set pageName="Your School Account summary" %}
+{% set pageName="Action needed: 2 schools have not completed the summer census" %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <form action="local-authority-census-open" method="post">
-        <p class="govuk-body">Hello</p>
-        <p class="govuk-body govuk-!-font-size-27 govuk-!-font-weight-bold">Your
-          local authority summary</p>
-        <p class="govuk-body govuk-!-font-weight-bold">New</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Summer school census is now open</li>
-        </ul>
-        <p class="govuk-body govuk-!-font-weight-bold">Things we want to promote???</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>PE and sport premium <strong class="govuk-tag govuk-tag--magenta">
-            Eligible</strong></li>
-          <li>Universal infant free school meals <strong class="govuk-tag govuk-tag--purple">
-            May be eligible</strong></li>
-        </ul>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Sign
-          into School Account to stay up to date</p>
-        <p class="govuk-body">In School Account, you can catch up with your
-          in-progress tasks, learn about funding and cost-saving opportunities,
-          manage compliance requirements and stay up to date with new guidance.
-        </p>
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Action needed: 2
+          schools have not completed the summer census</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">The summer census is due on [date], and 2 of the 10
+          schools in your local authority have not yet completed their return.</p>
+        <p class="govuk-body">Sign in to your school account to see the status of
+          each school and submit outstanding returns on their behalf.</p>
         <p class="govuk-body">
-          <button type="submit" class="govuk-button" data-module="govuk-button">Go to account</button>
+          <button type="submit" class="govuk-button" data-module="govuk-button">Go
+            to your account</button>
         </p>
-        <p class="govuk-body govuk-!-font-weight-bold">The School Account Team</p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education
       </form>
     </div>
   </div>

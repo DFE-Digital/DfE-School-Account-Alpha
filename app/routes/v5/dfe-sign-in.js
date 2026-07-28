@@ -10,6 +10,15 @@ module.exports = function (router) {
     res.redirect('/' + version + '/sign-in')
   })
 
+  router.get('/' + version + '/emails/local-authority-census-action-required', function (req, res) {
+    res.render(version + '/emails/local-authority-census-action-required', {})
+  })
+
+  router.post('/' + version + '/emails/local-authority-census-action-required', function (req, res) {
+    req.session.data['censusStatus'] = 'actionRequired'
+    res.redirect('/' + version + '/sign-in')
+  })
+
   router.get('/' + version + '/sign-in', function (req, res) {
     res.render(version + '/sign-in', {})
   })
