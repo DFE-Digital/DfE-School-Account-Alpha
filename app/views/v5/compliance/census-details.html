@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "Summer school census" %}
+{% set pageName = "Autumn school census" %}
 
 {% block pageScripts %}
   <script type="text/javascript">
@@ -76,14 +76,16 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['censusStatus'] == 'Action required' %}
+      {% if data['censusStatus'] == 'actionRequired' %}
         <div class="govuk-error-summary" data-module="govuk-error-summary">
           <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
             <div class="govuk-error-summary__body">
-              <p class="govuk-body">You have actions to complete in your summer school census return submission.</p>
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#">Go to DfE COLLECT (opens in new tab)</a>
+                  <a href="#ValeOfCatmoseCollege">Go to Autumn School Census and resolve the error for Vale of Catmose College</a>
                 </li>
               </ul>
             </div>
@@ -97,18 +99,21 @@
             </h2>
           </div>
           <div class="govuk-notification-banner__content">
-            <p class="govuk-notification-banner__heading">DfE has your census return and is currently checking it. We'll notify you when there's an update.</p>
+            <p class="govuk-notification-banner__heading">DfE has your census return and is
+              currently checking it. We'll notify you when there's an update.</p>
           </div>
         </div>
       {% endif %}
-      <span class="govuk-caption-xl">Census day {{ "today" | duration(7) | govukDate }}</span>
-      <h1 class="govuk-heading-l census-title">Summer school census</h1>
-      {% if data['censusStatus'] == 'Action required' %}
-        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6">Action required</strong>
+      <span class="govuk-caption-xl">Census day {{ "today" | duration(67) | govukDate }}</span>
+      <h1 class="govuk-heading-l census-title">Autumn school census</h1>
+      {% if data['censusStatus'] == 'actionRequired' %}
+        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Action required</strong>
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6">DfE reviewing</strong>
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">DfE reviewing</strong>
+      {% elseif data['userType'] == 'localAuthority' %}
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">2 of 10 not complete</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6">Not started</strong>
+        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Not started</strong>
       {% endif %}
       <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
@@ -206,22 +211,42 @@
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Belaire School</td>
-              <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
-                In progress</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
-              </td>
+              {% if data['censusStatus'] == 'actionRequired' %}
+                <td class="govuk-table__cell">Belaire School</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Complete</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% else %}
+                <td class="govuk-table__cell">Belaire School</td>
+                <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
+                  In progress</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% endif %}
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Vale of Catmose College</td>
-              <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
-                Not started</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
-              </td>
+              {% if data['censusStatus'] == 'actionRequired' %}
+                <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Vale of Catmose College</td>
+                <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
+                  Error</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% else %}
+                <td class="govuk-table__cell">Vale of Catmose College</td>
+                <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
+                  Not started</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% endif %}
             </tr>
           </tbody>
         </table>
@@ -276,13 +301,13 @@
                     </span>
                   </span>
                 </span>
-                {% if data['censusStatus'] == 'Action required' %}
+                {% if data['censusStatus'] == 'actionRequired' %}
                   <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
                 {% elseif data['censusStatus'] == 'DfE Review' %}
                   <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Due {{ "today" | duration(13) | govukDate }}</strong>
+                  Due {{ "today" | duration(73) | govukDate }}</strong>
                 {% endif %}
                 <span class="js-step-title">Test your data before you submit it</span>
               </h2>
@@ -356,7 +381,7 @@
       <form action="census-details" method="post">
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Go to Summer Census 2026
+            Go to Autumn Census 2026
           </button>
         </div>
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
@@ -370,7 +395,7 @@
             Census day
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(7) | govukDate }}
+            {{ "today" | duration(67) | govukDate }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -378,7 +403,7 @@
             Collection opens
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(13) | govukDate }}
+            {{ "today" | duration(73) | govukDate }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -386,7 +411,7 @@
             Return due
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(28) | govukDate }}
+            {{ "today" | duration(88) | govukDate }}
           </dd>
         </div>
       </dl>
@@ -427,7 +452,7 @@
               </a>
             </li>
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="?censusStatus=Action required">
+              <a class="govuk-footer__link" href="?censusStatus=actionRequired">
                 Status action required
               </a>
             </li>
