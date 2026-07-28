@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "Summer school census" %}
+{% set pageName = "Autumn school census" %}
 
 {% block pageScripts %}
   <script type="text/javascript">
@@ -85,7 +85,7 @@
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#ValeOfCatmoseCollege">Go to Summer School Census and resolve the error for Vale of Catmose College</a>
+                  <a href="#ValeOfCatmoseCollege">Go to Autumn School Census and resolve the error for Vale of Catmose College</a>
                 </li>
               </ul>
             </div>
@@ -104,8 +104,8 @@
           </div>
         </div>
       {% endif %}
-      <span class="govuk-caption-xl">Census day {{ "today" | duration(7) | govukDate }}</span>
-      <h1 class="govuk-heading-l census-title">Summer school census</h1>
+      <span class="govuk-caption-xl">Census day {{ "today" | duration(67) | govukDate }}</span>
+      <h1 class="govuk-heading-l census-title">Autumn school census</h1>
       {% if data['censusStatus'] == 'actionRequired' %}
         <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Action required</strong>
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
@@ -307,7 +307,7 @@
                   <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Due {{ "today" | duration(13) | govukDate }}</strong>
+                  Due {{ "today" | duration(73) | govukDate }}</strong>
                 {% endif %}
                 <span class="js-step-title">Test your data before you submit it</span>
               </h2>
@@ -381,7 +381,7 @@
       <form action="census-details" method="post">
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Go to Summer Census 2026
+            Go to Autumn Census 2026
           </button>
         </div>
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
@@ -395,7 +395,7 @@
             Census day
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(7) | govukDate }}
+            {{ "today" | duration(67) | govukDate }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -403,7 +403,7 @@
             Collection opens
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(13) | govukDate }}
+            {{ "today" | duration(73) | govukDate }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -411,7 +411,7 @@
             Return due
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(28) | govukDate }}
+            {{ "today" | duration(88) | govukDate }}
           </dd>
         </div>
       </dl>
