@@ -102,13 +102,13 @@
         </div>
       {% endif %}
       <span class="govuk-caption-xl">Census day {{ "today" | duration(7) | govukDate }}</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census: step by step</h1>
+      <h1 class="govuk-heading-l census-title">Summer school census</h1>
       {% if data['censusStatus'] == 'Action required' %}
-        <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
+        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6">Action required</strong>
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE reviewing</strong>
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6">DfE reviewing</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
+        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6">Not started</strong>
       {% endif %}
       <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
