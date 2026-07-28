@@ -102,19 +102,131 @@
         </div>
       {% endif %}
       <span class="govuk-caption-xl">Census day {{ "today" | duration(7) | govukDate }}</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-0 census-title">Summer school census: step by step</h1>
+      <h1 class="govuk-heading-l census-title">Summer school census</h1>
       {% if data['censusStatus'] == 'Action required' %}
-        <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
+        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6">Action required</strong>
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag">DfE reviewing</strong>
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6">DfE reviewing</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
+        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6">Not started</strong>
       {% endif %}
-      <br> {{data['schoolCensusDetails']}}<br>
-      <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
-      <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
-      <p class="govuk-body"> The school census is aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur.</p>
+      <h2 class="govuk-heading-m">Overview</h2>
+      <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
+      {% if data['userType'] == 'localAuthority' %}
+        <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Schools in your local authority</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+              <th scope="col" class="govuk-table__header" aria-sort="descending">Status</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                Trent River Primary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Lowe Croft Secondary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Euxton Hills School</a></td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Kings school</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Bourne School</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Uppingham Primary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">St James' School</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">St Iain's Primary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Kiplings Row School</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Belaire School</td>
+              <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
+                In progress</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Vale of Catmose College</td>
+              <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
+                Not started</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      {% endif %}
+      <h2 class="govuk-heading-m">Step by step</h2>
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
@@ -127,7 +239,7 @@
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Read guidance on census</span>
+                <span class="js-step-title">Check the census dates</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
@@ -145,7 +257,7 @@
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Test your XML file on your management information system</span>
+                <span class="js-step-title">Prepare the data in your MIS</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
@@ -172,7 +284,7 @@
                   <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
                   Due {{ "today" | duration(13) | govukDate }}</strong>
                 {% endif %}
-                <span class="js-step-title">Upload census XML file</span>
+                <span class="js-step-title">Test your data before you submit it</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
@@ -191,10 +303,30 @@
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Work with DfE to check and resolve issues</span>
+                <span class="js-step-title">Generate your return and get headteacher sign-off</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-4">
+              <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’
+                list for any queries or errors. You’ll need to correct or explain queries and
+                errors, before submitting the return.</p>
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+            <div class="app-step-nav__header js-toggle-panel" data-position="5">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Submit your return</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-5">
               <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’
                 list for any queries or errors. You’ll need to correct or explain queries and
                 errors, before submitting the return.</p>
@@ -206,11 +338,11 @@
                 <span class="app-step-nav__circle app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
                     <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 6<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
                     </span>
                   </span>
                 </span>
-                <span class="js-step-title">Census data accepted</span>
+                <span class="js-step-title">Wait for DfE to check and confirm your return</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-5">
@@ -229,6 +361,35 @@
         </div>
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
       </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Important dates</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
+          <dt class="govuk-summary-list__key">
+            Census day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(7) | govukDate }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Collection opens
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(13) | govukDate }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Return due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(28) | govukDate }}
+          </dd>
+        </div>
+      </dl>
     </div>
   </div>
 {% endblock %}
