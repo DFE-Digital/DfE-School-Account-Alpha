@@ -227,6 +227,9 @@
           </tbody>
         </table>
       {% endif %}
+      {% if data['userType'] == 'localAuthority' %}
+       <h2 class="govuk-heading-m">Step by step</h2>
+      {% endif %}
       <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
         <ol class="app-step-nav__steps">
           <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
