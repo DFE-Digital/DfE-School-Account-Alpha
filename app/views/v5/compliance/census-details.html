@@ -110,8 +110,6 @@
       {% else %}
         <strong class="govuk-tag govuk-tag--grey status-tag">Not started</strong>
       {% endif %}
-      <p class="govuk-body">Census collection opens {{ "today" | duration(13) | govukDate }}.</p>
-      <p class="govuk-body">Census return due {{ "today" | duration(28) | govukDate }}.</p>
       <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
       {% if data['userType'] == 'localAuthority' %}
@@ -363,6 +361,35 @@
         </div>
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
       </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Important dates</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
+          <dt class="govuk-summary-list__key">
+            Census day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(7) | govukDate }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Collection opens
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(13) | govukDate }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Return due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(28) | govukDate }}
+          </dd>
+        </div>
+      </dl>
     </div>
   </div>
 {% endblock %}
