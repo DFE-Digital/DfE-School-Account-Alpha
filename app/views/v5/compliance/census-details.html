@@ -394,11 +394,13 @@
         </ol>
       </div>
       <form action="census-details" method="post">
-        <div class="govuk-button-group">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Go to Autumn Census 2026
-          </button>
-        </div>
+        {% if data['userType'] != 'localAuthority' %}
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Go to Autumn Census 2026
+            </button>
+          </div>
+        {% endif %}
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
       </form>
     </div>
