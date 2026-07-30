@@ -283,8 +283,9 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
-              <p class="app-step-nav__paragraph">Run the census in your MIS, resolve any errors,
-                then export the return and save it as an XML file.</p>
+              <p class="app-step-nav__paragraph">There are two important dates to know.</p>
+              <p class="app-step-nav__paragraph">‘Census date’ is the date that your census return describes. Your return should reflect your school as it was on this day.</p>
+              <p class="app-step-nav__paragraph">‘Return date’ is the deadline for submitting your return. If your school is part of a trust or maintained by a local authority (LA), they may set an earlier deadline. They will confirm this with you.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
@@ -301,9 +302,14 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
-              <p class="app-step-nav__paragraph">Navigate to DfE COLLECT and under ‘My data
-                collections’, select the type of collection you’re submitting. On your school's
-                ‘Source’ page, select ‘Upload return from file’ and upload your XML file.</p>
+              <p class="app-step-nav__paragraph">Data for the census is prepared and checked in your school’s MIS, not in COLLECT. COLLECT is only used to submit the return and fix any errors.</p>
+              <p class="app-step-nav__paragraph">There is <a href="https://www.gov.uk/guidance/complete-the-school-census/data-items-2026-to-2027" class="govuk-link">guidance on data items</a> covering everything the census collects this term. Your MIS supplier’s guidance will tell you where to record this data.</p>
+              <p class="app-step-nav__paragraph">Start preparing the data well before census day. You may need information from several people in your school, including your:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>headteacher</li>
+                <li>special educational needs coordinator</li>
+                <li>staff responsible for catering and free school meals</li>
+              </ul>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
@@ -316,21 +322,15 @@
                     </span>
                   </span>
                 </span>
-                {% if data['censusStatus'] == 'actionRequired' %}
-                  <strong class="govuk-tag govuk-tag--red status-tag">Action required</strong>
-                {% elseif data['censusStatus'] == 'DfE Review' %}
-                  <strong class="govuk-tag govuk-tag--yellow status-tag">DfE Review</strong>
-                {% else %}
                   <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Due {{ "today" | duration(73) | govukDate }}</strong>
-                {% endif %}
+                  Available 17 October 2026</strong>
                 <span class="js-step-title">Test your data before you submit it</span>
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
-              <p class="app-step-nav__paragraph">Once your file loads, check the ‘All errors’
-                list for any queries or errors. You’ll need to correct or explain queries and
-                errors, before submitting the return.</p>
+              <p class="app-step-nav__paragraph">COLLECT runs a “familiarisation period”, usually beginning 4 weeks before the census opens. During this time you can upload your census return file in advance, see any errors or queries it raises. Your school’s census contact will be emailed when this is available.</p>
+              <p class="app-step-nav__paragraph">Export the census return file from your MIS, upload it to COLLECT, and see what issues it identifies. Fix any problems in your MIS and generate a new return. You can do this as many times as you need until your return is error-free.</p>
+              <p class="app-step-nav__paragraph">There is guidance on resolving errors and queries in <span class="govuk-!-font-weight-bold">Step 5: Submit your return</span>.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
