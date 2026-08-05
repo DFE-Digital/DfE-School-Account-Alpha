@@ -1,0 +1,20 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="We have your census return" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-open" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: We have your
+          census return</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">Thanks for submitting your autumn census return.
+          We will review it soon. We will let you know when it's authorised,
+          or if there's anything else you need to do.</p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education</p>
+      </form>
+    </div>
+  </div>
+{% endblock %}
