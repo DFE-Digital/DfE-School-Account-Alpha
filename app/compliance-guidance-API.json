@@ -1,0 +1,136 @@
+{
+  "type": "object",
+  "description": "Guidance page for a compliance action — a statutory return or similar. Other content types may need different models.",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Plain text."
+    },
+    "caption": {
+      "type": "string",
+      "description": "Optional plain text shown above the title"
+    },
+    "overview": {
+      "type": "string",
+      "description": "Formatted text description of the task. HTML or Markdown"
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the task must be completed by."
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": ["notStarted", "inProgress", "actionRequired", "inReview", "done"],
+          "description": "TBC - this set is a working assumption"
+        },
+        "label": {
+          "type": "string",
+          "description": "User-facing text shown in the tag"
+        }
+      },
+      "required": ["name", "label"]
+    },
+    "lastUpdated": {
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "format": "date-time" },
+        "changeNote": { "type": "string" }
+      },
+      "required": ["date", "changeNote"]
+    },
+    "callToAction": { "$ref": "#/$defs/callToAction" },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/step" },
+      "description": "The process in the order the user must complete it."
+    },
+    "importantDates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/importantDate" },
+      "description": "Optional relevant dates other than the due date."
+    }
+  },
+  "required": ["title", "overview", "dueDate", "status", "lastUpdated", "callToAction", "steps"],
+  "$defs": {
+    "importantDate": {
+      "type": "object",
+      "description": "A relevant date other than the due date, e.g. when the collection opens.",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "label": {
+          "type": "string",
+          "description": "Short text shown with the date, e.g. 'Census day'."
+        }
+      },
+      "required": ["date", "label"]
+    },
+    "callToAction": {
+      "type": "object",
+      "description": "a button linking the user onward, usually into the service.",
+      "properties": {
+        "label" : {
+          "type": "string",
+          "description": "Button text, eg 'Go to Collect'"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": ["label", "url"]
+    },
+    "step": {
+      "type": "object",
+      "description": "A discrete step in the process",
+      "properties": {
+        "order": {
+          "type": "integer",
+          "description": "Explicit ordering, rather than relying on array position - allows reordering, filtering etc"
+        },
+        "title": {"type": "string"},
+        "body": {
+          "type": "string",
+          "description": "Formatted text - HTML or markdown. Supports bullets, bold, links, visually hidden text"
+        },
+        "dateTag": { 
+          "type": "object",
+          "description": "An optional date tag shown against this step, eg 'Available 24 October'",
+          "properties": {
+            "date": { "type": "string", "format": "date"},
+            "prefix": {
+              "type": "string",
+              "description": "Text shown before the date, eg 'Available', 'Due', etc",
+              "enun": ["Available", "Due"]
+            }
+          },
+          "required": ["date", "prefix"]
+        },
+        "status": {
+          "type": "object",
+          "description": "Status for this step, independent of page-level status - values TBC",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "System-facing value - not yet decided"
+            },
+            "label": {
+              "type": "string",
+              "description": "User-facing text shown in the tag"
+            }          
+          },
+          "required": ["name", "label"]
+        },
+        "callToAction": { "$ref": "#/$defs/callToAction"}
+      },
+      "required": ["order", "title", "body"]
+    }
+  }
+}
