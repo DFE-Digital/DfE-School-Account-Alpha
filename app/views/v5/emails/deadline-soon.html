@@ -1,20 +1,21 @@
 {% extends "layouts/govuk-notify.html" %}
 
-{% set pageName="Your census return has been authorised" %}
+{% set pageName="Your autumn census return is due on [DATE]" %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <form action="local-authority-census-open" method="post">
-        <p class="govuk-body govuk-!-font-weight-bold">Subject: Your census return
-          has been authorised</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Your autumn census
+          return is due on [DATE]</p>
         <p class="govuk-body">Dear [name],</p>
-        <p class="govuk-body">Your autumn census return has now been authorised, so
-          your submission for this cycle is complete.</p>
-        <p class="govuk-body">Occasionally a return may need to be checked again
-          after it has been authorised. This usually happens because another school
-          has submitted data that conflicts with yours, such as a duplicate Unique
-          Pupil Number (UPN). If this happens, we will let you know.</p>
+        <p class="govuk-body">Your autumn census return is due on [DATE].</p>
+        <p class="govuk-body">You have not submitted your return yet. Sign in to
+          your school account to see the steps you need to complete.</p>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">Go
+            to your account</button>
+        </p>
         <p class="govuk-body">The School Account team</p>
         <p class="govuk-body">Department for Education</p>
       </form>
