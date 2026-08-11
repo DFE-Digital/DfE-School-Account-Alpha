@@ -1,0 +1,520 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Autumn school census" %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+{% block header %}
+  <header class="govuk-header gem-c-layout-super-navigation-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="/" class="govuk-header__link govuk-header__link--homepage">
+              <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype"/>
+          </a>
+          <nav aria-labelledby="super-navigation-menu-heading" class="gem-c-layout-super-navigation-header__content govuk-!-display-none-print js-module-initialised" data-module="super-navigation-mega-menu" data-super-navigation-mega-menu-module-started="true">
+            <h2 id="super-navigation-menu-heading" class="govuk-visually-hidden">
+              Navigation menu</h2>
+            <div class="gem-c-layout-super-navigation-header__navigation-item gem-c-layout-super-navigation-header__button-width-container">
+              <div class="gem-c-layout-super-navigation-header__button-container">
+                <span>
+                  <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/browse" hidden="hidden">
+                    <span class="gem-c-layout-super-navigation-header__navigation-item-link-inner">
+                      {% if (data[userType] == 'localAuthority') %}
+                        Devonshire local authority
+                      {% else %}
+                        Oakview Secondary School
+                      {% endif %}
+                    </span></a>
+                    <button aria-controls="super-navigation-menu" aria-expanded="false" aria-label="Show navigation menu" class="gem-c-layout-super-navigation-header__navigation-top-toggle-button" data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu" data-toggle-desktop-group="top" data-toggle-mobile-group="top" id="super-navigation-menu-toggle" type="button">
+                      <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">
+                        {% if data['userType'] == 'localAuthority' %}
+                          Devonshire local authority
+                        {% else %}
+                          Oakview Secondary School
+                        {% endif %}
+                      </span>
+                    </button>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div id="super-navigation-menu" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" hidden>
+        <div class="govuk-width-container">
+          <div class="govuk-grid-row gem-c-layout-super-navigation-header__navigation-items">
+            <div class="govuk-grid-column-two-thirds-from-desktop gem-c-layout-super-navigation-header__column--services-and-information">
+              <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
+                {% if data['userType'] == 'localAuthority' %}
+                  Devonshire local authority
+                {% else %}
+                  Oakview Secondary School
+                {% endif %}
+              </h3>
+              <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--services-and-information">
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                      <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">
+                        Change my view</a>
+                        <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Switch to other schools within your education group.</p>
+                  </li>
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                    <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="../my-preferences">
+                      My profile</a>
+                    <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Access personal details and set preferences associated with your account.</p>
+                  </li>
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  </li>
+              </ul>
+          </div>
+          <div class="govuk-grid-column-one-third-from-desktop gem-c-layout-super-navigation-header__column--government-activity">
+              <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
+                Support</h3>
+              <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--government-activity">
+                  <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                    <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="https://service-assessments.education.gov.uk/">
+                      Contact us</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['censusStatus'] == 'actionRequired' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#ValeOfCatmoseCollege">Go to Autumn School Census and resolve the error for Vale of Catmose College</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% elseif data['censusStatus'] == 'DfE reviewing' %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">DfE has your census return and is
+              currently checking it. We'll notify you when there's an update.</p>
+          </div>
+        </div>
+      {% endif %}
+      <span class="govuk-caption-xl">Census day {{ "today" | duration(67) | govukDate }}</span>
+      <h1 class="govuk-heading-l census-title">Autumn school census</h1>
+      {% if data['censusStatus'] == 'actionRequired' %}
+        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Action required</strong>
+      {% elseif data['censusStatus'] == 'DfE reviewing' %}
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">DfE reviewing</strong>
+      {% elseif data['userType'] == 'localAuthority' %}
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">2 of 10 not complete</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Not started</strong>
+      {% endif %}
+      <h2 class="govuk-heading-m">Overview</h2>
+      <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
+      {% if data['userType'] == 'localAuthority' %}
+        <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Schools in your local authority</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+              <th scope="col" class="govuk-table__header" aria-sort="descending">Status</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                Trent River Primary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Lowe Croft Secondary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Euxton Hills School</a></td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Kings school</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Bourne School</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Uppingham Primary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">St James' School</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">St Iain's Primary</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Kiplings Row School</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Complete</strong></td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link">Send reminder</a> |
+                <a href="#" class="govuk-link">Complete for school</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              {% if data['censusStatus'] == 'actionRequired' %}
+                <td class="govuk-table__cell">Belaire School</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Complete</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% else %}
+                <td class="govuk-table__cell">Belaire School</td>
+                <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
+                  In progress</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% endif %}
+            </tr>
+            <tr class="govuk-table__row">
+              {% if data['censusStatus'] == 'actionRequired' %}
+                <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Vale of Catmose College</td>
+                <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
+                  Error</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% else %}
+                <td class="govuk-table__cell">Vale of Catmose College</td>
+                <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
+                  Not started</strong></td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Send reminder</a> |
+                  <a href="#" class="govuk-link">Complete for school</a>
+                </td>
+              {% endif %}
+            </tr>
+          </tbody>
+        </table>
+      {% endif %}
+      <h2 class="govuk-heading-m">Step by step</h2>
+      <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large app-step-nav--tags" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step" id="autumn-school-census-step-1">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Check the census dates</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-1">
+              <p class="app-step-nav__paragraph">There are two important dates to know.</p>
+              <p class="app-step-nav__paragraph">‘Census date’ is the date that your census return describes. Your return should reflect your school as it was on this day.</p>
+              <p class="app-step-nav__paragraph">‘Return date’ is the deadline for submitting your return. If your school is part of a trust or maintained by a local authority (LA), they may set an earlier deadline. They will confirm this with you.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="autumn-school-census-step-2">
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Prepare the data in your MIS</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-2">
+              <p class="app-step-nav__paragraph">Data for the census is prepared and checked in your school’s MIS, not in COLLECT. COLLECT is only used to submit the return and fix any errors.</p>
+              <p class="app-step-nav__paragraph">There is <a href="https://www.gov.uk/guidance/complete-the-school-census/data-items-2026-to-2027" class="govuk-link">guidance on data items</a> covering everything the census collects this term. Your MIS supplier’s guidance will tell you where to record this data.</p>
+              <p class="app-step-nav__paragraph">Start preparing the data well before census day. You may need information from several people in your school, including your:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>headteacher</li>
+                <li>special educational needs coordinator</li>
+                <li>staff responsible for catering and free school meals</li>
+              </ul>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="autumn-school-census-step-3">
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                  <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
+                  Available {{ "today" | duration(25) | govukDate }}</strong>
+                <span class="js-step-title">Test your data before you submit it</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-3">
+              <p class="app-step-nav__paragraph">COLLECT runs a “familiarisation period”, usually beginning 4 weeks before the census opens. During this time you can upload your census return file in advance, see any errors or queries it raises. Your school’s census contact will be emailed when this is available.</p>
+              <p class="app-step-nav__paragraph">Export the census return file from your MIS, upload it to COLLECT, and see what issues it identifies. Fix any problems in your MIS and generate a new return. You can do this as many times as you need until your return is error-free.</p>
+              <p class="app-step-nav__paragraph"><a href="#autumn-school-census-step-5" class="govuk-link">See step 5 for guidance on resolving errors and queries</a>.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="autumn-school-census-step-4">
+            <div class="app-step-nav__header js-toggle-panel" data-position="4">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Generate your return and get headteacher sign-off</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-4">
+              <p class="app-step-nav__paragraph">When you’re confident that your census data is free of errors, generate the final return from your MIS.</p>
+              <p class="app-step-nav__paragraph">Your headteacher must check and authorise the return before you submit it. Make sure they have seen it, because submitting the return confirms that they have authorised it.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="autumn-school-census-step-5">
+            <div class="app-step-nav__header js-toggle-panel" data-position="5">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
+                  Available {{ "today" | duration(73) | govukDate }}</strong>
+                <span class="js-step-title">Submit your return</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-5">
+              <p class="app-step-nav__paragraph">Upload your return to COLLECT. You will be told whether there are any errors or queries.</p>
+              <p class="app-step-nav__paragraph">'Errors' must be fixed before you can submit. Correct them in your MIS, export a new return and upload it again.</p>
+              <p class="app-step-nav__paragraph">'Queries' flag data that looks unusual. You must either correct them in your MIS, or explain why the data is correct by adding an explanation note in COLLECT.</p>
+              <p class="app-step-nav__paragraph">Notes for queries must give a detailed reason. Notes like ‘confirmed’ or ‘data is correct’ won’t be accepted for most queries, and will delay DfE approving your return.</p>
+              <p class="app-step-nav__paragraph">See guidance on:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="https://www.gov.uk/guidance/complete-the-school-census/check-your-data#viewing-your-errors-and-queries" rel="noreferrer noopener" target="_blank" class="govuk-link">viewing your errors and queries (opens in new tab)</a></li>
+                <li><a href="https://www.gov.uk/guidance/complete-the-school-census/check-your-data#adding-explanation-notes-for-queries" rel="noreferrer noopener" target="_blank" class="govuk-link">adding explanation notes for queries (opens in new tab)</a></li>
+                <li><a href="https://assets.publishing.service.gov.uk/media/5cd5822840f0b6604efa74e2/School_Census_Notepad_entries_2025_26_v.1.1.xlsx" class="govuk-link">COLLECT queries and the explanatory notes DfE accepts (Excel sheet, 49KB)</a></li>
+              </ul>
+              <p class="app-step-nav__paragraph">Once you have addressed any errors and queries, you can submit your return.</p>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="autumn-school-census-step-6">
+            <div class="app-step-nav__header js-toggle-panel" data-position="6">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 6<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="js-step-title">Wait for DfE to check and authorise your return</span>
+              </h2>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-6">
+              <p class="app-step-nav__paragraph">Once you have submitted your return, DfE will check and authorise it. This is the final confirmation that your return is complete.</p>
+              <p class="app-step-nav__paragraph">You will be notified by email when your return is authorised. Until then, you do not need to do anything unless we contact you about a problem.</p>
+              <p class="app-step-nav__paragraph">If a local authority or multi-academy trust approves your return on your behalf, they will check and approve it before sending it to DfE.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <form action="census-details" method="post">
+        {% if data['userType'] != 'localAuthority' %}
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Go to Autumn Census 2026
+            </button>
+          </div>
+        {% endif %}
+        <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Important dates</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
+          <dt class="govuk-summary-list__key">
+            Census day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(67) | govukDate }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Collection opens
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(73) | govukDate }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Return due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ "today" | duration(88) | govukDate }}
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  <div class="govuk-footer">
+    <div class="govuk-width-container">
+      <svg
+        focusable="false"
+        role="presentation"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 64 60"
+        height="30"
+        width="32"
+        fill="currentcolor" class="govuk-footer__crown">
+        <g>
+          <circle cx="20" cy="17.6" r="3.7" />
+          <circle cx="10.2" cy="23.5" r="3.7" />
+          <circle cx="3.7" cy="33.2" r="3.7" />
+          <circle cx="31.7" cy="30.6" r="3.7" />
+          <circle cx="43.3" cy="17.6" r="3.7" />
+          <circle cx="53.2" cy="23.5" r="3.7" />
+          <circle cx="59.7" cy="33.2" r="3.7" />
+          <circle cx="31.7" cy="30.6" r="3.7" />
+          <path d="M33.1,9.8c.2-.1.3-.3.5-.5l4.6,2.4v-6.8l-4.6,1.5c-.1-.2-.3-.3-.5-.5l1.9-5.9h-6.7l1.9,5.9c-.2.1-.3.3-.5.5l-4.6-1.5v6.8l4.6-2.4c.1.2.3.3.5.5l-2.6,8c-.9,2.8,1.2,5.7,4.1,5.7h0c3,0,5.1-2.9,4.1-5.7l-2.6-8ZM37,37.9s-3.4,3.8-4.1,6.1c2.2,0,4.2-.5,6.4-2.8l-.7,8.5c-2-2.8-4.4-4.1-5.7-3.8.1,3.1.5,6.7,5.8,7.2,3.7.3,6.7-1.5,7-3.8.4-2.6-2-4.3-3.7-1.6-1.4-4.5,2.4-6.1,4.9-3.2-1.9-4.5-1.8-7.7,2.4-10.9,3,4,2.6,7.3-1.2,11.1,2.4-1.3,6.2,0,4,4.6-1.2-2.8-3.7-2.2-4.2.2-.3,1.7.7,3.7,3,4.2,1.9.3,4.7-.9,7-5.9-1.3,0-2.4.7-3.9,1.7l2.4-8c.6,2.3,1.4,3.7,2.2,4.5.6-1.6.5-2.8,0-5.3l5,1.8c-2.6,3.6-5.2,8.7-7.3,17.5-7.4-1.1-15.7-1.7-24.5-1.7h0c-8.8,0-17.1.6-24.5,1.7-2.1-8.9-4.7-13.9-7.3-17.5l5-1.8c-.5,2.5-.6,3.7,0,5.3.8-.8,1.6-2.3,2.2-4.5l2.4,8c-1.5-1-2.6-1.7-3.9-1.7,2.3,5,5.2,6.2,7,5.9,2.3-.4,3.3-2.4,3-4.2-.5-2.4-3-3.1-4.2-.2-2.2-4.6,1.6-6,4-4.6-3.7-3.7-4.2-7.1-1.2-11.1,4.2,3.2,4.3,6.4,2.4,10.9,2.5-2.8,6.3-1.3,4.9,3.2-1.8-2.7-4.1-1-3.7,1.6.3,2.3,3.3,4.1,7,3.8,5.4-.5,5.7-4.2,5.8-7.2-1.3-.2-3.7,1-5.7,3.8l-.7-8.5c2.2,2.3,4.2,2.7,6.4,2.8-.7-2.3-4.1-6.1-4.1-6.1h10.6,0Z" />
+        </g>
+      </svg>
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="?censusStatus=Not Started">
+                Status not started
+              </a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="?censusStatus=actionRequired">
+                Status action required
+              </a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="?censusStatus=DfE reviewing">
+                Status DfE reviewing
+              </a>
+            </li>
+          </ul>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 483.2 195.7"
+            height="17"
+            width="41">
+            <path
+              fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+          </svg>
+          <span class="govuk-footer__licence-description">
+            All content is available under the
+            <a
+              class="govuk-footer__link"
+              href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+              rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <a
+            class="govuk-footer__link govuk-footer__copyright-logo"
+            href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+            © Crown copyright
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
