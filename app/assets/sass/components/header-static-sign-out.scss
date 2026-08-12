@@ -1,4 +1,4 @@
-.simple-header {
+.simple-gov-header {
   background: var(--govuk-brand-colour, #1d70b8);
 
   .govuk-header__container {
@@ -27,7 +27,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .simple-header {
+  .simple-gov-header {
     height: auto;
 
     .govuk-header__container {
@@ -38,7 +38,7 @@
     .govuk-header__logo {
       padding-top: 0;
     }
-    
+
     .header-navigation {
       flex-direction: column;
       align-items: flex-start;
