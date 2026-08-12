@@ -5,12 +5,14 @@ module.exports = function (router) {
   function setLocalAuthority(req) {
     req.session.data['userType'] = 'localAuthority'
     delete req.session.data['singleHome']
+    delete req.session.data['censusStatus']
   }
 
   function setSingleHome(req) {
     if (req.query.singleHome) {
       req.session.data['singleHome'] = req.query.singleHome
       delete req.session.data['userType']
+      delete req.session.data['censusStatus']
     }
   }
 
