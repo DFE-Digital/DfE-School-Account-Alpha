@@ -86,4 +86,5 @@ module.exports = function (router) {
       res.redirect('/' + version + '/single-school')
     }
   })
+  
 }
