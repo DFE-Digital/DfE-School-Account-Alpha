@@ -15,6 +15,7 @@
     }
   }
 }
+    
 @media (min-width:40.0625em) {
   .dfe-grid-container {
     display:grid;
@@ -101,4 +102,20 @@
   top:0;
   right:0;
   bottom:0
+}
+
+.start-now-cards.dfe-grid-container {
+  grid-template-columns: repeat(3, 1fr);
+
+  .dfe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .start-now-cards.dfe-grid-container {
+    grid-template-columns: 1fr;
+  }
 }

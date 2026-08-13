@@ -16,25 +16,32 @@ module.exports = function (router) {
     }
   }
 
+  router.get('/' + version + '/start-now', function (req, res) {
+    setSingleHome(req)
+    res.render(version + '/start-now', {})
+  })
+
+  router.post('/' + version + '/start-now', function (req, res) {
+    res.redirect('/' + version + '/sign-in')
+  })
+
   router.get('/' + version + '/emails/local-authority-census-open', function (req, res) {
-    setLocalAuthority(req)
     res.render(version + '/emails/local-authority-census-open', {})
   })
 
   router.post('/' + version + '/emails/local-authority-census-open', function (req, res) {
     setLocalAuthority(req)
-    res.redirect('/' + version + '/sign-in')
+    res.redirect('/' + version + '/start-now')
   })
 
   router.get('/' + version + '/emails/local-authority-census-action-required', function (req, res) {
-    setLocalAuthority(req)
     res.render(version + '/emails/local-authority-census-action-required', {})
   })
 
   router.post('/' + version + '/emails/local-authority-census-action-required', function (req, res) {
     setLocalAuthority(req)
     req.session.data['censusStatus'] = 'actionRequired'
-    res.redirect('/' + version + '/sign-in')
+    res.redirect('/' + version + '/start-now')
   })
 
   router.get('/' + version + '/emails/update-email', function (req, res) {
@@ -86,5 +93,5 @@ module.exports = function (router) {
       res.redirect('/' + version + '/single-school')
     }
   })
-  
+
 }
