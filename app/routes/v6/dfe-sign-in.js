@@ -63,6 +63,14 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/password', function (req, res) {
+    res.redirect('/' + version + '/verify')
+  })
+
+  router.get('/' + version + '/verify', function (req, res) {
+    res.render(version + '/verify', {})
+  })
+
+  router.post('/' + version + '/verify', function (req, res) {
     res.redirect('/' + version + '/mfa')
   })
 
