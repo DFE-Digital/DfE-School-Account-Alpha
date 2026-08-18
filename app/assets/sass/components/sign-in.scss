@@ -57,26 +57,26 @@
   justify-content: center;
   .signin-card {
     width: 100%;
-    max-width: 600px;
+    max-width: 440px;
     background: govuk-colour("white");
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     > *:not(.signin-footer) {
-      @include govuk-responsive-padding(9, left);
-      @include govuk-responsive-padding(9, right);
+      @include govuk-responsive-padding(7, left);
+      @include govuk-responsive-padding(7, right);
     }
   }
   .signin-label {
-    font-weight: bold;
     letter-spacing: 1px;
     @include govuk-responsive-margin(8, top);
     @include govuk-responsive-margin(4, bottom);
   }
   .email-address {
-    @include govuk-font($size: 19, $weight: bold);
-    @include govuk-responsive-margin(6, bottom);
+    @include govuk-font($size: 19);
+    @include govuk-responsive-margin(4, bottom);
   }
   .signin-title {
     @include govuk-responsive-margin(6, bottom);
+    padding-top: 0;
   }
   .intro-text {
     max-width: 420px;
@@ -99,13 +99,36 @@
       @include govuk-responsive-padding(2);
       @include govuk-responsive-padding(4, left);
       @include govuk-responsive-padding(4, right);
+      margin: 0;
+    }
+  }
+  .verify-option {
+    width: 100%;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px 20px;
+    background: #f3f2f1;
+    border: 1px dashed #333;
+    cursor: pointer;
+    &:hover {
+      background: #ffffff;
+      border: 1px solid #dedede;
+    }
+    .verify-icon {
+      margin-right: 5px;
+    }
+    .verify-text {
+      font-size: 19px;
+      overflow-wrap: anywhere;
     }
   }
   .signin-footer {
     background: #f3f2f1;
     @include govuk-responsive-padding(7);
-    @include govuk-responsive-padding(9, left);
-    @include govuk-responsive-padding(9, right);
+    @include govuk-responsive-padding(7, left);
+    @include govuk-responsive-padding(7, right);
     .govuk-body:last-child {
       @include govuk-responsive-margin(0, bottom);
     }
