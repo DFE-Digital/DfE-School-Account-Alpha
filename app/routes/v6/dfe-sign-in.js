@@ -1,5 +1,5 @@
 module.exports = function (router) {
-  
+
   var version = "v6"
 
   function setLocalAuthority(req) {
@@ -16,32 +16,25 @@ module.exports = function (router) {
     }
   }
 
+  router.get('/' + version + '/emails/service-intro', function (req, res) {
+    if (req.query.singleHome) {
+      setSingleHome(req)
+    } else if (req.query.userType == 'localAuthority') {
+      setLocalAuthority(req)
+    }
+    res.render(version + '/emails/service-intro', {})
+  })
+
+  router.post('/' + version + '/emails/service-intro', function (req, res) {
+    res.redirect('/' + version + '/start-now')
+  })
+
   router.get('/' + version + '/start-now', function (req, res) {
-    setSingleHome(req)
     res.render(version + '/start-now', {})
   })
 
   router.post('/' + version + '/start-now', function (req, res) {
     res.redirect('/' + version + '/sign-in')
-  })
-
-  router.get('/' + version + '/emails/local-authority-census-open', function (req, res) {
-    res.render(version + '/emails/local-authority-census-open', {})
-  })
-
-  router.post('/' + version + '/emails/local-authority-census-open', function (req, res) {
-    setLocalAuthority(req)
-    res.redirect('/' + version + '/start-now')
-  })
-
-  router.get('/' + version + '/emails/local-authority-census-action-required', function (req, res) {
-    res.render(version + '/emails/local-authority-census-action-required', {})
-  })
-
-  router.post('/' + version + '/emails/local-authority-census-action-required', function (req, res) {
-    setLocalAuthority(req)
-    req.session.data['censusStatus'] = 'actionRequired'
-    res.redirect('/' + version + '/start-now')
   })
 
   router.get('/' + version + '/emails/update-email', function (req, res) {
@@ -50,7 +43,6 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/sign-in', function (req, res) {
-    setSingleHome(req)
     res.render(version + '/sign-in', {})
   })
 
