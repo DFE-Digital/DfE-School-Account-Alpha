@@ -44,7 +44,7 @@
           </div>
         </div>
       {% endif %}
-      <span class="govuk-caption-xl">Census day {{ "today" | duration(67) | govukDate }}</span>
+      <span class="govuk-caption-xl">Complete your census return</span>
       <h1 class="govuk-heading-l census-title">Autumn school census</h1>
       {% if data['censusStatus'] == 'actionRequired' %}
         <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Action required</strong>
@@ -64,7 +64,7 @@
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
               <th scope="col" class="govuk-table__header" aria-sort="descending">Status</th>
-              <th scope="col" class="govuk-table__header"></th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
@@ -74,8 +74,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -83,8 +82,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -92,17 +90,15 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Kings school</td>
+              <td class="govuk-table__cell">Kings School</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -110,8 +106,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -119,8 +114,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -128,8 +122,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -137,8 +130,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -146,8 +138,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                 Complete</strong></td>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link">Send reminder</a> |
-                <a href="#" class="govuk-link">Complete for school</a>
+                <a href="#" class="govuk-link--no-visited-state">View return</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -156,16 +147,15 @@
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
                   Complete</strong></td>
                 <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link">Send reminder</a> |
-                  <a href="#" class="govuk-link">Complete for school</a>
+                  <a href="#" class="govuk-link--no-visited-state">View return</a>
                 </td>
               {% else %}
                 <td class="govuk-table__cell">Belaire School</td>
                 <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
                   In progress</strong></td>
                 <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link">Send reminder</a> |
-                  <a href="#" class="govuk-link">Complete for school</a>
+                  <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
+                  <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
                 </td>
               {% endif %}
             </tr>
@@ -175,16 +165,16 @@
                 <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
                   Error</strong></td>
                 <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link">Send reminder</a> |
-                  <a href="#" class="govuk-link">Complete for school</a>
+                  <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
+                  <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
                 </td>
               {% else %}
                 <td class="govuk-table__cell">Vale of Catmose College</td>
                 <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
                   Not started</strong></td>
                 <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link">Send reminder</a> |
-                  <a href="#" class="govuk-link">Complete for school</a>
+                  <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
+                  <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
                 </td>
               {% endif %}
             </tr>
@@ -248,7 +238,7 @@
                   </span>
                 </span>
                   <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Available {{ "today" | duration(25) | govukDate }}</strong>
+                  Available {{ "2026-09-03" | govukDate }}</strong>
                 <span class="js-step-title">Test your data before you submit it</span>
               </h2>
             </div>
@@ -287,7 +277,7 @@
                   </span>
                 </span>
                 <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Available {{ "today" | duration(73) | govukDate }}</strong>
+                  Available {{ "2026-10-01" | govukDate }}</strong>
                 <span class="js-step-title">Submit your return</span>
               </h2>
             </div>
@@ -339,7 +329,7 @@
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Show status types
+            Show status types (prototype use only)
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -371,15 +361,7 @@
             Census day
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(67) | govukDate }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Collection opens
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ "today" | duration(73) | govukDate }}
+            {{ "2026-10-01" | govukDate }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -387,7 +369,7 @@
             Return due
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(88) | govukDate }}
+            {{ "2026-10-28" | govukDate }}
           </dd>
         </div>
       </dl>
