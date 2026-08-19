@@ -44,7 +44,7 @@
           </div>
         </div>
       {% endif %}
-      <span class="govuk-caption-xl">Census day {{ "today" | duration(67) | govukDate }}</span>
+      <span class="govuk-caption-xl">Complete your census return</span>
       <h1 class="govuk-heading-l census-title">Autumn school census</h1>
       {% if data['censusStatus'] == 'actionRequired' %}
         <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Action required</strong>
@@ -248,7 +248,7 @@
                   </span>
                 </span>
                   <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Available {{ "today" | duration(25) | govukDate }}</strong>
+                  Available {{ "2026-09-03" | govukDate }}</strong>
                 <span class="js-step-title">Test your data before you submit it</span>
               </h2>
             </div>
@@ -287,7 +287,7 @@
                   </span>
                 </span>
                 <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-                  Available {{ "today" | duration(73) | govukDate }}</strong>
+                  Available {{ "2026-10-01" | govukDate }}</strong>
                 <span class="js-step-title">Submit your return</span>
               </h2>
             </div>
@@ -339,7 +339,7 @@
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Show status types
+            Show status types (prototype use only)
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -371,15 +371,7 @@
             Census day
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(67) | govukDate }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Collection opens
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ "today" | duration(73) | govukDate }}
+            {{ "2026-10-01" | govukDate }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -387,7 +379,7 @@
             Return due
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ "today" | duration(88) | govukDate }}
+            {{ "2026-10-28" | govukDate }}
           </dd>
         </div>
       </dl>
