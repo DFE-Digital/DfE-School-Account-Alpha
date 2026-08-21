@@ -1,0 +1,26 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="The school census collection is open" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-open" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: The school census
+          collection is open</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">The school census collection is now open.</p>
+        <p class="govuk-body">You have until [DATE] to complete and submit your
+          return.</p>
+        <p class="govuk-body">Sign in to your school account for step-by-step
+          guidance.</p>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">Go
+            to your account</button>
+        </p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education</p>
+      </form>
+    </div>
+  </div>
+{% endblock %}
