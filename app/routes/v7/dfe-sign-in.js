@@ -16,16 +16,16 @@ module.exports = function (router) {
     }
   }
 
-  router.get('/' + version + '/emails/service-intro', function (req, res) {
+  router.get('/' + version + '/emails/service-invite', function (req, res) {
     if (req.query.singleHome) {
       setSingleHome(req)
     } else if (req.query.userType == 'localAuthority') {
       setLocalAuthority(req)
     }
-    res.render(version + '/emails/service-intro', {})
+    res.render(version + '/emails/service-invite', {})
   })
 
-  router.post('/' + version + '/emails/service-intro', function (req, res) {
+  router.post('/' + version + '/emails/service-invite', function (req, res) {
     res.redirect('/' + version + '/start-now')
   })
 
