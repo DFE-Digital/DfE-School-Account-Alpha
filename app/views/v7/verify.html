@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Verify your identity" %}
+
+{% block header %}
+  <div class="simple-header"></div>
+{% endblock %}
+
+{% block content %}
+  <form action="verify" method="post">
+    <div class="signin-wrapper">
+      <div class="signin-card">
+        <p class="govuk-body-s signin-label">DFE SIGN-IN</p>
+        <p class="govuk-body email-address">{{data['username'] | default('name.surname@education.gov.uk')}}</p>
+        <h1 class="govuk-heading-l signin-title">Verify your identity</h1>
+        <div class="govuk-form-group">
+          <button type="submit" class="verify-option">
+            <span class="verify-icon" aria-hidden="true">
+              <img src="/public/images/ms-email.svg" width="48" height="48" alt="email icon"/>
+            </span>
+            <span class="verify-text">Email code to<br>name.surname@education.gov.uk</span>
+          </button>
+        </div>
+        <div class="button-group">
+          <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary cancel-button" data-module="govuk-button">Cancel</a>
+        </div>
+        <div class="signin-footer">
+          <p class="govuk-body">By signing in you accept <a href="#" class="govuk-link">DfE Sign-in terms and conditions</a>.</p>
+          <p class="govuk-body">
+            <a href="#" class="govuk-link">Services accessed using DfE Sign-in</a>
+          </p>
+          <p class="govuk-body footer-brand">Department for Education Sign-in</p>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}
+
+{% block footer %}
+  <footer class="custom-footer"></footer>
+{% endblock %}

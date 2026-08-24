@@ -1,0 +1,25 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Action needed: issue with your census return" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-open" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Action needed:
+          issue with your census return </p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">There is an issue with your autumn census return.
+          You will need to resolve this before resubmitting it.</p>
+        <p class="govuk-body">Sign in to your school account to see what you
+          need to do.</p>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">Go
+            to your account</button>
+        </p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education
+      </form>
+    </div>
+  </div>
+{% endblock %}

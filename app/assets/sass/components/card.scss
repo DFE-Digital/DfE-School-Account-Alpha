@@ -13,9 +13,12 @@
     &:hover {
       background-color:#003a69;
     }
+    &.dfe-card--no-hover:hover{
+      background-color: govuk-colour("white");
+    }
   }
 }
-    
+
 @media (min-width:40.0625em) {
   .dfe-grid-container {
     display:grid;
@@ -28,8 +31,8 @@
     max-width:100%
   }
 }
-.dfe-card>picture,
-.dfe-card>picture>img {
+.dfe-card > picture,
+.dfe-card > picture > img {
   max-width:100%;
 }
 .dfe-card-container {
@@ -68,19 +71,19 @@
 .dfe-card-container h3+p:last-child {
   margin-top:0
 }
-.dfe-card:focus-within,
-.dfe-card:hover {
+.dfe-card:not(.dfe-card--no-hover):focus-within,
+.dfe-card:not(.dfe-card--no-hover):hover {
   background-color:#003a69;
 }
-.dfe-card:focus-within .govuk-heading-m,
-.dfe-card:focus-within a,
-.dfe-card:focus-within p,
-.dfe-card:hover .govuk-heading-m,
-.dfe-card:hover a,
-.dfe-card:hover p {
+.dfe-card:not(.dfe-card--no-hover):focus-within .govuk-heading-m,
+.dfe-card:not(.dfe-card--no-hover):focus-within a,
+.dfe-card:not(.dfe-card--no-hover):focus-within p,
+.dfe-card:not(.dfe-card--no-hover):hover .govuk-heading-m,
+.dfe-card:not(.dfe-card--no-hover):hover a,
+.dfe-card:not(.dfe-card--no-hover):hover p {
   color:govuk-colour("white")
 }
-.dfe-card:focus-within {
+.dfe-card:not(.dfe-card--no-hover):focus-within {
   outline:3px solid govuk-colour("yellow");
 }
 .dfe-card-container .dfe-card-link--header:focus,
