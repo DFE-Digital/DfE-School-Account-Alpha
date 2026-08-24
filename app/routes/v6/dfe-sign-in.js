@@ -30,6 +30,11 @@ module.exports = function (router) {
   })
 
   router.get('/' + version + '/start-now', function (req, res) {
+    if (req.query.singleHome) {
+      setSingleHome(req)
+    } else if (req.query.userType == 'localAuthority') {
+      setLocalAuthority(req)
+    }
     res.render(version + '/start-now', {})
   })
 
