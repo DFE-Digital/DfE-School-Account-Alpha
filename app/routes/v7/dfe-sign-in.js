@@ -26,14 +26,14 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/emails/service-invite', function (req, res) {
-    res.redirect('/' + version + '/start-now')
+    res.redirect('/' + version + '/start')
   })
 
-  router.get('/' + version + '/start-now', function (req, res) {
-    res.render(version + '/start-now', {})
+  router.get('/' + version + '/start', function (req, res) {
+    res.render(version + '/start', {})
   })
 
-  router.post('/' + version + '/start-now', function (req, res) {
+  router.post('/' + version + '/start', function (req, res) {
     res.redirect('/' + version + '/sign-in')
   })
 
