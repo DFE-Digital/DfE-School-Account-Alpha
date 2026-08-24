@@ -11,7 +11,7 @@
     <div class="signin-wrapper">
       <div class="signin-card">
         <p class="govuk-body-s signin-label">DFE SIGN-IN</p>
-        <p class="govuk-body email-address">name.surname@education.gov.uk</p>
+        <p class="govuk-body email-address">{{data['username'] | default('name.surname@education.gov.uk')}}</p>
         <h1 class="govuk-heading-l signin-title">Verify your identity</h1>
         <div class="govuk-form-group">
           <button type="submit" class="verify-option">

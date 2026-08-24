@@ -11,9 +11,10 @@
     <div class="signin-wrapper">
       <div class="signin-card">
         <p class="govuk-body-s signin-label">DFE SIGN-IN</p>
-        <p class="govuk-body email-address">name.surname@education.gov.uk</p>
+        <p class="govuk-body email-address">{{data['username'] | default('name.surname@education.gov.uk')}}</p>
         <h1 class="govuk-heading-l signin-title">Enter code</h1>
-        <p class="govuk-body intro-text">We emailed a code to name.surname@education.gov.uk. Please enter the code to sign in.</p>
+        <p class="govuk-body intro-text">We emailed a code to {{data['username'] | default('name.surname@education.gov.uk')}}.
+          Please enter the code to sign in.</p>
         <div class="govuk-form-group">
           <input class="govuk-input" id="code" name="code" type="text" autocomplete="one-time-code" placeholder="Enter code">
         </div>
