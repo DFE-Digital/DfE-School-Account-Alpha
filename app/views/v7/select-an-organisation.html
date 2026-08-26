@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Select an organisation" %}
+
+{% block header %}
+  <header class="govuk-header simple-gov-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype"/>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="govuk-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">Beta</strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.
+      </span>
+    </p>
+  </div>
+  <div class="govuk-width-container">
+    <a href="start.html" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Select your organisation</h1>
+      <p class="govuk-body">
+        You are associated with more than 1 organisation, please select the one you<br/>wish to sign-in with.
+      </p>
+      <form method="post">
+        <div class="govuk-form-group select-organisation">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Your organisations</legend>
+            <div class="govuk-radios organisation-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-1" name="organisation" type="radio" value="generations-multi-academy-trust">
+                <label class="govuk-label govuk-radios__label" for="organisation-1"><strong>Generations Multi Academy Trust (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">UKPRN: 10059296</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-2" name="organisation" type="radio" value="goffs-academy">
+                <label class="govuk-label govuk-radios__label" for="organisation-2"><strong>Goffs Academy (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 137532, UKPRN: 10035495</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-3" name="organisation" type="radio" value="flamstead-end-school">
+                <label class="govuk-label govuk-radios__label" for="organisation-3"><strong>Flamstead End School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 139545, UKPRN: 10040993</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-4" name="organisation" type="radio" value="goffs-churchgate-academy">
+                <label class="govuk-label govuk-radios__label" for="organisation-4"><strong>Goffs - Churchgate Academy (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 145297, UKPRN: 10066235</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-5" name="organisation" type="radio" value="oakview-primary-school">
+                <label class="govuk-label govuk-radios__label" for="organisation-5"><strong>Oakview Primary School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 150844, UKPRN: 10094938</div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside>
+        <h2 class="govuk-heading-m">Actions</h2>
+        <ul class="govuk-list">
+          <li><a class="govuk-link-bold" href="#">Request access to an organisation</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
