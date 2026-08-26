@@ -47,138 +47,30 @@
       <span class="govuk-caption-xl">Complete your census return</span>
       <h1 class="govuk-heading-l census-title">Autumn school census</h1>
       {% if data['censusStatus'] == 'actionRequired' %}
-        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Action required</strong>
+        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+          Action required</strong>
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">DfE reviewing</strong>
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+          DfE reviewing</strong>
       {% elseif data['userType'] == 'localAuthority' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">2 of 10 not complete</strong>
+        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+          2 of 10 not complete</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">Not started</strong>
+        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+          Not started</strong>
       {% endif %}
       <h2 class="govuk-heading-m">Overview</h2>
-      <p class="govuk-body">The school census collects pupil and school data from state-funded schools three times a year.  The data is exported from each school’s management information system (MIS) and submitted to the Department for Education through an online tool called COLLECT.</p>
-      {% if data['userType'] == 'localAuthority' %}
+      <p class="govuk-body">The school census collects pupil and school data from
+        state-funded schools three times a year.  The data is exported from each
+        school’s management information system (MIS) and submitted to the Department
+        for Education through an online tool called COLLECT.</p>
+      {% if data['userType'] != 'singleSchool' %}
         <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
-          <caption class="govuk-table__caption govuk-table__caption--m">Schools in your local authority</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
-              <th scope="col" class="govuk-table__header" aria-sort="descending">Status</th>
-              <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                Trent River Primary</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Lowe Croft Secondary</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Euxton Hills School</a></td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Kings School</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Bourne School</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Uppingham Primary</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">St James' School</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">St Iain's Primary</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Kiplings Row School</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                Complete</strong></td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-link--no-visited-state">View return</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              {% if data['censusStatus'] == 'actionRequired' %}
-                <td class="govuk-table__cell">Belaire School</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Complete</strong></td>
-                <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link--no-visited-state">View return</a>
-                </td>
-              {% else %}
-                <td class="govuk-table__cell">Belaire School</td>
-                <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
-                  In progress</strong></td>
-                <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
-                  <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
-                </td>
-              {% endif %}
-            </tr>
-            <tr class="govuk-table__row">
-              {% if data['censusStatus'] == 'actionRequired' %}
-                <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Vale of Catmose College</td>
-                <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
-                  Error</strong></td>
-                <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
-                  <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
-                </td>
-              {% else %}
-                <td class="govuk-table__cell">Vale of Catmose College</td>
-                <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
-                  Not started</strong></td>
-                <td class="govuk-table__cell">
-                  <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
-                  <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
-                </td>
-              {% endif %}
-            </tr>
-          </tbody>
+          {% if data['userType'] == 'localAuthority' %}
+            {% include "./includes/local-authority-census-schools.html" %}
+          {% else %}
+            {% include "./includes/multi-academy-trust-census-schools.html" %}
+          {% endif %}
         </table>
       {% endif %}
       <h2 class="govuk-heading-m">Step by step</h2>
@@ -199,8 +91,13 @@
             </div>
             <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-1">
               <p class="app-step-nav__paragraph">There are two important dates to know.</p>
-              <p class="app-step-nav__paragraph">‘Census date’ is the date that your census return describes. Your return should reflect your school as it was on this day.</p>
-              <p class="app-step-nav__paragraph">‘Return date’ is the deadline for submitting your return. If your school is part of a trust or maintained by a local authority (LA), they may set an earlier deadline. They will confirm this with you.</p>
+              <p class="app-step-nav__paragraph">‘Census date’ is the date that your
+                census return describes. Your return should reflect your school as it
+                was on this day.</p>
+              <p class="app-step-nav__paragraph">‘Return date’ is the deadline for
+                submitting your return. If your school is part of a trust or maintained by a
+                local authority (LA), they may set an earlier deadline. They will confirm
+                this with you.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="autumn-school-census-step-2">
@@ -217,9 +114,13 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-2">
-              <p class="app-step-nav__paragraph">Data for the census is prepared and checked in your school’s MIS, not in COLLECT. COLLECT is only used to submit the return and fix any errors.</p>
+              <p class="app-step-nav__paragraph">Data for the census is prepared and checked
+                in your school’s MIS, not in COLLECT. COLLECT is only used to submit the
+                return and fix any errors.</p>
               <p class="app-step-nav__paragraph">There is <a href="https://www.gov.uk/guidance/complete-the-school-census/data-items-2026-to-2027" class="govuk-link">guidance on data items</a> covering everything the census collects this term. Your MIS supplier’s guidance will tell you where to record this data.</p>
-              <p class="app-step-nav__paragraph">Start preparing the data well before census day. You may need information from several people in your school, including your:</p>
+              <p class="app-step-nav__paragraph">Start preparing the data well before census
+                day. You may need information from several people in your school, including
+                your:</p>
               <ul class="govuk-list govuk-list--bullet">
                 <li>headteacher</li>
                 <li>special educational needs coordinator</li>
@@ -243,9 +144,16 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-3">
-              <p class="app-step-nav__paragraph">COLLECT runs a “familiarisation period”, usually beginning 4 weeks before the census opens. During this time you can upload your census return file in advance, see any errors or queries it raises. Your school’s census contact will be emailed when this is available.</p>
-              <p class="app-step-nav__paragraph">Export the census return file from your MIS, upload it to COLLECT, and see what issues it identifies. Fix any problems in your MIS and generate a new return. You can do this as many times as you need until your return is error-free.</p>
-              <p class="app-step-nav__paragraph"><a href="#autumn-school-census-step-5" class="govuk-link">See step 5 for guidance on resolving errors and queries</a>.</p>
+              <p class="app-step-nav__paragraph">COLLECT runs a “familiarisation period”,
+                usually beginning 4 weeks before the census opens. During this time you can
+                upload your census return file in advance, see any errors or queries it raises.
+                Your school’s census contact will be emailed when this is available.</p>
+              <p class="app-step-nav__paragraph">Export the census return file from your MIS,
+                upload it to COLLECT, and see what issues it identifies. Fix any problems in
+                your MIS and generate a new return. You can do this as many times as you need
+                until your return is error-free.</p>
+              <p class="app-step-nav__paragraph"><a href="#autumn-school-census-step-5" class="govuk-link">
+                See step 5 for guidance on resolving errors and queries</a>.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="autumn-school-census-step-4">
@@ -262,8 +170,11 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-4">
-              <p class="app-step-nav__paragraph">When you’re confident that your census data is free of errors, generate the final return from your MIS.</p>
-              <p class="app-step-nav__paragraph">Your headteacher must check and authorise the return before you submit it. Make sure they have seen it, because submitting the return confirms that they have authorised it.</p>
+              <p class="app-step-nav__paragraph">When you’re confident that your census data is
+                free of errors, generate the final return from your MIS.</p>
+              <p class="app-step-nav__paragraph">Your headteacher must check and authorise the
+                return before you submit it. Make sure they have seen it, because submitting the
+                return confirms that they have authorised it.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="autumn-school-census-step-5">
@@ -282,17 +193,24 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-5">
-              <p class="app-step-nav__paragraph">Upload your return to COLLECT. You will be told whether there are any errors or queries.</p>
-              <p class="app-step-nav__paragraph">'Errors' must be fixed before you can submit. Correct them in your MIS, export a new return and upload it again.</p>
-              <p class="app-step-nav__paragraph">'Queries' flag data that looks unusual. You must either correct them in your MIS, or explain why the data is correct by adding an explanation note in COLLECT.</p>
-              <p class="app-step-nav__paragraph">Notes for queries must give a detailed reason. Notes like ‘confirmed’ or ‘data is correct’ won’t be accepted for most queries, and will delay DfE approving your return.</p>
+              <p class="app-step-nav__paragraph">Upload your return to COLLECT. You will be told
+                whether there are any errors or queries.</p>
+              <p class="app-step-nav__paragraph">'Errors' must be fixed before you can submit.
+                Correct them in your MIS, export a new return and upload it again.</p>
+              <p class="app-step-nav__paragraph">'Queries' flag data that looks unusual. You must
+                either correct them in your MIS, or explain why the data is correct by adding an
+                explanation note in COLLECT.</p>
+              <p class="app-step-nav__paragraph">Notes for queries must give a detailed reason.
+                Notes like ‘confirmed’ or ‘data is correct’ won’t be accepted for most queries, and
+                will delay DfE approving your return.</p>
               <p class="app-step-nav__paragraph">See guidance on:</p>
               <ul class="govuk-list govuk-list--bullet">
                 <li><a href="https://www.gov.uk/guidance/complete-the-school-census/check-your-data#viewing-your-errors-and-queries" rel="noreferrer noopener" target="_blank" class="govuk-link">viewing your errors and queries (opens in new tab)</a></li>
                 <li><a href="https://www.gov.uk/guidance/complete-the-school-census/check-your-data#adding-explanation-notes-for-queries" rel="noreferrer noopener" target="_blank" class="govuk-link">adding explanation notes for queries (opens in new tab)</a></li>
                 <li><a href="https://assets.publishing.service.gov.uk/media/5cd5822840f0b6604efa74e2/School_Census_Notepad_entries_2025_26_v.1.1.xlsx" class="govuk-link">COLLECT queries and the explanatory notes DfE accepts (Excel sheet, 49KB)</a></li>
               </ul>
-              <p class="app-step-nav__paragraph">Once you have addressed any errors and queries, you can submit your return.</p>
+              <p class="app-step-nav__paragraph">Once you have addressed any errors and queries,
+                you can submit your return.</p>
             </div>
           </li>
           <li class="app-step-nav__step js-step" id="autumn-school-census-step-6">
@@ -309,9 +227,14 @@
               </h2>
             </div>
             <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-6">
-              <p class="app-step-nav__paragraph">Once you have submitted your return, DfE will check and authorise it. This is the final confirmation that your return is complete.</p>
-              <p class="app-step-nav__paragraph">You will be notified by email when your return is authorised. Until then, you do not need to do anything unless we contact you about a problem.</p>
-              <p class="app-step-nav__paragraph">If a local authority or multi-academy trust approves your return on your behalf, they will check and approve it before sending it to DfE.</p>
+              <p class="app-step-nav__paragraph">Once you have submitted your return, DfE will check
+                and authorise it. This is the final confirmation that your return is complete.</p>
+              <p class="app-step-nav__paragraph">You will be notified by email when your return is
+                authorised. Until then, you do not need to do anything unless we contact you about
+                a problem.</p>
+              <p class="app-step-nav__paragraph">If a local authority or multi-academy trust
+                approves your return on your behalf, they will check and approve it before sending
+                it to DfE.</p>
             </div>
           </li>
         </ol>
@@ -326,32 +249,7 @@
         {% endif %}
         <p class="govuk-body-s">Last updated: {{ "today" | govukDate }}</p>
       </form>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Show status types (prototype use only)
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-footer__inline-list">
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="?censusStatus=Not Started">
-                Not started
-              </a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="?censusStatus=actionRequired">
-                Action required
-              </a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="?censusStatus=DfE reviewing">
-                DfE reviewing
-              </a>
-            </li>
-          </ul>
-        </div>
-      </details>
+      {% include ".././includes/prototype-settings.html" %}
     </div>
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">Important dates</h2>
@@ -376,7 +274,6 @@
     </div>
   </div>
 {% endblock %}
-
 {% block footer %}
   {% include ".././includes/footer.html" %}
 {% endblock %}

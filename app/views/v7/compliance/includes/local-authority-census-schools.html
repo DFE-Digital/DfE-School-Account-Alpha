@@ -1,0 +1,120 @@
+<caption class="govuk-table__caption govuk-table__caption--m">Schools in your local authority</caption>
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+    <th scope="col" class="govuk-table__header" aria-sort="descending">Status</th>
+    <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+  </tr>
+</thead>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      Trent River Primary</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Lowe Croft Secondary</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Euxton Hills School</a></td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Kings School</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Bourne School</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Uppingham Primary</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">St James' School</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">St Iain's Primary</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Kiplings Row School</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+      Complete</strong></td>
+    <td class="govuk-table__cell">
+      <a href="#" class="govuk-link--no-visited-state">View return</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    {% if data['censusStatus'] == 'actionRequired' %}
+      <td class="govuk-table__cell">Belaire School</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+        Complete</strong></td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link--no-visited-state">View return</a>
+      </td>
+    {% else %}
+      <td class="govuk-table__cell">Belaire School</td>
+      <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
+        In progress</strong></td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
+        <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
+      </td>
+    {% endif %}
+  </tr>
+  <tr class="govuk-table__row">
+    {% if data['censusStatus'] == 'actionRequired' %}
+      <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Vale of Catmose College</td>
+      <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
+        Error</strong></td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
+        <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
+      </td>
+    {% else %}
+      <td class="govuk-table__cell">Vale of Catmose College</td>
+      <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
+        Not started</strong></td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link--no-visited-state">Send reminder</a> |
+        <a href="#" class="govuk-link--no-visited-state">Complete for school</a>
+      </td>
+    {% endif %}
+  </tr>
+</tbody>
