@@ -3,11 +3,11 @@ module.exports = function (router) {
   var version = "v7";
 
   router.get('/' + version + '/single-school', function (req, res) {
-    if (req.session.data['singleHome'] == 'priority') {
+    if (req.session.data['aBTesting'] == 'priority') {
       res.redirect('/' + version + '/single-priority-home')
-    } else if (req.session.data['singleHome'] == 'nowNextLater'){
+    } else if (req.session.data['aBTesting'] == 'nowNextLater'){
       res.redirect('/' + version + '/single-now-next-later-home')
-    } else if (req.session.data['singleHome'] == 'roleLed'){
+    } else if (req.session.data['aBTesting'] == 'roleLed'){
       res.redirect('/' + version + '/single-role-led-home')
     } else {
       res.redirect('/' + version + '/single-combined-home')
@@ -15,11 +15,11 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/single-school', function (req, res) {
-    if (req.session.data['singleHome'] == 'priority') {
+    if (req.session.data['aBTesting'] == 'priority') {
       res.redirect('/' + version + '/single-priority-home')
-    } else if (req.session.data['singleHome'] == 'nowNextLater'){
+    } else if (req.session.data['aBTesting'] == 'nowNextLater'){
       res.redirect('/' + version + '/single-now-next-later-home')
-    } else if (req.session.data['singleHome'] == 'roleLed'){
+    } else if (req.session.data['aBTesting'] == 'roleLed'){
       res.redirect('/' + version + '/single-role-led-home')
     } else {
       res.redirect('/' + version + '/single-combined-home')
