@@ -240,7 +240,7 @@
         </ol>
       </div>
       <form action="census-details" method="post">
-        {% if data['userType'] != 'localAuthority' and data['userType'] != 'multiAcademyTrust' %}
+        {% if data['userType'] == 'singleSchool' %}
           <div class="govuk-button-group">
             <button type="submit" class="govuk-button" data-module="govuk-button">
               Go to Autumn Census 2026
