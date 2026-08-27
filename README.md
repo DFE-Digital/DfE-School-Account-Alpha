@@ -38,8 +38,7 @@ harder. Pushing directly to the main branch makes is very difficult to support
 multiple concurrent items of work at once, it also means it is much harder to
 roll back code if it is ditched mid sprint.
 
-
-### Incrementing the prototype for a new sprint
+### Incrementing the prototype
 
 The prototype contains all the previous version in the single repository. This
 means that anyone can look at previous versions to understand what has changed.
@@ -76,6 +75,21 @@ The prototype uses Heroku for hosting and is set to look for merges on the main
 branch. When a merge occurs on the main branch, Heroku will immediately get the
 latest version of the main branch and rebuild and deploy the code. After a
 minute or two the change should be live.
+
+### Routing
+
+Routing it use to handle the logic the prototype needs. Values for variables are
+set by hiting a URL, saving session data via the routes files, or automatically
+recording a users answer.
+
+We try to have fewer variable and change the values rather than saving and 
+deleting variables in session data. For example we have a `userType` variable
+and we look for singleSchool, localAuthority or multiAcademyTrust values rather
+than varaibles for each kind of user with a true value e.g. singleSchool == True.
+
+This allows us to have values that persist across the prototype until session data
+is cleared. It also simplifies routing files as we do not need to check or delete
+variables on each post or get.
 
 ## Recording changes
 When an change for the prototype is live, we notify the team about the changes
