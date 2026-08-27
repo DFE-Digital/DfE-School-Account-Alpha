@@ -75,6 +75,9 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/select-an-organisation', function (req, res) {
+    if (req.session.data['organisation'] != 'Generations Multi Academy Trust') {
+      req.session.data['userType'] = 'singleSchool'
+    }
     res.redirect('/' + version + '/compliance/census-details')
   })
 }
