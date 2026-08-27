@@ -134,3 +134,9 @@
     }
   }
 }
+
+.select-organisation {
+  .govuk-radios__item {
+    @include govuk-responsive-margin(7, bottom);
+  }
+}
