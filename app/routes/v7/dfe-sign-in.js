@@ -51,7 +51,9 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/mfa', function (req, res) {
-    if (req.session.data['userType'] != '') {
+    if (req.session.data['userType'] == 'multiAcademyTrust') {
+      res.redirect('/' + version + '/select-an-organisation')
+    } else if (req.session.data['userType'] == 'singleSchool' || (req.session.data['userType'] == 'localAuthority')) {
       res.redirect('/' + version + '/compliance/census-details')
     } else if (req.session.data['aBTesting'] == 'thinLine') {
       res.redirect('/' + version + '/compliance/census-details')
@@ -66,5 +68,16 @@ module.exports = function (router) {
     } else {
       res.redirect('/' + version + '/single-school')
     }
+  })
+
+  router.get('/' + version + '/select-an-organisation', function (req, res) {
+    res.render(version + '/select-an-organisation', {})
+  })
+
+  router.post('/' + version + '/select-an-organisation', function (req, res) {
+    if (req.session.data['organisation'] != 'Generations Multi Academy Trust') {
+      req.session.data['userType'] = 'singleSchool'
+    }
+    res.redirect('/' + version + '/compliance/census-details')
   })
 }
