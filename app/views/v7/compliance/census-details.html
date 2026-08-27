@@ -52,7 +52,7 @@
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
         <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
           DfE reviewing</strong>
-      {% elseif data['userType'] == 'localAuthority' %}
+      {% elseif data['userType'] == 'localAuthority' or data['userType'] == 'multiAcademyTrust' %}
         <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
           2 of 10 not complete</strong>
       {% else %}
@@ -240,7 +240,7 @@
         </ol>
       </div>
       <form action="census-details" method="post">
-        {% if data['userType'] != 'localAuthority' %}
+        {% if data['userType'] == 'singleSchool' %}
           <div class="govuk-button-group">
             <button type="submit" class="govuk-button" data-module="govuk-button">
               Go to Autumn Census 2026
