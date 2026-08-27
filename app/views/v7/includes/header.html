@@ -7,11 +7,7 @@
     </div>
     <nav class="header-navigation" aria-label="Account navigation">
       <span class="header-navigation__school">
-        {% if data['userType'] == 'localAuthority' %}
-          Devonshire local authority
-        {% else %}
-          Oakview Secondary School
-        {% endif %}
+        {{data['organisation'] | default('Goffs Academy')}}
       </span>
       <a href="#" class="header-navigation__link">Sign out</a>
     </nav>
