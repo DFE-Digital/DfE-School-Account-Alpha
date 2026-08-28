@@ -8,64 +8,50 @@
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Milstead and Frinsted Church of England Primary School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">No Data</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Petham Primary School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">No Data</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Lydd Primary School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">No Data</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Dymchurch Primary School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">No Data</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Borden Church of England Primary School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">Submitted</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Bredgar Church of England Primary School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">Submitted</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Minterne Junior School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">Approved</td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">The Oaks Infant School</td>
-    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-      Complete</strong></td>
+    <td class="govuk-table__cell">Authorised</td>
   </tr>
   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Selling Church of England Primary School</td>
     {% if data['censusStatus'] == 'actionRequired' %}
-      <td class="govuk-table__cell">Selling Church of England Primary School</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-        Complete</strong></td>
+      <td class="govuk-table__cell">No data</td>
     {% else %}
-      <td class="govuk-table__cell">Selling Church of England Primary School</td>
-      <td class="govuk-table__cell" data-sort-value="In progress"><strong class="govuk-tag govuk-tag--yellow">
-        In progress</strong></td>
+    <td class="govuk-table__cell">Authorised</td>
     {% endif %}
   </tr>
   <tr class="govuk-table__row">
-    {% if data['censusStatus'] == 'actionRequired' %}
       <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Lynsted and Norton Primary School</td>
-      <td class="govuk-table__cell" data-sort-value="ACTION REQUIRED"><strong class="govuk-tag govuk-tag--red">
-        Error</strong></td>
-    {% else %}
-      <td class="govuk-table__cell">Lynsted and Norton Primary School</td>
-      <td class="govuk-table__cell" data-sort-value="Not Started"><strong class="govuk-tag govuk-tag--grey">
-        Not started</strong></td>
-    {% endif %}
+      {% if data['censusStatus'] == 'actionRequired' %}
+        <td class="govuk-table__cell">No data</td>
+      {% else %}
+      <td class="govuk-table__cell">Authorised</td>
+      {% endif %}
   </tr>
 </tbody>

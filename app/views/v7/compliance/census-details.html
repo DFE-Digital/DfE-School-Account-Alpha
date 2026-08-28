@@ -52,12 +52,9 @@
       {% elseif data['censusStatus'] == 'DfE reviewing' %}
         <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
           DfE reviewing</strong>
-      {% elseif data['userType'] == 'localAuthority' or data['userType'] == 'multiAcademyTrust' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-          2 of 10 not complete</strong>
-      {% else %}
+      {% elseif data['userType'] == 'singleSchool' %}
         <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-          Not started</strong>
+          No data</strong>
       {% endif %}
       <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">The school census collects pupil and school data from
