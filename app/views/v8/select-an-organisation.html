@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Select an organisation" %}
+
+{% block header %}
+  <header class="govuk-header simple-gov-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype"/>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="govuk-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">Beta</strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service. Help us improve it and <a class="govuk-link" href="#">
+          give your feedback (opens in new tab)</a>.
+      </span>
+    </p>
+  </div>
+  <div class="govuk-width-container">
+    <a href="start.html" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Select your organisation</h1>
+      <p class="govuk-body">You are associated with more than 1 organisation, please select
+        the one you wish to sign-in with.</p>
+      <form method="post" action="select-an-organisation">
+        <div class="govuk-form-group select-organisation">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Your organisations</legend>
+            <div class="govuk-radios organisation-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-1" name="organisation" type="radio" value="Our Community Multi Academy Trust">
+                <label class="govuk-label govuk-radios__label" for="organisation-1"><strong>
+                  Our Community Multi Academy Trust (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">UKPRN: 10065212</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-2" name="organisation" type="radio" value="Lynsted and Norton Primary School">
+                <label class="govuk-label govuk-radios__label" for="organisation-2"><strong>
+                  Lynsted and Norton Primary School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 137467, UKPRN: 10035094</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-3" name="organisation" type="radio" value="Selling Church of England Primary School">
+                <label class="govuk-label govuk-radios__label" for="organisation-3"><strong>
+                  Selling Church of England Primary School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 137481, UKPRN: 10035102</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-4" name="organisation" type="radio" value="Milstead and Frinsted Church of England Primary School">
+                <label class="govuk-label govuk-radios__label" for="organisation-4"><strong>
+                  Milstead and Frinsted Church of England Primary School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 137483, UKPRN: 10035126</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-5" name="organisation" type="radio" value="Petham Primary School">
+                <label class="govuk-label govuk-radios__label" for="organisation-5"><strong>
+                  Petham Primary School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 139810, UKPRN: 10042015</div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="organisation-6" name="organisation" type="radio" value="Lydd Primary School">
+                <label class="govuk-label govuk-radios__label" for="organisation-6"><strong>
+                  Lydd Primary School (Open)</strong></label>
+                <div class="govuk-hint govuk-radios__hint">URN: 141660, UKPRN: 10048212</div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside>
+        <h2 class="govuk-heading-m">Actions</h2>
+        <ul class="govuk-list">
+          <li><a class="govuk-link-bold" href="#">Request access to an organisation</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
