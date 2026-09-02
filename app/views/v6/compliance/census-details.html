@@ -11,6 +11,16 @@
 
 {% block header %}
   {% include ".././includes/header.html" %}
+  <div class="govuk-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service. Help us improve it and <a class="govuk-link--no-visited-state" href="https://digital-forms.education.gov.uk/smxqhd6u2i/give-feedback-on-dfe-connect" target="_blank">give your feedback (opens in new tab)</a>.
+      </span>
+    </p>
+  </div>
 {% endblock %}
 
 {% block content %}
@@ -355,7 +365,7 @@
     </div>
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">Important dates</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
         <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
           <dt class="govuk-summary-list__key">
             Census day
@@ -373,10 +383,140 @@
           </dd>
         </div>
       </dl>
+      <!--Feedback banner-->
+      <div class="feedback-banner govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+        <h2 class="govuk-heading-m">
+            Help us improve
+        </h2>
+        <p class="govuk-body">
+            To help us improve School Account, we’d like to know more about your visit today.
+        </p>
+        <p class="govuk-body">
+            <a href="https://digital-forms.education.gov.uk/smxqhd6u2i/give-feedback-on-dfe-connect" class="govuk-link--no-visited-state" target="_blank">Give your feedback (opens in a new tab)</a>.
+        </p>
+      </div>
+      <!--End of feedback banner-->
     </div>
   </div>
 {% endblock %}
 
 {% block footer %}
+  <!--Footer feedback-->
+  <section id="page-feedback" class="footer-feedback" aria-label="Page feedback">
+    <div class="govuk-width-container">
+      <div class="footer-feedback__initial" aria-live="polite">
+        <div class="footer-feedback__row">
+          <div class="footer-feedback__left">
+            <span class="footer-feedback__question"><strong>Is this page useful?</strong></span>
+            <form method="#" action="#" class="service-feedback__choices" novalidate="">
+              <input name="__RequestVerificationToken" type="hidden" value="/">
+              <input type="hidden" name="pageId" value="/">
+              <input type="hidden" name="returnUrl" value="/">
+              <input type="hidden" name="ctaType" value="yes_no">
+              <ul class="govuk-list">
+                <li>
+                  <button type="submit" name="selectedAnswer" value="yes" class="footer-feedback__choice">Yes</button>
+                </li>
+                <li>
+                  <button type="submit" name="selectedAnswer" value="no" class="footer-feedback__choice">No</button>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <button type="submit" class="footer-feedback__choice footer-feedback__choice--report">
+            Report a problem with this page
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const feedbackContainer = document.querySelector('.footer-feedback__initial');
+
+      if (!feedbackContainer) {
+        return;
+      }
+
+      const originalFeedbackHTML = feedbackContainer.innerHTML;
+
+      const setFeedbackContent = (content) => {
+        const feedbackRow = feedbackContainer.querySelector('.footer-feedback__row');
+        feedbackRow.innerHTML = content;
+        feedbackRow.className = 'footer-feedback__row footer-feedback__row--submitted';
+      };
+
+      feedbackContainer.addEventListener('submit', function (event) {
+        if (event.target.matches('#report-problem-form')) {
+          event.preventDefault();
+          setFeedbackContent(`
+            <h2 class="govuk-heading-m">Thank you for your feedback</h2>
+            <p class="govuk-body">Your feedback will help us improve School Account.</p>
+          `);
+          return;
+        }
+
+        if (!event.target.matches('.service-feedback__choices')) {
+          return;
+        }
+
+        event.preventDefault();
+
+        const selectedAnswer = event.submitter.value;
+
+        if (selectedAnswer === 'yes') {
+          setFeedbackContent(`
+            <h2 class="govuk-heading-m">Thank you for your feedback</h2>
+            <p class="govuk-body">To help us improve School Account, we’d like to know more about your visit today.</p>
+            <p class="govuk-body">
+              <a href="https://digital-forms.education.gov.uk/smxqhd6u2i/give-feedback-on-dfe-connect" class="govuk-link--no-visited-state" target="_blank">Give your feedback (opens in a new tab)</a>.
+            </p>
+            <button type="button" class="govuk-button footer-feedback__cancel">Cancel</button>
+          `);
+        }
+
+        if (selectedAnswer === 'no') {
+          setFeedbackContent(`
+            <h2 class="govuk-heading-m">Help us improve School Account</h2>
+            <p class="govuk-body">To help us improve School Account, we’d like to know more about your visit today.</p>
+            <p class="govuk-body">
+              <a href="https://digital-forms.education.gov.uk/smxqhd6u2i/give-feedback-on-dfe-connect" class="govuk-link--no-visited-state" target="_blank">Give your feedback (opens in a new tab)</a>.
+            </p>
+            <button type="button" class="govuk-button footer-feedback__cancel">Cancel</button>
+          `);
+        }
+      });
+
+      feedbackContainer.addEventListener('click', function (event) {
+        if (event.target.matches('.footer-feedback__cancel')) {
+          feedbackContainer.innerHTML = originalFeedbackHTML;
+          return;
+        }
+        
+        if (event.target.matches('.footer-feedback__choice--report')) {
+          setFeedbackContent(`
+            <form id="report-problem-form">
+              <h2 class="govuk-heading-m">Help us improve School Account</h2>
+              <p class="govuk-body">To help us improve School Account, we’d like to know more about your visit today.</p>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="what-were-you-doing">What were you doing?</label>
+                <textarea class="free-text govuk-textarea" id="what-were-you-doing" name="whatWereYouDoing" rows="3"></textarea>
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="what-went-wrong">What went wrong?</label>
+                <textarea class="free-text govuk-textarea" id="what-went-wrong" name="whatWentWrong" rows="3"></textarea>
+              </div>
+              <div class="govuk-button-group">
+                <button type="submit" class="govuk-button">Send</button>
+                <button type="button" class="govuk-button footer-feedback__cancel">Cancel</button>
+              </div>
+            </form>
+          `);
+        }
+      });
+    });
+  </script>
+  <!--end of footer feedback-->
   {% include ".././includes/footer.html" %}
 {% endblock %}
