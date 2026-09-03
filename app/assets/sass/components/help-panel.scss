@@ -1,0 +1,7 @@
+.help-panel{
+  border-top:2px;
+  border-top-style: solid;
+  border-top-color: govuk-colour("blue");
+  background-color: govuk-colour("blue", $variant: "tint-95");
+  @include govuk-responsive-padding(6);
+}
