@@ -2,8 +2,7 @@
   <div class="govuk-width-container">
     <div class="footer-feedback__initial" aria-live="polite">
       <div class="footer-feedback__row">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">Tell us what you think about
-          this page or report a problem
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">Give feedback on this page or report a problem
         </h2>
         <button type="submit" class="govuk-button footer-feedback__primary">
           Give feedback
@@ -35,12 +34,20 @@
         setFeedbackContent(`
           <form id="tell-us-form">
             <div class="govuk-form-group">
-              <h2 class="govuk-heading-m" for="what-do-you-want-to-tell-us">
-                What do you want to tell us about?</h2>
-              <textarea class="govuk-textarea" id="what-do-you-want-to-tell-us" name="whatDoYouWantToTellUs" rows="5"></textarea>
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper govuk-heading-m">
+                  <label class="govuk-label govuk-label--m" for="what-do-you-want-to-tell-us">
+                    Your feedback
+                  </label>
+                </h2>
+                <div id="what-do-you-want-to-tell-us-hint" class="govuk-hint">
+                  Tell us what you think or describe the problem
+                </div>
+                <textarea class="govuk-textarea" id="what-do-you-want-to-tell-us" name="whatDoYouWantToTellUs" rows="5"></textarea>
+              </div>
             </div>
             <div class="govuk-button-group">
-              <button type="submit" class="govuk-button footer-feedback__send" data-module="govuk-button">Send</button>
+              <button type="submit" class="govuk-button footer-feedback__send" data-module="govuk-button">Send feedback</button>
               <button type="button" class="govuk-button govuk-button--secondary footer-feedback__cancel" data-module="govuk-button">Cancel</button>
             </div>
           </form>
