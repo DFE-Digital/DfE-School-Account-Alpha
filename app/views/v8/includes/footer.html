@@ -1,3 +1,62 @@
+<section id="page-feedback" class="footer-feedback" aria-label="Page feedback">
+  <div class="govuk-width-container">
+    <div class="footer-feedback__initial" aria-live="polite">
+      <div class="footer-feedback__row">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">Give feedback on this page or report a problem
+        </h2>
+        <button type="submit" class="govuk-button footer-feedback__primary">
+          Give feedback
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const feedbackContainer = document.querySelector('.footer-feedback__initial');
+    if (!feedbackContainer) {
+      return;
+    }
+    const originalFeedbackHTML = feedbackContainer.innerHTML;
+    const setFeedbackContent = (content) => {
+      const feedbackRow = feedbackContainer.querySelector('.footer-feedback__row');
+      feedbackRow.innerHTML = content;
+      feedbackRow.className = 'footer-feedback__row footer-feedback__row--submitted';
+    };
+    feedbackContainer.addEventListener('click', function (event) {
+      if (event.target.matches('.footer-feedback__cancel')) {
+        feedbackContainer.innerHTML = originalFeedbackHTML;
+        return;
+      } else if (event.target.matches('.footer-feedback__send')) {
+        setFeedbackContent(`<h2 class="govuk-heading-s govuk-!-margin-bottom-0">Thank you for your feedback</h2>`);
+      }
+      if (event.target.matches('.footer-feedback__primary')) {
+        setFeedbackContent(`
+          <form id="tell-us-form">
+            <div class="govuk-form-group">
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper govuk-heading-m">
+                  <label class="govuk-label govuk-label--m" for="what-do-you-want-to-tell-us">
+                    Your feedback
+                  </label>
+                </h2>
+                <div id="what-do-you-want-to-tell-us-hint" class="govuk-hint">
+                  Tell us what you think or describe the problem
+                </div>
+                <textarea class="govuk-textarea" id="what-do-you-want-to-tell-us" name="whatDoYouWantToTellUs" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button footer-feedback__send" data-module="govuk-button">Send feedback</button>
+              <button type="button" class="govuk-button govuk-button--secondary footer-feedback__cancel" data-module="govuk-button">Cancel</button>
+            </div>
+          </form>
+        `);
+      }
+    });
+  });
+</script>
+
 <div class="govuk-footer">
   <div class="govuk-width-container">
     <svg
@@ -37,11 +96,6 @@
           <li class="govuk-footer__inline-list-item">
             <a class="govuk-footer__link" href="#">
               Privacy notice
-            </a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="mailto:SCHOOL-ACCOUNT-MAILBOX">
-              Contact us
             </a>
           </li>
         </ul>

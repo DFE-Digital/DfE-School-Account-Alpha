@@ -1,0 +1,33 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Help us test a new DfE service" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="service-invite" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Help us
+          test a new DfE service</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">You’re invited to help us test our new
+          service: School Account.</p>
+        <p class="govuk-body">School Account brings DfE services and
+          guidance together in one place, helping you understand what you
+          need to do and when.</p>
+        <p class="govuk-body">You'll get:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Step-by-step guidance to help you complete your statutory
+            returns</li>
+          <li>Statuses that show where you are in the process</li>
+          <li>Email notifications when something needs your attention</li>
+        </ul>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Go to School Account</button>
+        </p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education
+      </form>
+    </div>
+  </div>
+{% endblock %}

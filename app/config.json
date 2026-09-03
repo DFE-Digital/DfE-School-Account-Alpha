@@ -1,5 +1,5 @@
 {
-  "serviceName": "School Account Alpha",
+  "serviceName": "School Account",
   "useServiceNavigation": true,
   "plugins": {
     "govuk-frontend": {
