@@ -6,7 +6,7 @@
     <div class="signin-card">
       <p class="govuk-body-s signin-label">DFE SIGN-IN</p>
       <p class="govuk-body email-address">
-        {{data['username'] | default('name.surname@education.gov.uk')}}
+        {{ data['username'] or "name.surname@education.gov.uk" }}
       </p>
       <h1 class="govuk-heading-l signin-title">Verify your identity</h1>
       <div class="govuk-form-group">
@@ -16,7 +16,7 @@
           </span>
           <span class="verify-text"
             >Email code to<br />
-            {{data['username'] | default('name.surname@education.gov.uk') }}</span
+            {{ data['username'] or "name.surname@education.gov.uk" }}</span
           >
         </button>
       </div>
