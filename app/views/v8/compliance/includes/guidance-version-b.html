@@ -1,0 +1,45 @@
+{% if data['userType'] == 'singleSchool' %}
+  <form action="census-details" method="post">
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Go to COLLECT
+      </button>
+    </div>
+  </form>
+{% endif %}
+<h2 class="govuk-heading-m">Guidance</h2>
+<ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="https://www.gov.uk/guidance/complete-the-school-census" aria-describedby="guidance-details-1-hint">
+        Complete the school census
+      </a>
+      <div id="guidance-details-1-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">Guidance for schools and local authorities on what we need for the school census and how to submit it.</p>
+        <p class="govuk-body-s">Last updated: {{ "2026-08-06" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="https://www.gov.uk/government/publications/collect-guides-for-schools-and-local-authorities" aria-describedby="guidance-details-2-hint">
+        COLLECT guide for schools (PDF, 2.03 MB, 27 pages) 
+      </a>
+      <div id="guidance-details-2-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">Guide for schools submitting data using COLLECT.</p>
+        <p class="govuk-body-s">Last updated: {{ "2023-10-31" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="https://www.youtube.com/watch?v=4K7j66-GrCY" aria-describedby="guidance-details-3-hint">
+        Video: COLLECT guide for schools (YouTube video, 10 minutes 18 seconds)
+      </a>
+      <div id="guidance-details-3-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">A video to guide users through the various aspects of COLLECT.</p>
+        <p class="govuk-body-s">Last updated: {{ "2017-10-27" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+</ul>
