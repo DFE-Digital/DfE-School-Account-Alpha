@@ -26,9 +26,6 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/sign-in', function (req, res) {
-    if (req.session['username'].length > 1) {
-      delete req.session.data['username']
-    }
     res.redirect('/' + version + '/password')
   })
 
