@@ -1,6 +1,5 @@
 module.exports = function (router) {
-
-  var version = "v8"
+  var version = 'v8'
 
   router.get('/' + version + '/emails/service-invite', function (req, res) {
     res.render(version + '/emails/service-invite', {})
@@ -27,6 +26,9 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/sign-in', function (req, res) {
+    if (req.session['username'].length > 1) {
+      delete req.session.data['username']
+    }
     res.redirect('/' + version + '/password')
   })
 
@@ -53,7 +55,10 @@ module.exports = function (router) {
   router.post('/' + version + '/mfa', function (req, res) {
     if (req.session.data['userType'] == 'multiAcademyTrust') {
       res.redirect('/' + version + '/select-an-organisation')
-    } else if (req.session.data['userType'] == 'singleSchool' || (req.session.data['userType'] == 'localAuthority')) {
+    } else if (
+      req.session.data['userType'] == 'singleSchool' ||
+      req.session.data['userType'] == 'localAuthority'
+    ) {
       res.redirect('/' + version + '/compliance/census-details')
     } else if (req.session.data['aBTesting'] == 'thinLine') {
       res.redirect('/' + version + '/compliance/census-details')
