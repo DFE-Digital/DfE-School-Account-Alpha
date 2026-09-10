@@ -1,216 +1,281 @@
-{% extends "layouts/main.html" %}
-
-{% set pageName="Index" %}
-
-{% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
-      <h2 class="govuk-heading-l">Beta work</h2>
-      <h3 class="govuk-heading-m">Version 8</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-419">
+{% extends "layouts/main.html" %} {% set pageName="Index" %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
+    <h2 class="govuk-heading-l">Beta work</h2>
+    <h3 class="govuk-heading-m">Version 8</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-419">
           Add guidance A/B versions
-        </a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-156">
-          Add feedback form</a></li>
-        <li>Increment to V8</li>
-      </ul>
-      <p class="govuk-body">
-        <strong>(A)</strong> Step by step guidance:
-        <a href="/v8/emails/service-invite?userType=singleSchool&guidanceVersion=A" class="govuk-link">
-          Single school</a> |
-        <a href="/v8/emails/service-invite?userType=multiAcademyTrust&guidanceVersion=A" class="govuk-link">
-          Trust</a> |
-        <a href="/v8/emails/service-invite?userType=localAuthority&guidanceVersion=A" class="govuk-link">
-          Local authority</a>
-      </p>
-      <p class="govuk-body">
-        <strong>(B)</strong> Signposting to guidance:
-        <a href="/v8/emails/service-invite?userType=singleSchool&guidanceVersion=B" class="govuk-link">
-          Single school</a> |
-        <a href="/v8/emails/service-invite?userType=multiAcademyTrust&guidanceVersion=B" class="govuk-link">
-          Trust</a> |
-        <a href="/v8/emails/service-invite?userType=localAuthority&guidanceVersion=B" class="govuk-link">
-          Local authority</a>
-      </p>
-      <p class="govuk-body">
-        Older screens:
-        <a href="/v8/emails/update-email?aBTesting=combined" class="govuk-link">
-          Combined home</a> |
-        <a href="/v8/emails/update-email?aBTesting=priority" class="govuk-link">
-          Priority home</a> |
-        <a href="/v8/emails/update-email?aBTesting=nowNextLater" class="govuk-link">
-          Now/Next/Later home</a> |
-        <a href="/v8/emails/update-email?aBTesting=roleLed" class="govuk-link">
-          Role led home</a> |
-        <a href="/v8/overview" class="govuk-link">Overview</a>
-      </p>
-      <h3 class="govuk-heading-m">Version 7</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-402">
-          Add in school / organisation picker</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-306">
-          Refactor routing and user management</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-306">
-          Consistancey changes</a></li>
-        <li>Increment to V7</li>
-      </ul>
-      <p class="govuk-body">
-        UserType:
-        <a href="/v7/emails/service-invite?userType=singleSchool" class="govuk-link">
-          Single school</a> |
-        <a href="/v7/emails/service-invite?userType=multiAcademyTrust" class="govuk-link">
-          Trust</a> |
-        <a href="/v7/emails/service-invite?userType=localAuthority" class="govuk-link">
-          Local authority</a>
-      </p>
-      <p class="govuk-body">
-        Older screens:
-        <a href="/v7/emails/update-email?aBTesting=combined" class="govuk-link">
-          Combined home</a> |
-        <a href="/v7/emails/update-email?aBTesting=priority" class="govuk-link">
-          Priority home</a> |
-        <a href="/v7/emails/update-email?aBTesting=nowNextLater" class="govuk-link">
-          Now/Next/Later home</a> |
-        <a href="/v7/emails/update-email?aBTesting=roleLed" class="govuk-link">
-          Role led home</a> |
-        <a href="/v7/overview" class="govuk-link">Overview</a>
-      </p>
-      <h3 class="govuk-heading-m">Version 6</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-309">
-          Tidy up header</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-323">
-          Routing fixes</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-269">
-          Start now page design and copy</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-311">
-          Footer amends</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-339">
-          DSI screen amends</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-349">
-          Add intro email to start of flows</a></li>
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-305">
-          Census details tweaks</a></li>
-        <li>Increment to V6</li>
-      </ul>
-      <p class="govuk-body">
-        Current screens:
-        <a href="/v6/start-now?singleHome=thinLine" class="govuk-link">
-          Thin line (single school)</a> |
-        <a href="/v6/start-now?userType=localAuthority" class="govuk-link">
-          Local authority</a>
-      </p>
-      <p class="govuk-body">
-        Older screens:
-        <a href="/v6/emails/update-email?singleHome=combined" class="govuk-link">
-          Combined home</a> |
-        <a href="/v6/emails/update-email?singleHome=priority" class="govuk-link">
-          Priority home</a> |
-        <a href="/v6/emails/update-email?singleHome=nowNextLater" class="govuk-link">
-          Now/Next/Later home</a> |
-        <a href="/v6/emails/update-email?singleHome=roleLed" class="govuk-link">
-          Role led home</a> |
-        <a href="/v6/overview" class="govuk-link">Overview</a>
-      </p>
-      <h3 class="govuk-heading-m">Version 5</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-149" class="govuk-link">
-          Add thin line email notifications to prototype</a></li>
-        <li><a href="https://dfedigital.atlassian.net/browse/SAB-150" class="govuk-link">
-          Add exemplar guidance to prototype</a></li>
-        <li><a href="https://dfedigital.atlassian.net/browse/SAB-173" class="govuk-link">
-          Local authority changes for user research</a></li>
-        <li><a href="https://dfedigital.atlassian.net/browse/SAB-153" class="govuk-link">
-          Housekeeping - remove service navigation from thin line journey</a></li>
-        <li><a href="https://dfedigital.atlassian.net/browse/SAB-153" class="govuk-link">
-          Housekeeping - standardise SCSS</a></li>
-        <li><a href="https://dfedigital.atlassian.net/browse/SAB-146" class="govuk-link">
-          General prototype content updates</a></li>
-        <li><a href="https://dfedigital.atlassian.net/browse/SAB-67" class="govuk-link">
-          Create the now journey in the prototype</a></li>
-        <li>Increment to V5</li>
-      </ul>
-      <h2 class="govuk-heading-l">Alpha work</h2>
-      <p class="govuk-body">
-        <a href="/v5/sign-in?singleHome=thinLine" class="govuk-link">Thin line</a> |
-        <a href="/v5/emails/update-email?singleHome=combined" class="govuk-link">
-          Combined home</a> |
-        <a href="/v5/emails/update-email?singleHome=priority" class="govuk-link">
-          Priority home</a> |
-        <a href="/v5/emails/update-email?singleHome=nowNextLater" class="govuk-link">
-          Now/Next/Later home</a> |
-        <a href="/v5/emails/update-email?singleHome=roleLed" class="govuk-link">
-          Role led home</a> |
-        <a href="/v5/emails/local-authority-census-open?userType=localAuthority" class="govuk-link">
-          Local authority</a> |
-        <a href="/v5/overview" class="govuk-link">Overview</a>
-      </p>
-      <h3 class="govuk-heading-m">Version 4</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Add summary cards</li>
-        <li>Add now role led priority home page</li>
-        <li>Add now next later home page</li>
-        <li>Add homepage for now next later</li>
-        <li>Bump prototype kit to V13.20.2</li>
-        <li>Increment to V4</li>
-      </ul>
-      <p class="govuk-body">
-        <a href="/v4/emails/update-email?singleHome=combined" class="govuk-link">
-          Combined home</a> |
-        <a href="/v4/emails/update-email?singleHome=priority" class="govuk-link">
-          Priority home</a> |
-        <a href="/v4/emails/update-email?singleHome=nowNextLater" class="govuk-link">
-          Now/Next/Later home</a> |
-        <a href="/v4/emails/update-email?singleHome=roleLed" class="govuk-link">
-          Role led home</a> |
-        <a href="/v4/overview" class="govuk-link">Overview</a>
-      </p>
-      <h3 class="govuk-heading-m">Concept testing round 2</h3>
-      <p class="govuk-body">Testing alternate ways to do things:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Census details shows multiple states <a href="/v3/compliance/census-details?schoolCensusDetails=In review" class="govuk-link">
-          In review</a> | <a href="/v3/compliance/census-details?schoolCensusDetails=Action required" class="govuk-link">
-          Action required</a> | <a href="/v3/compliance/census-details?schoolCensusDetails= " class="govuk-link">
-          Default</a>
-        </li>
-        <li>Home page shows that energy for schools is complete until onboarding
-          starts</li>
-        <li>Add in energy for schools details page</li>
-        <li>Ability to view past, now and next activities</li>
-        <li>Increment to V3</li>
-      </ul>
-      <p class="govuk-body">
-        <a href="/v3/emails/update-email" class="govuk-link">Single school</a> |
-        <a href="/v3/overview" class="govuk-link">Overview</a>
-      </p>
-      <h3 class="govuk-heading-m">Concept testing round 1</h3>
-      <p class="govuk-body">Develop design sprint work into a prototype for
-        concept testing:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Remove chatbot</li>
-        <li>Census guidance details now has sensible copy</li>
-        <li>Add preferences pages for customisation</li>
-        <li>Add email and DfE sign in journey</li>
-        <li>Add in mega menu</li>
-        <li>Make design sprint prototype</li>
-        <li>Increment to version 2</li>
-      </ul>
-      <p class="govuk-body">
-        <a href="/v2/emails/update-email" class="govuk-link">Single school</a> |
-        <a href="/v2/overview" class="govuk-link">Overview</a>
-      </p>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      <h3 class="govuk-heading-m">v1 Post design sprint prep</h3>
-      <p class="govuk-body">As we approach the design sprint, we want to prepare
-        as much as possible as we will have 3 sprints until the service
-        assessment. This version is about creating pages with components we think
-        would be used regardless of design sprint output, so that we can cut and
-        paste them into the prototype and save time.</p>
-      <p class="govuk-body"><a href="/v1/contents" class="govuk-link">View list of
-        prepared elements</a></p>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-    </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-156"> Add feedback form</a>
+      </li>
+      <li>Increment to V8</li>
+    </ul>
+    <p class="govuk-body">
+      <strong>(A)</strong> Step by step guidance:
+      <a
+        href="/v8/emails/service-invite?userType=singleSchool&guidanceVersion=A&organisation=Lynsted and Norton Primary School"
+        class="govuk-link"
+      >
+        Single school</a
+      >
+      |
+      <a
+        href="/v8/emails/service-invite?userType=multiAcademyTrust&guidanceVersion=A&organisation=Our Community Multi Academy Trust"
+        class="govuk-link"
+      >
+        Trust</a
+      >
+      |
+      <a
+        href="/v8/emails/service-invite?userType=localAuthority&guidanceVersion=A"
+        class="govuk-link"
+      >
+        Local authority</a
+      >
+    </p>
+    <p class="govuk-body">
+      <strong>(B)</strong> Signposting to guidance:
+      <a
+        href="/v8/emails/service-invite?userType=singleSchool&guidanceVersion=B&organisation=Lynsted and Norton Primary School"
+        class="govuk-link"
+      >
+        Single school</a
+      >
+      |
+      <a
+        href="/v8/emails/service-invite?userType=multiAcademyTrust&guidanceVersion=B&organisation=Our Community Multi Academy Trust"
+        class="govuk-link"
+      >
+        Trust</a
+      >
+      |
+      <a
+        href="/v8/emails/service-invite?userType=localAuthority&guidanceVersion=B"
+        class="govuk-link"
+      >
+        Local authority</a
+      >
+    </p>
+    <p class="govuk-body">
+      Older screens:
+      <a href="/v8/emails/update-email?aBTesting=combined" class="govuk-link"> Combined home</a> |
+      <a href="/v8/emails/update-email?aBTesting=priority" class="govuk-link"> Priority home</a> |
+      <a href="/v8/emails/update-email?aBTesting=nowNextLater" class="govuk-link">
+        Now/Next/Later home</a
+      >
+      | <a href="/v8/emails/update-email?aBTesting=roleLed" class="govuk-link"> Role led home</a> |
+      <a href="/v8/overview" class="govuk-link">Overview</a>
+    </p>
+    <h3 class="govuk-heading-m">Version 7</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-402">
+          Add in school / organisation picker</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-306">
+          Refactor routing and user management</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-306"> Consistancey changes</a>
+      </li>
+      <li>Increment to V7</li>
+    </ul>
+    <p class="govuk-body">
+      UserType:
+      <a href="/v7/emails/service-invite?userType=singleSchool" class="govuk-link">
+        Single school</a
+      >
+      |
+      <a href="/v7/emails/service-invite?userType=multiAcademyTrust" class="govuk-link"> Trust</a> |
+      <a href="/v7/emails/service-invite?userType=localAuthority" class="govuk-link">
+        Local authority</a
+      >
+    </p>
+    <p class="govuk-body">
+      Older screens:
+      <a href="/v7/emails/update-email?aBTesting=combined" class="govuk-link"> Combined home</a> |
+      <a href="/v7/emails/update-email?aBTesting=priority" class="govuk-link"> Priority home</a> |
+      <a href="/v7/emails/update-email?aBTesting=nowNextLater" class="govuk-link">
+        Now/Next/Later home</a
+      >
+      | <a href="/v7/emails/update-email?aBTesting=roleLed" class="govuk-link"> Role led home</a> |
+      <a href="/v7/overview" class="govuk-link">Overview</a>
+    </p>
+    <h3 class="govuk-heading-m">Version 6</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-309"> Tidy up header</a></li>
+      <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-323"> Routing fixes</a></li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-269">
+          Start now page design and copy</a
+        >
+      </li>
+      <li><a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-311"> Footer amends</a></li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-339"> DSI screen amends</a>
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-349">
+          Add intro email to start of flows</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-305"> Census details tweaks</a>
+      </li>
+      <li>Increment to V6</li>
+    </ul>
+    <p class="govuk-body">
+      Current screens:
+      <a href="/v6/start-now?singleHome=thinLine" class="govuk-link"> Thin line (single school)</a>
+      |
+      <a href="/v6/start-now?userType=localAuthority" class="govuk-link"> Local authority</a>
+    </p>
+    <p class="govuk-body">
+      Older screens:
+      <a href="/v6/emails/update-email?singleHome=combined" class="govuk-link"> Combined home</a> |
+      <a href="/v6/emails/update-email?singleHome=priority" class="govuk-link"> Priority home</a> |
+      <a href="/v6/emails/update-email?singleHome=nowNextLater" class="govuk-link">
+        Now/Next/Later home</a
+      >
+      | <a href="/v6/emails/update-email?singleHome=roleLed" class="govuk-link"> Role led home</a> |
+      <a href="/v6/overview" class="govuk-link">Overview</a>
+    </p>
+    <h3 class="govuk-heading-m">Version 5</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="https://dfedigital.atlassian.net.mcas.ms/browse/SAB-149" class="govuk-link">
+          Add thin line email notifications to prototype</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net/browse/SAB-150" class="govuk-link">
+          Add exemplar guidance to prototype</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net/browse/SAB-173" class="govuk-link">
+          Local authority changes for user research</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net/browse/SAB-153" class="govuk-link">
+          Housekeeping - remove service navigation from thin line journey</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net/browse/SAB-153" class="govuk-link">
+          Housekeeping - standardise SCSS</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net/browse/SAB-146" class="govuk-link">
+          General prototype content updates</a
+        >
+      </li>
+      <li>
+        <a href="https://dfedigital.atlassian.net/browse/SAB-67" class="govuk-link">
+          Create the now journey in the prototype</a
+        >
+      </li>
+      <li>Increment to V5</li>
+    </ul>
+    <h2 class="govuk-heading-l">Alpha work</h2>
+    <p class="govuk-body">
+      <a href="/v5/sign-in?singleHome=thinLine" class="govuk-link">Thin line</a> |
+      <a href="/v5/emails/update-email?singleHome=combined" class="govuk-link"> Combined home</a> |
+      <a href="/v5/emails/update-email?singleHome=priority" class="govuk-link"> Priority home</a> |
+      <a href="/v5/emails/update-email?singleHome=nowNextLater" class="govuk-link">
+        Now/Next/Later home</a
+      >
+      | <a href="/v5/emails/update-email?singleHome=roleLed" class="govuk-link"> Role led home</a> |
+      <a href="/v5/emails/local-authority-census-open?userType=localAuthority" class="govuk-link">
+        Local authority</a
+      >
+      |
+      <a href="/v5/overview" class="govuk-link">Overview</a>
+    </p>
+    <h3 class="govuk-heading-m">Version 4</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Add summary cards</li>
+      <li>Add now role led priority home page</li>
+      <li>Add now next later home page</li>
+      <li>Add homepage for now next later</li>
+      <li>Bump prototype kit to V13.20.2</li>
+      <li>Increment to V4</li>
+    </ul>
+    <p class="govuk-body">
+      <a href="/v4/emails/update-email?singleHome=combined" class="govuk-link"> Combined home</a> |
+      <a href="/v4/emails/update-email?singleHome=priority" class="govuk-link"> Priority home</a> |
+      <a href="/v4/emails/update-email?singleHome=nowNextLater" class="govuk-link">
+        Now/Next/Later home</a
+      >
+      | <a href="/v4/emails/update-email?singleHome=roleLed" class="govuk-link"> Role led home</a> |
+      <a href="/v4/overview" class="govuk-link">Overview</a>
+    </p>
+    <h3 class="govuk-heading-m">Concept testing round 2</h3>
+    <p class="govuk-body">Testing alternate ways to do things:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        Census details shows multiple states
+        <a href="/v3/compliance/census-details?schoolCensusDetails=In review" class="govuk-link">
+          In review</a
+        >
+        |
+        <a
+          href="/v3/compliance/census-details?schoolCensusDetails=Action required"
+          class="govuk-link"
+        >
+          Action required</a
+        >
+        |
+        <a href="/v3/compliance/census-details?schoolCensusDetails= " class="govuk-link">
+          Default</a
+        >
+      </li>
+      <li>Home page shows that energy for schools is complete until onboarding starts</li>
+      <li>Add in energy for schools details page</li>
+      <li>Ability to view past, now and next activities</li>
+      <li>Increment to V3</li>
+    </ul>
+    <p class="govuk-body">
+      <a href="/v3/emails/update-email" class="govuk-link">Single school</a> |
+      <a href="/v3/overview" class="govuk-link">Overview</a>
+    </p>
+    <h3 class="govuk-heading-m">Concept testing round 1</h3>
+    <p class="govuk-body">Develop design sprint work into a prototype for concept testing:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Remove chatbot</li>
+      <li>Census guidance details now has sensible copy</li>
+      <li>Add preferences pages for customisation</li>
+      <li>Add email and DfE sign in journey</li>
+      <li>Add in mega menu</li>
+      <li>Make design sprint prototype</li>
+      <li>Increment to version 2</li>
+    </ul>
+    <p class="govuk-body">
+      <a href="/v2/emails/update-email" class="govuk-link">Single school</a> |
+      <a href="/v2/overview" class="govuk-link">Overview</a>
+    </p>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+    <h3 class="govuk-heading-m">v1 Post design sprint prep</h3>
+    <p class="govuk-body">
+      As we approach the design sprint, we want to prepare as much as possible as we will have 3
+      sprints until the service assessment. This version is about creating pages with components we
+      think would be used regardless of design sprint output, so that we can cut and paste them into
+      the prototype and save time.
+    </p>
+    <p class="govuk-body">
+      <a href="/v1/contents" class="govuk-link">View list of prepared elements</a>
+    </p>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
   </div>
+</div>
 {% endblock %}
