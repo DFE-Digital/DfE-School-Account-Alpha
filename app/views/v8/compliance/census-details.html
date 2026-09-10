@@ -10,7 +10,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Complete your census return</span>
     <h1 class="govuk-heading-l census-title">Autumn school census</h1>
-    {% if data['censusStatus'] == 'Submitted' %}
+    {% if data['userType'] == 'singleSchool' %} {% if data['censusStatus'] == 'Submitted' %}
     <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted
     </strong>
@@ -26,7 +26,7 @@
     <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       No Data
     </strong>
-    {% endif %}
+    {% endif %} {% endif %}
     <h2 class="govuk-heading-m">Overview</h2>
     <p class="govuk-body">
       The school census collects pupil and school data from state-funded schools three times a year.
