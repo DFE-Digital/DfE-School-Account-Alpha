@@ -1,115 +1,107 @@
-{% extends "layouts/main.html" %}
-
-{% set pageName = "Autumn school census" %}
-
-{% block pageScripts %}
-  {% if data['guidanceVersion'] != 'B' %}
-    <script type="text/javascript">
-      var $element = document.querySelector('#step-by-step-navigation')
-      var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
-    </script>
-  {% endif %}
-{% endblock %}
-
-{% block header %}
-  {% include ".././includes/header.html" %}
-{% endblock %}
-
-{% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% if data['censusStatus'] == 'actionRequired' %}
-        <div class="govuk-error-summary" data-module="govuk-error-summary">
-          <div role="alert">
-            <h2 class="govuk-error-summary__title">
-              There is a problem
-            </h2>
-            <div class="govuk-error-summary__body">
-              <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                  <a href="#ValeOfCatmoseCollege">Go to Autumn School Census and resolve the error for Vale of Catmose College</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% block pageScripts
+%} {% if data['guidanceVersion'] != 'B' %}
+<script type="text/javascript">
+  var $element = document.querySelector('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+</script>
+{% endif %} {% endblock %} {% block header %} {% include ".././includes/header.html" %} {% endblock
+%} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['censusStatus'] == 'actionRequired' %}
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">There is a problem</h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#ValeOfCatmoseCollege"
+                >Go to Autumn School Census and resolve the error for Vale of Catmose College</a
+              >
+            </li>
+          </ul>
         </div>
-      {% elseif data['censusStatus'] == 'DfE reviewing' %}
-        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-          <div class="govuk-notification-banner__header">
-            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-              Important
-            </h2>
-          </div>
-          <div class="govuk-notification-banner__content">
-            <p class="govuk-notification-banner__heading">
-              DfE has your census return and is currently checking it. We'll notify you when there's an update.
-            </p>
-          </div>
-        </div>
-      {% endif %}
-      <span class="govuk-caption-xl">Complete your census return</span>
-      <h1 class="govuk-heading-l census-title">Autumn school census</h1>
-      {% if data['censusStatus'] == 'actionRequired' %}
-        <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-          Action required
-        </strong>
-      {% elseif data['censusStatus'] == 'DfE reviewing' %}
-        <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-          DfE reviewing
-        </strong>
-      {% elseif data['userType'] == 'singleSchool' %}
-        <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-          No data
-        </strong>
-      {% endif %}
-      <h2 class="govuk-heading-m">Overview</h2>
-      <p class="govuk-body">
-        The school census collects pupil and school data from
-        state-funded schools three times a year. The data is exported from each
-        school’s management information system (MIS) and submitted to the Department
-        for Education through an online tool called COLLECT.
-      </p>
-      {% if data['userType'] != 'singleSchool' %}
-        <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
-          {% if data['userType'] == 'localAuthority' %}
-            {% include "./includes/local-authority-census-schools.html" %}
-          {% else %}
-            {% include "./includes/multi-academy-trust-census-schools.html" %}
-          {% endif %}
-        </table>
-      {% endif %}
-      {% if data['guidanceVersion'] == 'B' %}
-        {% include "./includes/guidance-version-b.html" %}
-      {% else %}
-        {% include "./includes/guidance-version-a.html" %}
-      {% endif %}
-      {% include ".././includes/prototype-settings.html" %}
+      </div>
     </div>
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-m">Important dates</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
-        <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
-          <dt class="govuk-summary-list__key">
-            Census day
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ "2026-10-01" | govukDate }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Return due
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ "2026-10-28" | govukDate }}
-          </dd>
-        </div>
-      </dl>
-      {% include ".././includes/help-from-service.html" %}
+    {% elseif data['censusStatus'] == 'DfE reviewing' %}
+    <div
+      class="govuk-notification-banner"
+      role="region"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner"
+    >
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          DfE has your census return and is currently checking it. We'll notify you when there's an
+          update.
+        </p>
+      </div>
     </div>
+    {% endif %}
+    <span class="govuk-caption-xl">Complete your census return</span>
+    <h1 class="govuk-heading-l census-title">Autumn school census</h1>
+    {% if data['censusStatus'] == 'actionRequired' %}
+    <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      Action required
+    </strong>
+    {% elseif data['censusStatus'] == 'DfE reviewing' %}
+    <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      DfE reviewing
+    </strong>
+    {% elseif data['userType'] == 'singleSchool' %}
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      No Data
+    </strong>
+    {% endif %}
+    <h2 class="govuk-heading-m">Overview</h2>
+    <p class="govuk-body">
+      The school census collects pupil and school data from state-funded schools three times a year.
+      The data is exported from each school’s management information system (MIS) and submitted to
+      the Department for Education through an online tool called COLLECT.
+    </p>
+    {% if data['userType'] != 'singleSchool' %}
+    <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+      {% if data['userType'] == 'localAuthority' %} {% include
+      "./includes/local-authority-census-schools.html" %} {% else %} {% include
+      "./includes/multi-academy-trust-census-schools.html" %} {% endif %}
+    </table>
+    {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include
+    "./includes/guidance-version-b.html" %} {% else %} {% include
+    "./includes/guidance-version-a.html" %} {% endif %} {% include
+    ".././includes/prototype-settings.html" %}
   </div>
-{% endblock %}
-
-{% block footer %}
-  {% include ".././includes/footer.html" %}
-{% endblock %}
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Important dates</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+      <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
+        <dt class="govuk-summary-list__key">Census day</dt>
+        <dd class="govuk-summary-list__value">{{ "2026-10-01" | govukDate }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Return due</dt>
+        <dd class="govuk-summary-list__value">{{ "2026-10-28" | govukDate }}</dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">Understand your status</h2>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-bottom-7">
+      <li><strong>No Data</strong>: Nothing has been uploaded into COLLECT</li>
+      <li><strong>Submitted</strong>: The file has been uploaded by the source and submitted</li>
+      <li>
+        <strong>Approved</strong>: The return has been approved by the LA or the DfE (for
+        non-maintained schools), which means the DfE can now start looking at the data and cleaning
+        the return. Once everything has been resolved the return can be authorised.
+      </li>
+      <li>
+        <strong>Authorised</strong>: The return is clean from errors and queries and data has been
+        authorised
+      </li>
+    </ul>
+    {% include ".././includes/help-from-service.html" %}
+  </div>
+</div>
+{% endblock %} {% block footer %} {% include ".././includes/footer.html" %} {% endblock %}
