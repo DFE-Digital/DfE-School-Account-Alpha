@@ -1,33 +1,47 @@
-{% extends "layouts/govuk-notify.html" %}
-
-{% set pageName="Help us test a new DfE service" %}
-
-{% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <form action="service-invite" method="post">
-        <p class="govuk-body govuk-!-font-weight-bold">Subject: Help us
-          test a new DfE service</p>
-        <p class="govuk-body">Dear [name],</p>
-        <p class="govuk-body">You’re invited to help us test our new
-          service: School Account.</p>
-        <p class="govuk-body">School Account brings DfE services and
-          guidance together in one place, helping you understand what you
-          need to do and when.</p>
-        <p class="govuk-body">You'll get:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Step-by-step guidance to help you complete your statutory
-            returns</li>
-          <li>Statuses that show where you are in the process</li>
-          <li>Email notifications when something needs your attention</li>
-        </ul>
-        <p class="govuk-body">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Go to School Account</button>
-        </p>
-        <p class="govuk-body">The School Account team</p>
-        <p class="govuk-body">Department for Education
-      </form>
-    </div>
+{% extends "layouts/govuk-notify.html" %} {% set pageName="Getting started with School Account" %} {% block
+content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="service-invite" method="post">
+      <p class="govuk-body govuk-!-font-weight-bold">Subject: Getting started with School Account</p>
+      <p class="govuk-body">Hello,</p>
+      <p class="govuk-body">
+        Thank you for helping us test School Account: a new service that brings DfE tools, guidance and
+        communications together in one place.
+      </p>
+      <p class="govuk-body">
+        This October, we’re starting with the autumn school census. You’ll see guidance, status updates and
+        email notifications for your return, but you’ll still submit your census through COLLECT as usual.
+      </p>
+      <p class="govuk-body">
+        <a href="../sign-in" class="govuk-link" rel="noreferrer noopener" target="_blank"
+          >Sign in to School Account</a
+        >
+      </p>
+      <p class="govuk-body">You’ll need to sign in through DfE Sign-in.</p>
+      <p class="govuk-body govuk-!-font-weight-bold">What you'll see</p>
+      <p class="govuk-body">
+        After signing in, you’ll see a page of guidance and information about the autumn school census,
+        including the status of your submission.
+      </p>
+      <p class="govuk-body">We’ll also notify you by email when the status of your submission changes.</p>
+      <p class="govuk-body">
+        Because we’re currently focusing on supporting the census, there’s no home page yet. We’ll add more
+        services, opportunities and information in future, but for now we’d like to know whether this narrower
+        set of features is useful.
+      </p>
+      <p class="govuk-body">
+        To help us find out what you think, we may invite you to participate in a short research session or
+        diary study. These are optional, and you’ll be compensated for your time.
+      </p>
+      <p class="govuk-body govuk-!-font-weight-bold">If you don’t want to take part</p>
+      <p class="govuk-body">
+        Just reply to this email and we’ll remove you. This won’t affect your census submission or access to
+        any other DfE services.
+      </p>
+      <p class="govuk-body">The School Account team</p>
+      <p class="govuk-body">Department for Education</p>
+    </form>
   </div>
+</div>
 {% endblock %}
