@@ -1,0 +1,33 @@
+{% extends "layouts/govuk-notify.html" %} {% set pageName="Your school census status has changed" %} {% block
+content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="govuk-body govuk-!-font-size-27 govuk-!-font-weight-bold">
+      Subject: Your school census status has changed: {{data['organisation']}}
+    </p>
+    <p class="govuk-body">Hello,</p>
+    <p class="govuk-body">
+      The status of the autumn census return for {{data['organisation']}} has changed to
+      {{data['censusStatus']}}.
+    </p>
+    <p class="govuk-body">
+      <a href="../sign-in" class="govuk-link" rel="noreferrer noopener" target="_blank"
+        >Sign in to School Account</a
+      >
+      for guidance on the school census return
+    </p>
+    <p class="govuk-body">
+      You cannot reply to this email. If you need help with your school census submission, please use the
+      <a
+        href="https://form.education.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-2b61dfcd-9296-4f6a-8a26-4671265cae67/AF-Stage-f3f5200e-e605-4a1b-ae6b-3536bc77305c/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen"
+        class="govuk-link"
+        rel="noreferrer noopener"
+        target="_blank"
+        >data collection services request form</a
+      >.
+    </p>
+    <p class="govuk-body">The School Account Team</p>
+    <p class="govuk-body">Department for Education</p>
+  </div>
+</div>
+{% endblock %}
