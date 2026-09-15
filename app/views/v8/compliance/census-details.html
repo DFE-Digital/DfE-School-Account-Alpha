@@ -1,16 +1,16 @@
-{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% block pageScripts
-%} {% if data['guidanceVersion'] != 'B' %}
+{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% block pageScripts %} {% if
+data['guidanceVersion'] != 'B' %}
 <script type="text/javascript">
   var $element = document.querySelector('#step-by-step-navigation')
   var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
 </script>
-{% endif %} {% endblock %} {% block header %} {% include ".././includes/header.html" %} {% endblock
-%} {% block content %}
+{% endif %} {% endblock %} {% block header %} {% include ".././includes/header.html" %} {% endblock %} {%
+block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Complete your census return</span>
     <h1 class="govuk-heading-l census-title">Autumn school census</h1>
-    {% if data['userType'] == 'singleSchool' %} {% if data['censusStatus'] == 'Submitted' %}
+    {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
     <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted
     </strong>
@@ -29,19 +29,18 @@
     {% endif %} {% endif %}
     <h2 class="govuk-heading-m">Overview</h2>
     <p class="govuk-body">
-      The school census collects pupil and school data from state-funded schools three times a year.
-      The data is exported from each school’s management information system (MIS) and submitted to
-      the Department for Education through an online tool called COLLECT.
+      The school census collects pupil and school data from state-funded schools three times a year. The data
+      is exported from each school’s management information system (MIS) and submitted to the Department for
+      Education through an online tool called COLLECT.
     </p>
-    {% if data['userType'] != 'singleSchool' %}
+    {% if data['overView'] == 'true' %}
     <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
       {% if data['userType'] == 'localAuthority' %} {% include
       "./includes/local-authority-census-schools.html" %} {% else %} {% include
       "./includes/multi-academy-trust-census-schools.html" %} {% endif %}
     </table>
-    {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include
-    "./includes/guidance-version-b.html" %} {% else %} {% include
-    "./includes/guidance-version-a.html" %} {% endif %} {% include
+    {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include "./includes/guidance-version-b.html" %} {%
+    else %} {% include "./includes/guidance-version-a.html" %} {% endif %} {% include
     ".././includes/prototype-settings.html" %}
   </div>
   <div class="govuk-grid-column-one-third">
@@ -62,13 +61,12 @@
       <li><strong>No Data</strong>: Nothing has been uploaded into COLLECT</li>
       <li><strong>Submitted</strong>: The file has been uploaded by the source and submitted</li>
       <li>
-        <strong>Approved</strong>: The return has been approved by the LA or the DfE (for
-        non-maintained schools), which means the DfE can now start looking at the data and cleaning
-        the return. Once everything has been resolved the return can be authorised.
+        <strong>Approved</strong>: The return has been approved by the LA or the DfE (for non-maintained
+        schools), which means the DfE can now start looking at the data and cleaning the return. Once
+        everything has been resolved the return can be authorised.
       </li>
       <li>
-        <strong>Authorised</strong>: The return is clean from errors and queries and data has been
-        authorised
+        <strong>Authorised</strong>: The return is clean from errors and queries and data has been authorised
       </li>
     </ul>
     {% include ".././includes/help-from-service.html" %}
