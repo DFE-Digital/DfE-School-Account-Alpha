@@ -77,8 +77,8 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/select-an-organisation', function (req, res) {
-    if (req.session.data['organisation'] != 'Our Community Multi Academy Trust') {
-      req.session.data['userType'] = 'singleSchool'
+    if (req.session.data['organisation'] == 'Our Community Multi Academy Trust') {
+      req.session.data['overView'] = 'true'
     }
     res.redirect('/' + version + '/compliance/census-details')
   })
