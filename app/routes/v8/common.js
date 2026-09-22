@@ -30,7 +30,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/compliance/census-details', function (req, res) {
-    req.session.data['censusStatus'] = 'Submitted'
+    req.session.data['censusStatus'] = 'Approved'
 
     if (req.session.data['userType'] == 'localAuthority') {
       res.redirect('/' + version + '/emails/local-authority-census-action-required')
