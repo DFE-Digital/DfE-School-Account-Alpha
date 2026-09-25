@@ -1,0 +1,21 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Your census return has been authorised" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-open" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Your census return
+          has been authorised</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">Your autumn census return has now been authorised, so
+          your submission for this cycle is complete.</p>
+        <p class="govuk-body">Occasionally a return may need to be checked again
+          after it has been authorised. If this happens, we will let you know.</p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education</p>
+      </form>
+    </div>
+  </div>
+{% endblock %}

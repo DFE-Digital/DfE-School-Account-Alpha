@@ -8,16 +8,18 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-require('./routes/v1/test-routes.js')(router);
-require('./routes/v2/dfe-sign-in.js')(router);
-require('./routes/v3/dfe-sign-in.js')(router);
-require('./routes/v4/common.js')(router);
-require('./routes/v4/dfe-sign-in.js')(router);
-require('./routes/v5/common.js')(router);
-require('./routes/v5/dfe-sign-in.js')(router);
-require('./routes/v6/common.js')(router);
-require('./routes/v6/dfe-sign-in.js')(router);
-require('./routes/v7/common.js')(router);
-require('./routes/v7/dfe-sign-in.js')(router);
-require('./routes/v8/common.js')(router);
-require('./routes/v8/dfe-sign-in.js')(router);
+require('./routes/v1/test-routes.js')(router)
+require('./routes/v2/dfe-sign-in.js')(router)
+require('./routes/v3/dfe-sign-in.js')(router)
+require('./routes/v4/common.js')(router)
+require('./routes/v4/dfe-sign-in.js')(router)
+require('./routes/v5/common.js')(router)
+require('./routes/v5/dfe-sign-in.js')(router)
+require('./routes/v6/common.js')(router)
+require('./routes/v6/dfe-sign-in.js')(router)
+require('./routes/v7/common.js')(router)
+require('./routes/v7/dfe-sign-in.js')(router)
+require('./routes/v8/common.js')(router)
+require('./routes/v8/dfe-sign-in.js')(router)
+require('./routes/v8-dev/common.js')(router)
+require('./routes/v8-dev/dfe-sign-in.js')(router)
