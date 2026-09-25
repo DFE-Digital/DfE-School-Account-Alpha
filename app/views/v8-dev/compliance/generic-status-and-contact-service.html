@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% block pageScripts %} {% if
+data['guidanceVersion'] != 'B' %}
+<script type="text/javascript">
+  var $element = document.querySelector('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+</script>
+{% endif %} {% endblock %} {% block header %} {% include ".././includes/header.html" %} {% endblock %} {%
+block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Complete your census return</span>
+    <h1 class="govuk-heading-l census-title">Autumn school census</h1>
+    {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      Submitted
+    </strong>
+    {% elseif data['censusStatus'] == 'Approved' %}
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      Approved
+    </strong>
+    {% elseif data['censusStatus'] == 'Authorised' %}
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      Authorised
+    </strong>
+    {% else %}
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+      No Data
+    </strong>
+    {% endif %} {% endif %}
+    <h2 class="govuk-heading-m">Overview</h2>
+    <p class="govuk-body">
+      The school census collects pupil and school data from state-funded schools three times a year. The data
+      is exported from each school’s management information system (MIS) and submitted to the Department for
+      Education through an online tool called COLLECT.
+    </p>
+    {% if data['overView'] == 'true' %}
+    <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+      {% if data['userType'] == 'localAuthority' %} {% include
+      "./includes/local-authority-census-schools.html" %} {% else %} {% include
+      "./includes/multi-academy-trust-census-schools.html" %} {% endif %}
+    </table>
+    {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include "./includes/guidance-version-b.html" %} {%
+    else %} {% include "./includes/guidance-version-a.html" %} {% endif %} {% include
+    ".././includes/prototype-settings.html" %}
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Important dates</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
+        <dt class="govuk-summary-list__key">Census day</dt>
+        <dd class="govuk-summary-list__value">{{ "2026-10-01" | govukDate }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Return due</dt>
+        <dd class="govuk-summary-list__value">{{ "2026-10-28" | govukDate }}</dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">Autumn school census statuses</h2>
+    <p class="govuk-body">Statuses are updated overnight. You will be emailed when the status changes.</p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">Help understanding your status </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>
+            <strong>No Data</strong>: Nothing has been uploaded into COLLECT. The school needs to upload their
+            data.
+          </li>
+          <li><strong>Loaded</strong>: Data has been loaded. The school needs to submit their data.</li>
+          <li>
+            <strong>Submitted</strong>: The data has been submitted. DfE or your local authority will approve
+            your data.
+          </li>
+          <li>
+            <strong>Amended by source</strong>: The data has changed. The school needs to resubmit their data.
+          </li>
+          <li>
+            <strong>Approved</strong>: The data is being reviewed. The school will be notified if additional
+            information is needed.
+          </li>
+          <li>
+            <strong>Authorised</strong>: DfE have accepted the data.There are no more actions for the school.
+          </li>
+        </ul>
+      </div>
+    </details>
+    <div class="feedback-banner govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">Get help with the Autumn school census</h2>
+      <p class="govuk-body">
+        <a
+          href="https://form.education.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-2b61dfcd-9296-4f6a-8a26-4671265cae67/AF-Stage-f3f5200e-e605-4a1b-ae6b-3536bc77305c/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen"
+          class="govuk-link govuk-link--no-visited-state"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          Contact the Autumn school census team (opens in new tab)</a
+        >
+        for queries and help.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block footer %} {% include ".././includes/footer.html" %} {% endblock %}

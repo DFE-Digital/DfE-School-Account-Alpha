@@ -1,0 +1,25 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Your School Account summary" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-action-required" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Action needed:
+          there is an issue with the Autumn census</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">1 of the schools in your local authority has an
+          error in their census return.</p>
+        <p class="govuk-body">Sign in to your school account to see more about
+          the error and how to resolve it.</p>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Go to your account</button>
+        </p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education
+      </form>
+    </div>
+  </div>
+{% endblock %}

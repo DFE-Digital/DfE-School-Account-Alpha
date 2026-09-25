@@ -1,0 +1,28 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Action needed: your census return is overdue" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-open" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Action needed: your
+          census return is overdue</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">The autumn census return was due on [DATE] and has not
+          been submitted.</p>
+        <p class="govuk-body">Sign in to your school account to see what you still
+          need to do.</p>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">Go
+            to your account</button>
+        </p>
+        <p class="govuk-body">If you need help with your return, contact us through
+          the <a href="mailto:email@email.com">data collection services request
+            form</a>.</p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education</p>
+      </form>
+    </div>
+  </div>
+{% endblock %}
