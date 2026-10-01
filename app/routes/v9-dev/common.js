@@ -38,4 +38,12 @@ module.exports = function (router) {
       res.redirect('/' + version + '/compliance/collect')
     }
   })
+
+  router.get('/' + version + '/non-js-feedback', function (req, res) {
+    res.render(version + '/non-js-feedback', {})
+  })
+
+  router.post('/' + version + '/non-js-feedback', function (req, res) {
+    res.redirect('/' + version + '/non-js-feedback-submitted')
+  })
 }

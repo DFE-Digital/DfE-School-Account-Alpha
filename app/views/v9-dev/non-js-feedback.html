@@ -1,14 +1,41 @@
-<section id="page-feedback" class="footer-feedback" aria-label="Page feedback">
-  <div class="govuk-width-container govuk-!-padding-4">
-    <h2 class="govuk-heading-s">Give feedback on this page or report a problem</h2>
-    <p class="govuk-body govuk-!-margin-bottom-0">
-      <a href="./non-js-feedback" class="govuk-link" rel="noreferrer noopener" target="_blank"
-        >Give feedback (opens in new tab)</a
-      >
-    </p>
+{% extends "layouts/main.html" %} {% set pageName = "Give feedback or report a problem" %} {% block header %}
+<header class="govuk-header simple-gov-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <img
+          src="/public/images/department-for-education_white.png"
+          alt="Department for Education"
+          class="govuk-header__logotype"
+        />
+      </a>
+    </div>
   </div>
-</section>
-
+</header>
+{% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="non-js-feedback" method="post">
+      <h1 class="govuk-heading-xl">Give feedback or report a problem</h1>
+      <p class="govuk-body-l">Tell us what you think or describe the problem</p>
+      <textarea
+        class="govuk-textarea"
+        id="what-do-you-want-to-tell-us"
+        name="whatDoYouWantToTellUs"
+        rows="5"
+      ></textarea>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button footer-feedback__send" data-module="govuk-button">
+          Send feedback
+        </button>
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %} {% block footer %}
 <div class="govuk-footer">
   <div class="govuk-width-container">
     <svg
@@ -40,13 +67,13 @@
         <h2 class="govuk-visually-hidden">Support links</h2>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="#"> Accessibility statement </a>
+            <a class="govuk-footer__link" href="#">Accessibility statement</a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="#"> Cookies </a>
+            <a class="govuk-footer__link" href="#">Cookies</a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="#"> Privacy notice </a>
+            <a class="govuk-footer__link" href="#">Privacy notice</a>
           </li>
         </ul>
         <svg
@@ -85,3 +112,4 @@
     </div>
   </div>
 </div>
+{% endblock %}
