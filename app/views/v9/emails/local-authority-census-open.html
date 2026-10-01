@@ -1,0 +1,26 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Action needed: 2 schools have not completed the Autumn census" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="local-authority-census-open" method="post">
+        <p class="govuk-body govuk-!-font-weight-bold">Subject: Action needed: 2
+          schools have not completed the Autumn census</p>
+        <p class="govuk-body">Dear [name],</p>
+        <p class="govuk-body">The Autumn census is due on {{ "today" | duration(88) | govukDate }},
+          and 2 of the 10 schools in your local authority have not yet completed
+          their return.</p>
+        <p class="govuk-body">Sign in to your school account to see the status of
+          each school and submit outstanding returns on their behalf.</p>
+        <p class="govuk-body">
+          <button type="submit" class="govuk-button" data-module="govuk-button">Go
+            to your account</button>
+        </p>
+        <p class="govuk-body">The School Account team</p>
+        <p class="govuk-body">Department for Education
+      </form>
+    </div>
+  </div>
+{% endblock %}
