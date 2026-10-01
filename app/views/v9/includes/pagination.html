@@ -1,0 +1,57 @@
+<nav class="govuk-pagination" aria-label="Pagination" id="pagination">
+  <ul class="govuk-pagination__list">
+    {% if data['pageSelected'] == 'previous' %}
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=previous" aria-label="Previous" aria-current="page">
+          Previous
+        </a>
+      </li>
+    {% else %}
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=previous" aria-label="Previous">
+          Previous
+        </a>
+      </li>
+    {% endif %}
+    {% if data['pageSelected'] == 'now' %}
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=now" aria-label="Now" aria-current="page">
+          Now
+        </a>
+      </li>
+    {% else %}
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=now" aria-label="Now">
+          Now
+        </a>
+      </li>
+    {% endif %}
+    {% if data['pageSelected'] == 'next' %}
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=next" aria-label="Next" aria-current="page">
+          Next
+        </a>
+      </li>
+    {% else %}
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=next" aria-label="Next">
+          Next
+        </a>
+      </li>
+    {% endif %}
+    {% if data['pageSelected'] == 'later' %}
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=later" aria-label="Later" aria-current="page">
+          Later
+        </a>
+      </li>
+    {% else %}
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="?pageSelected=later" aria-label="Later">
+          Later
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+{{data['pageSelected']}}
