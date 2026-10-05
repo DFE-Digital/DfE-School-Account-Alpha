@@ -56,7 +56,7 @@ module.exports = function (router) {
       req.session.data['userType'] == 'singleSchool' ||
       req.session.data['userType'] == 'localAuthority'
     ) {
-      res.redirect('/' + version + '/compliance/census-details')
+      res.redirect('/' + version + '/landing-page')
     } else if (req.session.data['aBTesting'] == 'thinLine') {
       res.redirect('/' + version + '/compliance/census-details')
     } else if (req.session.data['aBTesting'] == 'combined') {

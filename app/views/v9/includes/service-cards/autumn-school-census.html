@@ -1,0 +1,113 @@
+{% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Loaded' %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container yellow">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Loaded
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% elseif data['censusStatus'] == 'Submitted' %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container yellow">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Submitted
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% elseif data['censusStatus'] == 'AmendedBySource' %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container red">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Amended by Source
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% elseif data['censusStatus'] == 'Error' %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container red">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--red status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Has errors
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% elseif data['censusStatus'] == 'Approved' %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container green">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Approved
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% elseif data['censusStatus'] == 'Authorised' %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container green">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Authorised
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% else %}
+<div class="dfe-card dfe-card--white-background dfe-card--small">
+  <div class="dfe-card-container grey">
+    <h4 class="govuk-heading-s">
+      <a class="govuk-link govuk-link--no-visited-state" href="./compliance/census-details.html">
+        Autumn school census</a
+      >
+    </h4>
+    <p class="govuk-body-s">
+      <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        No Data
+      </strong>
+    </p>
+    <p class="govuk-body-s">Due 24 October 2026</p>
+  </div>
+</div>
+{% endif %} {% endif %}

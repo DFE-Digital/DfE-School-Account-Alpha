@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %} {% set pageName = "Landing page" %} {% block header %} {% include
+"./includes/header.html" %} {% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <h1 class="govuk-heading-l census-title">Landing page</h1>
+    <div class="govuk-grid-row" style="margin: 0">
+      <div class="govuk-grid-column-one-half govuk-grid-column-group" style="width: calc(50% - 30px)">
+        <div class="govuk-grid-column-group-header govuk-grid-column-group-header--blue">
+          <h2 class="govuk-heading-m">Now</h2>
+        </div>
+        <div class="govuk-grid-row govuk-grid-row--flex-container">
+          <div class="govuk-grid-column-group-content">
+            {% include "./includes/service-cards/autumn-school-census.html" %} {% if data['ScheduleMVP'] ==
+            "Now" %} {% include "./includes/service-cards/MVP.html" %} {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-grid-column-group">
+        <div class="govuk-grid-column-group-header">
+          <h2 class="govuk-heading-m">Next</h2>
+        </div>
+        {% if data['ScheduleMVP'] == "Next" %}
+        <div class="govuk-grid-row govuk-grid-row--flex-container">
+          <div class="govuk-grid-column-group-content">
+            <div class="dfe-card dfe-card--white-background dfe-card--small">
+              <div class="dfe-card-container grey">
+                <h4 class="govuk-heading-s">
+                  <a class="govuk-link govuk-link--no-visited-state" href="?ScheduleMVP=Now">
+                    Maximising Value for Pupils</a
+                  >
+                </h4>
+                <p class="govuk-body-s">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </p>
+                <p class="govuk-body-s">{{ "today" | duration(43) | govukDate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="govuk-grid-row govuk-grid-row--flex-container">
+          <div class="govuk-grid-column-group-content">NOTHING HERE</div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-grid-column-group">
+        <div class="govuk-grid-column-group-header">
+          <h2 class="govuk-heading-m">Later</h2>
+        </div>
+        <div class="govuk-grid-row govuk-grid-row--flex-container">
+          <div class="govuk-grid-column-group-content">
+            <div class="dfe-card dfe-card--white-background dfe-card--small">
+              <div class="dfe-card-container grey">
+                <h4 class="govuk-heading-s">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#"> Workforce census</a>
+                </h4>
+                <p class="govuk-body-s">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </p>
+                <p class="govuk-body-s">{{ "today" | duration(243) | govukDate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include "./includes/prototype-settings.html" %}
+  </div>
+</div>
+{% endblock %} {% block footer %} {% include "./includes/footer.html" %} {% endblock %}
