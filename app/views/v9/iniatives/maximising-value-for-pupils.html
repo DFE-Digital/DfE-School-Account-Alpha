@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %} {% set pageName = "Maximising value for pupils" %} {% block header %} {%
+include ".././includes/header.html" %} {% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Maximising value for pupils</h1>
+    <h2 class="govuk-heading-m">Overview</h2>
+    <p class="govuk-body">Practical steps to maximise budgests.</p>
+    <p class="govuk-body">View the iniatives below.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a
+          href="https://get-help-buying-for-schools.education.gov.uk/categories/energy-utilities/energy-for-schools"
+          class="govuk-link"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          Join DfE enery for schools</a
+        >
+        to reduce energy costs and protect against market volitility.
+      </li>
+      <li>
+        <a
+          href="https://get-help-buying-for-schools.education.gov.uk/categories/energy-utilities/energy-for-schools"
+          class="govuk-link"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          Switch to STeER for supply staff</a
+        >
+        a mandated framework for academies to use. Cap agency margins and eliminate temporary to permanent
+        staff fees.
+      </li>
+      <li>
+        <a
+          href="https://banking-for-schools.education.gov.uk/site/LEOULQZMCMW6DDDL/index.html"
+          class="govuk-link"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          Banking comparison tool</a
+        >
+        see how your bank's interest rates compare and unlock better returns without necessarily switching
+        banks
+      </li>
+      <li>
+        <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+          Plan your management information system transition</a
+        >
+        If your contract renews befor September 2027, request a short extension rather than a full renewal.
+        Framework launches June 2027 (WHAT DO WE DO WITH THIS, YOU CAN'T EVEN DO ANYTHING NOW, SO SACK IT OFF
+        UNTIL LATER?)
+      </li>
+      <li>
+        <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank"> Use teaching vacancies</a>
+        a free national recruitment platform, estimated to have saved schools £47 to £60 million in
+        recruitment costs (2020-2024). Now includes a free applicant tracking system.
+      </li>
+      <li>
+        <a
+          href="https://get-help-buying-for-schools.education.gov.uk/"
+          class="govuk-link"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          Use get help buying for schools</a
+        >
+        DfE-approved buying option across ICT, catering, estates, clearn transport, legal and more. Over 5,000
+        schools have already benefited.
+      </li>
+      <li>
+        <a
+          href="https://get-help-buying-for-schools.education.gov.uk/"
+          class="govuk-link"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          Use FBI and strengthen strategic planning</a
+        >
+        DfE-approved buying option across ICT, catering, estates, clearn transport, legal and more. Over 5,000
+        schools have already benefited.
+      </li>
+    </ul>
+    {% include "./../includes/prototype-settings.html" %}
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Important dates</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row app-govuk-summary-list__two-column">
+        <dt class="govuk-summary-list__key">Census day</dt>
+        <dd class="govuk-summary-list__value">{{ "2026-10-01" | govukDate }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Return due</dt>
+        <dd class="govuk-summary-list__value">{{ "2026-10-28" | govukDate }}</dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">About your status</h2>
+    <p class="govuk-body">Statuses are updated overnight. You will be emailed when the status changes.</p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">What your status means</span>
+      </summary>
+      <div class="govuk-details__text">
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>
+            <strong>No Data</strong>: Nothing has been uploaded to COLLECT yet. You need to upload your data.
+          </li>
+          <li><strong>Loaded</strong>: Your data has been uploaded to COLLECT. You need to submit it.</li>
+          <li>
+            <strong>Submitted</strong>: You have submitted your data. Your local authority or DfE will now
+            check it.
+          </li>
+          <li>
+            <strong>Amended by Source</strong>: Your data has been changed since you submitted it. You need to
+            submit it again.
+          </li>
+          <li>
+            <strong>Approved</strong>: Your data has been approved and is waiting for DfE to authorise it. DfE
+            will contact you if you need to do anything else.
+          </li>
+          <li>
+            <strong>Authorised</strong>: DfE has accepted your data. You do not need to do anything else
+            unless DfE contacts you.
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% include "./../includes/help-from-service.html" %}
+  </div>
+</div>
+{% endblock %} {% block footer %} {% include "./../includes/footer.html" %} {% endblock %}
