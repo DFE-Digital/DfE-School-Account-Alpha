@@ -11,15 +11,15 @@ block content %}
     <span class="govuk-caption-xl">Complete your census return</span>
     <h1 class="govuk-heading-l census-title">Autumn school census</h1>
     {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+    <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted
     </strong>
     {% elseif data['censusStatus'] == 'Approved' %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+    <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Approved
     </strong>
     {% elseif data['censusStatus'] == 'Authorised' %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+    <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Authorised
     </strong>
     {% else %}
