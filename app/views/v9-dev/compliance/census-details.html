@@ -34,7 +34,11 @@ block content %}
       Education through an online tool called COLLECT.
     </p>
     {% if data['overView'] == 'true' %}
-    <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
+    <table
+      class="govuk-table govuk-table__break-word"
+      aria-labelledby="plannerTable"
+      data-module="moj-sortable-table"
+    >
       {% if data['userType'] == 'localAuthority' %} {% include
       "./includes/local-authority-census-schools.html" %} {% else %} {% include
       "./includes/multi-academy-trust-census-schools.html" %} {% endif %}
