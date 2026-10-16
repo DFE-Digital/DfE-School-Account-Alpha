@@ -35,9 +35,7 @@ block content %}
     </p>
     {% if data['overView'] == 'true' %}
     <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
-      {% if data['userType'] == 'localAuthority' %} {% include
-      "./includes/local-authority-census-schools.html" %} {% else %} {% include
-      "./includes/multi-academy-trust-census-schools.html" %} {% endif %}
+      {% "./includes/multi-academy-trust-census-schools.html" %}
     </table>
     {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include "./includes/guidance-version-b.html" %} {%
     else %} {% include "./includes/guidance-version-a.html" %} {% endif %} {% include
