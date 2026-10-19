@@ -1,0 +1,38 @@
+{% extends "layouts/govuk-notify.html" %} {% set pageName="Your census return has changed: Realfield Academy"
+%} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="local-authority-census-open" method="post">
+      <p class="govuk-body govuk-!-font-weight-bold">
+        Subject: Your census return has changed: Realfield Academy
+      </p>
+      <p class="govuk-body">Hello,</p>
+      <p class="govuk-body">
+        The status of the autumn census return for Realfield Academy has changed to Approved.
+      </p>
+      <p class="govuk-body govuk-!-font-weight-bold">What this means</p>
+      <p class="govuk-body">
+        Your data has been approved and is waiting for DfE to authorise it. DfE will contact you if you need
+        to do anything else.
+      </p>
+      <p class="govuk-body">
+        <a href="../start" class="govuk-link"> Sign into School Account </a>
+        for guidance on the school census return.
+      </p>
+      <p class="govuk-body">
+        You cannot reply to this email. If you need help with your school census submission, please use the
+        <a
+          href="https://form.education.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-2b61dfcd-9296-4f6a-8a26-4671265cae67/AF-Stage-f3f5200e-e605-4a1b-ae6b-3536bc77305c/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen"
+          class="govuk-link"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          data collection services request form</a
+        >.
+      </p>
+      <p class="govuk-body">Data Operations Service Desk</p>
+      <p class="govuk-body">Department for Education</p>
+    </form>
+  </div>
+</div>
+{% endblock %}
