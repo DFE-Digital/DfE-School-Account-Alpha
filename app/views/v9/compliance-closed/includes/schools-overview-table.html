@@ -1,0 +1,146 @@
+<caption class="govuk-table__caption govuk-table__caption--m">
+  Schools in your trust
+</caption>
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+    <th scope="col" class="govuk-table__header" aria-sort="descending">Status</th>
+    <th scope="col" class="govuk-table__header" aria-sort="none">Last changed</th>
+    <th scope="col" class="govuk-table__header" aria-sort="none">Errors</th>
+    <th scope="col" class="govuk-table__header" aria-sort="none">Queries</th>
+  </tr>
+</thead>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Milstead and Frinsted Church of England Primary School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Amended_by_Collector
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="6">6 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">0</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Petham Primary School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Amended_by_Source
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="21">21 Oct 2026</td>
+    <td class="govuk-table__cell">2</td>
+    <td class="govuk-table__cell">8</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Lydd Primary School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Loaded_and_Validated
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="13">13 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">0</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Dymchurch Primary School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        No_Data
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="6">6 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">0</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Borden Church of England Primary School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Submitted
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="21">21 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">0</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Bredgar Church of England Primary School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Amended_by_agent
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="19">19 Oct 2026</td>
+    <td class="govuk-table__cell">12</td>
+    <td class="govuk-table__cell">4</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Minterne Junior School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Approved
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="20">20 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">9</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">The Oaks Infant School</td>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Authorised
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="7">7 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">6</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Selling Church of England Primary School</td>
+    {% if data['censusStatus'] == 'actionRequired' %}
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        No_Data
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="8">8 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">0</td>
+    {% else %}
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Authorised
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="21">21 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">20</td>
+    {% endif %}
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell" id="ValeOfCatmoseCollege">Lynsted and Norton Primary School</td>
+    {% if data['censusStatus'] == 'actionRequired' %}
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        No_Data
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="8">8 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">0</td>
+    {% else %}
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+        Authorised
+      </strong>
+    </td>
+    <td class="govuk-table__cell" data-sort-value="11">11 Oct 2026</td>
+    <td class="govuk-table__cell">0</td>
+    <td class="govuk-table__cell">39</td>
+    {% endif %}
+  </tr>
+</tbody>
