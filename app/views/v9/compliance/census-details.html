@@ -11,15 +11,15 @@ block content %}
     <span class="govuk-caption-xl">Complete your census return</span>
     <h1 class="govuk-heading-l census-title">Autumn school census</h1>
     {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
-    <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted
     </strong>
     {% elseif data['censusStatus'] == 'Approved' %}
-    <strong class="govuk-tag govuk-tag--yellow status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Approved
     </strong>
     {% elseif data['censusStatus'] == 'Authorised' %}
-    <strong class="govuk-tag govuk-tag--green status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
+    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Authorised
     </strong>
     {% else %}
@@ -33,15 +33,16 @@ block content %}
       is exported from each school’s management information system (MIS) and submitted to the Department for
       Education through an online tool called COLLECT.
     </p>
-    {% if data['overView'] == 'true' %}
+    {% if data['overView'] == 'true' %} {% if data['userType'] == 'multiAcademyTrust' and data['trustSchools']
+    == 'none' %} {% include "./includes/schools-overview-inset.html" %} {% else %}
     <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
       {% if data['userType'] == 'localAuthority' %} {% include
       "./includes/local-authority-census-schools.html" %} {% else %} {% include
       "./includes/schools-overview-table.html" %} {% endif %}
     </table>
-    {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include "./includes/guidance-version-b.html" %} {%
-    else %} {% include "./includes/guidance-version-a.html" %} {% endif %} {% include
-    ".././includes/prototype-settings.html" %}
+    {% endif %} {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include
+    "./includes/guidance-version-b.html" %} {% else %} {% include "./includes/guidance-version-a.html" %} {%
+    endif %} {% include ".././includes/prototype-settings.html" %}
   </div>
   <div class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-m">Important dates</h2>
