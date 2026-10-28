@@ -67,15 +67,16 @@ block content %}
       is exported from each school’s management information system (MIS) and submitted to the Department for
       Education through an online tool called COLLECT.
     </p>
-    {% if data['overView'] == 'true' %}
+    {% if data['overView'] == 'true' %} {% if data['userType'] == 'multiAcademyTrust' and data['trustSchools']
+    == 'none' %} {% include "./includes/schools-overview-inset.html" %} {% else %}
     <table class="govuk-table" aria-labelledby="plannerTable" data-module="moj-sortable-table">
       {% if data['userType'] == 'localAuthority' %} {% include
       "./includes/local-authority-census-schools.html" %} {% else %} {% include
       "./includes/schools-overview-table.html" %} {% endif %}
     </table>
-    {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include "./includes/guidance-version-b.html" %} {%
-    else %} {% include "./includes/guidance-version-a.html" %} {% endif %} {% include
-    ".././includes/prototype-settings.html" %}
+    {% endif %} {% endif %} {% if data['guidanceVersion'] == 'B' %} {% include
+    "./includes/guidance-version-b.html" %} {% else %} {% include "./includes/guidance-version-a.html" %} {%
+    endif %} {% include ".././includes/prototype-settings.html" %}
   </div>
   <div class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-m">Important dates</h2>
