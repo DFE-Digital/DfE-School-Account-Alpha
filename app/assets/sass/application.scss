@@ -25,18 +25,18 @@
 @import 'components/sidebar.scss';
 @import 'components/step-by-step.scss';
 @import 'components/tags.scss';
-
+@import 'components/summary-list-custom.scss';
 
 // Add extra styles here
 * {
-  font-family: 'Inter', sans-serif!important;
+  font-family: 'Inter', sans-serif !important;
 }
 
-.govuk-header__link .govuk-header__logotype{
+.govuk-header__link .govuk-header__logotype {
   height: 30px;
 }
 
-.govuk-header__link:focus .govuk-header__logotype{
+.govuk-header__link:focus .govuk-header__logotype {
   content: url(/public/images/department-for-education_black.png);
   height: 30px;
 }

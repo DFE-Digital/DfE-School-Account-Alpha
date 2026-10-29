@@ -1,0 +1,13 @@
+.govuk-summary-list.important-dates {
+  .govuk-summary-list__key {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1019px) {
+  .govuk-summary-list.important-dates {
+    .govuk-summary-list__key {
+      width: 50%;
+    }
+  }
+}
