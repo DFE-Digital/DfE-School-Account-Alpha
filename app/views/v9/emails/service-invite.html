@@ -1,5 +1,5 @@
 {% extends "layouts/govuk-notify.html" %} {% set pageName="Getting started with School Account" %} {% block
-content %}
+content %} {% if (censusType | default(data['censusType'])) == "autumn" %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form action="service-invite" method="post">
@@ -42,4 +42,16 @@ content %}
     </form>
   </div>
 </div>
-{% endblock %}
+{% elseif (censusType | default(data['censusType'])) == "workforce" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="service-invite" method="post">
+      <p class="govuk-body govuk-!-font-weight-bold">Subject: School workforce census</p>
+      <p class="govuk-body">Hello,</p>
+      <p class="govuk-body">School workforce census email content goes here.</p>
+      <p class="govuk-body">The School Account team</p>
+      <p class="govuk-body">Department for Education</p>
+    </form>
+  </div>
+</div>
+{% endif %} {% endblock %}

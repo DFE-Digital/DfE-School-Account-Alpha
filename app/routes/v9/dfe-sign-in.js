@@ -56,7 +56,11 @@ module.exports = function (router) {
       req.session.data['userType'] == 'singleSchool' ||
       req.session.data['userType'] == 'localAuthority'
     ) {
-      res.redirect('/' + version + '/compliance/census-details')
+      if (req.session.data['censusType'] == 'workforce') {
+        res.redirect('/' + version + '/compliance/workforce-census-details')
+      } else {
+        res.redirect('/' + version + '/compliance/census-details')
+      }
     } else if (req.session.data['aBTesting'] == 'thinLine') {
       res.redirect('/' + version + '/compliance/census-details')
     } else if (req.session.data['aBTesting'] == 'combined') {
@@ -80,6 +84,11 @@ module.exports = function (router) {
     if (req.session.data['organisation'] == 'Our Community Multi Academy Trust') {
       req.session.data['overView'] = 'true'
     }
-    res.redirect('/' + version + '/compliance/census-details')
+
+    if (req.session.data['censusType'] == 'workforce') {
+      res.redirect('/' + version + '/compliance/workforce-census-details')
+    } else {
+      res.redirect('/' + version + '/compliance/census-details')
+    }
   })
 }
