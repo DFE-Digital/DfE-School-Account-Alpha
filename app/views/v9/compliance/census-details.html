@@ -1,5 +1,5 @@
-{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% block pageScripts %} {% if
-data['guidanceVersion'] != 'B' %}
+{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% set censusType = "autumn" %}
+{% block pageScripts %} {% if data['guidanceVersion'] != 'B' %}
 <script type="text/javascript">
   var $element = document.querySelector('#step-by-step-navigation')
   var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
