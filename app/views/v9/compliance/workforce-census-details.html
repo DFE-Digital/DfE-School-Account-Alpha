@@ -29,8 +29,10 @@ block content %}
     {% endif %} {% endif %}
     <h2 class="govuk-heading-m">Overview</h2>
     <p class="govuk-body">
-      The school workforce census is a statutory data collection that takes place each autumn. You must
-      complete statutory censuses by law unless there’s a good reason not to.
+      The school workforce census collects data on teaching and support staff in state-funded schools in
+      England once a year. The data is exported from each school’s management information system (MIS) and HR
+      and payroll systems, and submitted to the Department for Education (DfE) through an online tool called
+      COLLECT.
     </p>
     {% if data['overView'] == 'true' %} {% if data['userType'] == 'multiAcademyTrust' and data['trustSchools']
     == 'none' %} {% include "./includes/schools-overview-inset.html" %} {% else %}
