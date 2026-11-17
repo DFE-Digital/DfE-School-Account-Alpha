@@ -30,23 +30,6 @@ block beforeContent %}
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Complete your census return</span>
     <h1 class="govuk-heading-l census-title">{{ pageName }}</h1>
-    {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-      Submitted
-    </strong>
-    {% elseif data['censusStatus'] == 'Approved' %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-      Approved
-    </strong>
-    {% elseif data['censusStatus'] == 'Authorised' %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-      Authorised
-    </strong>
-    {% else %}
-    <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
-      No_Data
-    </strong>
-    {% endif %} {% endif %}
     <h2 class="govuk-heading-m">Overview</h2>
     <p class="govuk-body">
       The school census collects pupil and school data from state-funded schools three times a year. The data
