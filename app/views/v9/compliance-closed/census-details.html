@@ -1,5 +1,5 @@
-{% extends "layouts/main.html" %} {% set pageName = "Autumn school census" %} {% block pageScripts %} {% if
-data['guidanceVersion'] != 'B' %}
+{% extends "layouts/main.html" %} {% set pageName = "Autumn school census 2026" %} {% block pageScripts %} {%
+if data['guidanceVersion'] != 'B' %}
 <script type="text/javascript">
   var $element = document.querySelector('#step-by-step-navigation')
   var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
@@ -18,7 +18,7 @@ block beforeContent %}
     >
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          The {{ pageName }} 2026 has now closed
+          The {{ pageName }} has now closed
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
@@ -45,7 +45,7 @@ block beforeContent %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Complete your census return</span>
-    <h1 class="govuk-heading-l census-title">{{ pageName }} 2026</h1>
+    <h1 class="govuk-heading-l census-title">{{ pageName }}</h1>
     {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
     <strong class="govuk-tag govuk-tag--orange status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted

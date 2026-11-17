@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %} {% set pageName = "School workforce census" %} {% set censusType =
+{% extends "layouts/main.html" %} {% set pageName = "School workforce census 2026" %} {% set censusType =
 "workforce" %} {% block pageScripts %} {% if data['guidanceVersion'] != 'B' %}
 <script type="text/javascript">
   var $element = document.querySelector('#step-by-step-navigation')
@@ -11,7 +11,7 @@ block beforeContent %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Complete your census return</span>
-    <h1 class="govuk-heading-l census-title">{{ pageName }} 2026</h1>
+    <h1 class="govuk-heading-l census-title">{{ pageName }}</h1>
     {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
     <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted
