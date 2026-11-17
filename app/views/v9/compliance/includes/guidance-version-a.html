@@ -1,5 +1,5 @@
 <h2 class="govuk-heading-m">Step by step</h2>
-{% if censusType == "autumn" %}
+{% if censusType == "autumn" or censusType == "spring" or censusType == "summer" %}
 <div
   data-module="appstepnav"
   id="step-by-step-navigation"
@@ -91,8 +91,11 @@
               </span>
             </span>
           </span>
+
           <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-            Available {{ "2026-09-03" | govukDate }}
+            Available {% if censusType == "autumn" %} {{ "2026-09-03" | govukDate }} {% elseif censusType ==
+            "spring" %} {{ "2026-12-24" | govukDate }} {% elseif censusType == "summer" %} {{ "2027-04-22" |
+            govukDate }} {% endif %}
           </strong>
           <span class="js-step-title">Test your data before you submit it</span>
         </h2>
@@ -154,7 +157,9 @@
             </span>
           </span>
           <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-            Available {{ "2026-10-01" | govukDate }}
+            Available {% if censusType == "autumn" %} {{ "2026-10-01" | govukDate }} {% elseif censusType ==
+            "spring" %} {{ "2027-01-27" | govukDate }} {% elseif censusType == "summer" %} {{ "2027-05-20" |
+            govukDate }} {% endif %}
           </strong>
           <span class="js-step-title">Submit your return</span>
         </h2>
@@ -243,13 +248,13 @@
     </li>
   </ol>
 </div>
-{% if data['overView'] != 'true' %}
+{% if data['overView'] != 'true' %} {% if censusType != "summer" %}
 <form action="census-details" method="post">
   <div class="govuk-button-group">
     <button type="submit" class="govuk-button" data-module="govuk-button">Go to COLLECT</button>
   </div>
 </form>
-{% endif %} {% elseif censusType == "workforce" %}
+{% endif %} {% endif %} {% elseif censusType == "workforce" %}
 <div
   data-module="appstepnav"
   id="step-by-step-navigation"
@@ -260,7 +265,7 @@
   data-hide-all-text="Hide all steps"
 >
   <ol class="app-step-nav__steps">
-    <li class="app-step-nav__step js-step" id="autumn-school-census-step-1">
+    <li class="app-step-nav__step js-step" id="workforce-census-step-1">
       <div class="app-step-nav__header js-toggle-panel" data-position="1">
         <h2 class="app-step-nav__title">
           <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -275,20 +280,20 @@
           <span class="js-step-title">Check the census dates</span>
         </h2>
       </div>
-      <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-1">
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-1">
         <p class="app-step-nav__paragraph">There are two important dates to know.</p>
         <p class="app-step-nav__paragraph">
-          ‘Census date’ is the date that your census return describes. Your return should reflect your school
-          as it was on this day.
+          ‘Census day’ is the day that your census return describes. Your return should reflect your school’s
+          staff as they were on this day.
         </p>
         <p class="app-step-nav__paragraph">
-          ‘Return date’ is the deadline for submitting your return. If your school is part of a trust or
+          The deadline is the last day you can submit your return. If your school is part of a trust or
           maintained by a local authority (LA), they may set an earlier deadline. They will confirm this with
           you.
         </p>
       </div>
     </li>
-    <li class="app-step-nav__step js-step" id="autumn-school-census-step-2">
+    <li class="app-step-nav__step js-step" id="workforce-census-step-2">
       <div class="app-step-nav__header js-toggle-panel" data-position="2">
         <h2 class="app-step-nav__title">
           <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -300,36 +305,27 @@
               </span>
             </span>
           </span>
-          <span class="js-step-title">Prepare the data in your MIS</span>
+          <span class="js-step-title">Check who prepares and submits your return</span>
         </h2>
       </div>
-      <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-2">
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-2">
         <p class="app-step-nav__paragraph">
-          Data for the census is prepared and checked in your school’s MIS, not in COLLECT. COLLECT is only
-          used to submit the return and fix any errors.
+          How your return is prepared depends on your school. Your school may do everything itself, or your
+          trust or LA may do some or all of it for you.
         </p>
-        <p class="app-step-nav__paragraph">
-          There is
-          <a
-            href="https://www.gov.uk/guidance/complete-the-school-census/data-items-2026-to-2027"
-            class="govuk-link"
-            >guidance on data items</a
-          >
-          covering everything the census collects this term. Your MIS supplier’s guidance will tell you where
-          to record this data.
-        </p>
-        <p class="app-step-nav__paragraph">
-          Start preparing the data well before census day. You may need information from several people in
-          your school, including your:
-        </p>
+        <p class="app-step-nav__paragraph">Check who:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>headteacher</li>
-          <li>special educational needs coordinator</li>
-          <li>staff responsible for catering and free school meals</li>
+          <li>provides your staff records</li>
+          <li>prepares and submits your return</li>
+          <li>approves your return after it’s submitted</li>
         </ul>
+        <p class="app-step-nav__paragraph">
+          If your school is part of a trust or maintained by an LA, check with them to find out how this
+          works.
+        </p>
       </div>
     </li>
-    <li class="app-step-nav__step js-step" id="autumn-school-census-step-3">
+    <li class="app-step-nav__step js-step" id="workforce-census-step-3">
       <div class="app-step-nav__header js-toggle-panel" data-position="3">
         <h2 class="app-step-nav__title">
           <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -341,31 +337,46 @@
               </span>
             </span>
           </span>
-          <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-            Available {{ "2026-10-07" | govukDate }}
-          </strong>
-          <span class="js-step-title">Test your data before you submit it</span>
+
+          <span class="js-step-title">Make sure your staff records are complete</span>
         </h2>
       </div>
-      <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-3">
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-3">
         <p class="app-step-nav__paragraph">
-          COLLECT runs a “familiarisation period”, usually beginning 4 weeks before the census opens. During
-          this time you can upload your census return file in advance, see any errors or queries it raises.
-          Your school’s census contact will be emailed when this is available.
+          Your return is created from your staff records. These may be held in your management information
+          system (MIS), HR or payroll systems.
         </p>
+        <p class="app-step-nav__paragraph">Check that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            all staff have up-to-date personal details, such as National Insurance numbers and teacher
+            reference numbers
+          </li>
+          <li>all current staff have up-to-date contract, pay and working hours details</li>
+          <li>
+            staff who have left since the start of the last school year have a contract end date in their
+            record
+          </li>
+          <li>staff absences from the last school year have been recorded</li>
+        </ul>
         <p class="app-step-nav__paragraph">
-          Export the census return file from your MIS, upload it to COLLECT, and see what issues it
-          identifies. Fix any problems in your MIS and generate a new return. You can do this as many times as
-          you need until your return is error-free.
-        </p>
-        <p class="app-step-nav__paragraph">
-          <a href="#autumn-school-census-step-5" class="govuk-link">
-            See step 5 for guidance on resolving errors and queries </a
+          To check which staff to include, see section 4 of the
+          <a
+            href="https://assets.publishing.service.gov.uk/media/6ae1a43b16428df53760627e/School_Workforce_Census_Guide_2026.pdf"
+            rel="noreferrer noopener"
+            target="_blank"
+            class="govuk-link"
+          >
+            school workforce census guide (PDF, opens in new tab)</a
           >.
+        </p>
+        <p class="app-step-nav__paragraph">
+          You may need support from whoever manages HR or payroll for your school. If your LA or trust holds
+          some of your staff records, they may check these for you.
         </p>
       </div>
     </li>
-    <li class="app-step-nav__step js-step" id="autumn-school-census-step-4">
+    <li class="app-step-nav__step js-step" id="workforce-census-step-4">
       <div class="app-step-nav__header js-toggle-panel" data-position="4">
         <h2 class="app-step-nav__title">
           <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -377,21 +388,32 @@
               </span>
             </span>
           </span>
-          <span class="js-step-title"> Generate your return and get headteacher sign-off </span>
+          <span class="js-step-title">Record your school's vacancies and staffing on census day</span>
         </h2>
       </div>
-      <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-4">
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-4">
         <p class="app-step-nav__paragraph">
-          When you’re confident that your census data is free of errors, generate the final return from your
-          MIS.
+          Some information in your return is only about the state of your school on census day. On that day,
+          record:
         </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>any vacant teaching posts</li>
+          <li>how many supply teachers are in school who have been with you for less than 28 days</li>
+          <li>
+            staff who have left since the start of the last school year have a contract end date in their
+            record
+          </li>
+          <li>
+            how many support staff are in school who are not employed directly by your school or LA, such as
+            agency teaching assistants or contract cleaners
+          </li>
+        </ul>
         <p class="app-step-nav__paragraph">
-          Your headteacher must check and authorise the return before you submit it. Make sure they have seen
-          it, because submitting the return confirms that they have authorised it.
+          If your LA or trust prepares your return, they may contact you for this information.
         </p>
       </div>
     </li>
-    <li class="app-step-nav__step js-step" id="autumn-school-census-step-5">
+    <li class="app-step-nav__step js-step" id="workforce-census-step-5">
       <div class="app-step-nav__header js-toggle-panel" data-position="5">
         <h2 class="app-step-nav__title">
           <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -403,65 +425,27 @@
               </span>
             </span>
           </span>
-          <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
-            Available {{ "2026-12-04" | govukDate }}
-          </strong>
-          <span class="js-step-title">Submit your return</span>
+
+          <span class="js-step-title">Create and check your return</span>
         </h2>
       </div>
-      <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-5">
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-5">
+        <p class="app-step-nav__paragraph">Your return is usually created in your school’s MIS.</p>
         <p class="app-step-nav__paragraph">
-          Upload your return to COLLECT. You will be told whether there are any errors or queries.
+          Before you create your return, run any data checks your MIS offers. These can help you find and fix
+          errors and inconsistencies early.
         </p>
         <p class="app-step-nav__paragraph">
-          'Errors' must be fixed before you can submit. Correct them in your MIS, export a new return and
-          upload it again.
+          Your MIS may also include a summary of your return. Ask someone who knows your staff records to
+          check the summary, as comparing it to last year’s can help you spot anything unexpected. Your
+          headteacher can then check the summary before your return is sent to your LA or DfE.
         </p>
         <p class="app-step-nav__paragraph">
-          'Queries' flag data that looks unusual. You must either correct them in your MIS, or explain why the
-          data is correct by adding an explanation note in COLLECT.
-        </p>
-        <p class="app-step-nav__paragraph">
-          Notes for queries must give a detailed reason. Notes like ‘confirmed’ or ‘data is correct’ won’t be
-          accepted for most queries, and will delay DfE approving your return.
-        </p>
-        <p class="app-step-nav__paragraph">See guidance on:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            <a
-              href="https://www.gov.uk/guidance/complete-the-school-census/check-your-data#viewing-your-errors-and-queries"
-              rel="noreferrer noopener"
-              target="_blank"
-              class="govuk-link"
-            >
-              viewing your errors and queries (opens in new tab)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.gov.uk/guidance/complete-the-school-census/check-your-data#adding-explanation-notes-for-queries"
-              rel="noreferrer noopener"
-              target="_blank"
-              class="govuk-link"
-            >
-              adding explanation notes for queries (opens in new tab)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://assets.publishing.service.gov.uk/media/5cd5822840f0b6604efa74e2/School_Census_Notepad_entries_2025_26_v.1.1.xlsx"
-              class="govuk-link"
-            >
-              COLLECT queries and the explanatory notes DfE accepts (Excel sheet, 49KB)
-            </a>
-          </li>
-        </ul>
-        <p class="app-step-nav__paragraph">
-          Once you have addressed any errors and queries, you can submit your return.
+          If your LA or trust prepares your return, they may ask you to check it.
         </p>
       </div>
     </li>
-    <li class="app-step-nav__step js-step" id="autumn-school-census-step-6">
+    <li class="app-step-nav__step js-step" id="workforce-census-step-6">
       <div class="app-step-nav__header js-toggle-panel" data-position="6">
         <h2 class="app-step-nav__title">
           <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -473,26 +457,93 @@
               </span>
             </span>
           </span>
-          <span class="js-step-title"> Wait for DfE to check and authorise your return </span>
+          <strong class="govuk-tag govuk-tag--grey status-tag govuk-tag--wide">
+            Available {{ "2026-11-05" | govukDate }}
+          </strong>
+          <span class="js-step-title">Submit your return</span>
         </h2>
       </div>
-      <div class="app-step-nav__panel js-panel" id="autumn-school-census-panel-6">
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-6">
         <p class="app-step-nav__paragraph">
-          Once you have submitted your return, DfE will check and authorise it. This is the final confirmation
-          that your return is complete.
+          Upload your return to COLLECT. You will be told whether there are any errors or queries.
         </p>
         <p class="app-step-nav__paragraph">
-          You will be notified by email when your return is authorised. Until then, you do not need to do
-          anything unless we contact you about a problem.
+          ‘Errors’ must be fixed before you can submit. Correct them in your MIS, create a new return and
+          upload it again.
         </p>
         <p class="app-step-nav__paragraph">
-          If a local authority or multi-academy trust approves your return on your behalf, they will check and
-          approve it before sending it to DfE.
+          ‘Queries’ flag data that looks unusual. You must either correct the data, or explain why it’s
+          correct or missing by adding a note in COLLECT. If any queries are not explained, DfE cannot
+          authorise your return.
+        </p>
+        <p class="app-step-nav__paragraph">
+          For many queries, DfE provides the exact note to use, starting with the query number. Check the
+          notes DfE accepts for each query in the
+          <a
+            href="https://assets.publishing.service.gov.uk/media/6ae9dafb0b4ef57b15121f10/School_workforce_2026_-_minimum_notepad_entries_for_queries_on_the_school_workforce_census.pdf"
+            rel="noreferrer noopener"
+            target="_blank"
+            class="govuk-link"
+          >
+            school workforce minimum notepad entries guidance (PDF, opens in new tab)</a
+          >
+          before writing your own.
+        </p>
+        <p class="app-step-nav__paragraph">
+          If your return comes from more than one system, such as your MIS and a separate HR system, the files
+          need to be combined in COLLECT before you can submit. This is called ‘matching and reconciliation’.
+        </p>
+        <p class="app-step-nav__paragraph">
+          Once you have addressed any errors and queries, and combined your files if you need to, you can
+          submit your return.
+        </p>
+        <p class="app-step-nav__paragraph">
+          If your school is maintained by an LA, they will tell you how to submit. You may need to send your
+          return to them instead. They will also usually do any matching and reconciliation for you.
+        </p>
+      </div>
+    </li>
+    <li class="app-step-nav__step js-step" id="workforce-census-step-7">
+      <div class="app-step-nav__header js-toggle-panel" data-position="7">
+        <h2 class="app-step-nav__title">
+          <span class="app-step-nav__circle app-step-nav__circle--number">
+            <span class="app-step-nav__circle-inner">
+              <span class="app-step-nav__circle-background">
+                <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span>
+                7
+                <span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+              </span>
+            </span>
+          </span>
+          <span class="js-step-title">Wait for your return to be checked and authorised</span>
+        </h2>
+      </div>
+      <div class="app-step-nav__panel js-panel" id="workforce-census-panel-7">
+        <p class="app-step-nav__paragraph">
+          After you submit your return, it needs to be ‘approved’ and then ‘authorised’.
+        </p>
+        <p class="app-step-nav__paragraph">
+          ‘Approved’ means whoever is responsible for your return has accepted it. If your school is
+          maintained by an LA, your LA checks your return and approves it. They may also add data from their
+          own systems. If your school is an academy, you are responsible for approving your own return.
+        </p>
+        <p class="app-step-nav__paragraph">
+          ‘Authorised’ means DfE has checked and accepted your return. If they have questions or need changes,
+          they will contact your LA or academy. This is usually the final stage.
+        </p>
+        <p class="app-step-nav__paragraph">
+          You will get an email when your return has been authorised. Until then, you do not need to do
+          anything unless DfE or your LA contacts you about a problem.
+        </p>
+        <p class="app-step-nav__paragraph">
+          DfE may run further checks after authorising your return. If they find a problem, they will contact
+          your LA or academy.
         </p>
       </div>
     </li>
   </ol>
 </div>
+
 {% if data['overView'] != 'true' %}
 <form action="census-details" method="post">
   <div class="govuk-button-group">

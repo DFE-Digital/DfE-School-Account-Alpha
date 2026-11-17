@@ -5,11 +5,13 @@
   var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
 </script>
 {% endif %} {% endblock %} {% block header %} {% include ".././includes/header.html" %} {% endblock %} {%
-block content %}
+block beforeContent %}
+<a href="../homepage" class="govuk-back-link govuk-!-margin-bottom-0">Back</a>
+{% endblock %} {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">Complete your census return</span>
-    <h1 class="govuk-heading-l census-title">School workforce census</h1>
+    <h1 class="govuk-heading-l census-title">{{ pageName }} 2026</h1>
     {% if data['overView'] != 'true' %} {% if data['censusStatus'] == 'Submitted' %}
     <strong class="govuk-tag govuk-tag--grey status-tag govuk-!-margin-bottom-6 govuk-tag--wide">
       Submitted
@@ -29,8 +31,10 @@ block content %}
     {% endif %} {% endif %}
     <h2 class="govuk-heading-m">Overview</h2>
     <p class="govuk-body">
-      The school workforce census is a statutory data collection that takes place each autumn. You must
-      complete statutory censuses by law unless there’s a good reason not to.
+      The school workforce census collects data on teaching and support staff in state-funded schools in
+      England once a year. The data is exported from each school’s management information system (MIS) and HR
+      and payroll systems, and submitted to the Department for Education (DfE) through an online tool called
+      COLLECT.
     </p>
     {% if data['overView'] == 'true' %} {% if data['userType'] == 'multiAcademyTrust' and data['trustSchools']
     == 'none' %} {% include "./includes/schools-overview-inset.html" %} {% else %}

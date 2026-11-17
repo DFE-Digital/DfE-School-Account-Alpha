@@ -9,16 +9,16 @@ module.exports = function (router) {
     res.redirect('/' + version + '/start')
   })
 
+  router.get('/' + version + '/emails/update-email', function (req, res) {
+    res.render(version + '/emails/update-email', {})
+  })
+
   router.get('/' + version + '/start', function (req, res) {
     res.render(version + '/start', {})
   })
 
   router.post('/' + version + '/start', function (req, res) {
     res.redirect('/' + version + '/sign-in')
-  })
-
-  router.get('/' + version + '/emails/update-email', function (req, res) {
-    res.render(version + '/emails/update-email', {})
   })
 
   router.get('/' + version + '/sign-in', function (req, res) {
@@ -56,11 +56,7 @@ module.exports = function (router) {
       req.session.data['userType'] == 'singleSchool' ||
       req.session.data['userType'] == 'localAuthority'
     ) {
-      if (req.session.data['censusType'] == 'workforce') {
-        res.redirect('/' + version + '/compliance/workforce-census-details')
-      } else {
-        res.redirect('/' + version + '/compliance/census-details')
-      }
+      res.redirect('/' + version + '/homepage')
     } else if (req.session.data['aBTesting'] == 'thinLine') {
       res.redirect('/' + version + '/compliance/census-details')
     } else if (req.session.data['aBTesting'] == 'combined') {
@@ -72,8 +68,12 @@ module.exports = function (router) {
     } else if (req.session.data['aBTesting'] == 'roleLed') {
       res.redirect('/' + version + '/single-role-led-home')
     } else {
-      res.redirect('/' + version + '/single-school')
+      res.redirect('/' + version + '/homepage')
     }
+  })
+
+  router.get('/' + version + '/homepage', function (req, res) {
+    res.render(version + '/homepage', {})
   })
 
   router.get('/' + version + '/select-an-organisation', function (req, res) {
@@ -84,11 +84,6 @@ module.exports = function (router) {
     if (req.session.data['organisation'] == 'Our Community Multi Academy Trust') {
       req.session.data['overView'] = 'true'
     }
-
-    if (req.session.data['censusType'] == 'workforce') {
-      res.redirect('/' + version + '/compliance/workforce-census-details')
-    } else {
-      res.redirect('/' + version + '/compliance/census-details')
-    }
+    res.redirect('/' + version + '/homepage')
   })
 }
