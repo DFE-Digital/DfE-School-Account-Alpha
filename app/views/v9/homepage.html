@@ -1,0 +1,329 @@
+{% extends "layouts/main.html" %} {% set pageName = "School Account homepage" %} {% block header %} {% include
+"./includes/header.html" %} {% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">School Account</h1>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      School Account brings DfE services and guidance together in one place, helping you understand what you
+      need to do and when.
+    </p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="#upcoming">Upcoming activities</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#past">Past activities</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="govuk-!-margin-bottom-8" id="upcoming">
+      <h2 class="govuk-heading-m">Upcoming activities</h2>
+      <p class="govuk-body">View and manage upcoming activities across DfE services.</p>
+      <div class="govuk-grid-row govuk-grid-row--equal-height now-next" style="margin: 0">
+        <div class="govuk-grid-column-one-half govuk-grid-column-group">
+          <div class="govuk-grid-column-group-header govuk-grid-column-group-header--blue">
+            <h3 class="govuk-heading-s">Action now</h3>
+          </div>
+          <div class="govuk-grid-row govuk-grid-row--flex-container">
+            <div class="govuk-grid-column-group-content">
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <div class="govuk-grid-row">
+                      <div
+                        class="{% if data['userType'] == 'singleSchool' %}govuk-grid-column-two-thirds{% else %}govuk-grid-column-full{% endif %}"
+                      >
+                        <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                          <a
+                            class="govuk-link govuk-link--no-visited-state"
+                            href="./compliance/workforce-census-details?censusStatus=No Data"
+                          >
+                            School workforce census 2026</a
+                          >
+                        </h4>
+                        <p class="govuk-body-s govuk-!-margin-bottom-3">
+                          The school workforce census collects data on teaching and support staff in
+                          state-funded schools in England once a year.
+                        </p>
+                        <p class="govuk-body-s govuk-!-margin-bottom-0">Due {{ "2026-12-04" | govukDate }}</p>
+                      </div>
+                      {% if data['userType'] == 'singleSchool' %}
+                      <div class="govuk-grid-column-one-third">
+                        <strong class="govuk-tag govuk-tag--grey">No_Data</strong>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <div class="govuk-grid-row">
+                      <div
+                        class="{% if data['userType'] == 'singleSchool' %}govuk-grid-column-two-thirds{% else %}govuk-grid-column-full{% endif %}"
+                      >
+                        <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                          <a
+                            class="govuk-link govuk-link--no-visited-state"
+                            href="./compliance/spring-census-details?censusStatus=No Data"
+                          >
+                            Spring school census 2027</a
+                          >
+                        </h4>
+                        <p class="govuk-body-s govuk-!-margin-bottom-3">
+                          The school census collects pupil and school data from state-funded schools three
+                          times a year.
+                        </p>
+                        <p class="govuk-body-s govuk-!-margin-bottom-0">Due {{ "2027-02-10" | govukDate }}</p>
+                      </div>
+                      {% if data['userType'] == 'singleSchool' %}
+                      <div class="govuk-grid-column-one-third">
+                        <strong class="govuk-tag govuk-tag--grey">No_Data</strong>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half govuk-grid-column-group">
+          <div class="govuk-grid-column-group-header">
+            <h3 class="govuk-heading-s">Action later</h3>
+          </div>
+          <div class="govuk-grid-row govuk-grid-row--flex-container">
+            <div class="govuk-grid-column-group-content">
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-full">
+                        <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                          <a
+                            class="govuk-link govuk-link--no-visited-state"
+                            href="./compliance/summer-census-details?censusStatus=No Data"
+                          >
+                            Summer school census 2027</a
+                          >
+                        </h4>
+                        <p class="govuk-body-s govuk-!-margin-bottom-3">
+                          The school census collects pupil and school data from state-funded schools three
+                          times a year.
+                        </p>
+                        <p class="govuk-body-s govuk-!-margin-bottom-0">Due {{ "2027-06-16" | govukDate }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="govuk-grid-row govuk-grid-row--equal-height" style="margin: 0">
+        <div class="govuk-grid-column-one-half govuk-grid-column-group">
+          <div class="govuk-grid-column-group-header govuk-grid-column-group-header--blue">
+            <h3 class="govuk-heading-s">Action now</h3>
+          </div>
+          <div class="govuk-grid-row govuk-grid-row--flex-container">
+            <div class="govuk-grid-column-group-content">
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                      <a
+                        class="govuk-link govuk-link--no-visited-state"
+                        href="./compliance/workforce-census-details?censusStatus=No Data"
+                      >
+                        School workforce census 2027</a
+                      >
+                    </h4>
+                    {% if data['userType'] == 'singleSchool' %}
+                    <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-3">No_Data</strong>
+                    {% endif %}
+                    <p class="govuk-body-s govuk-!-margin-bottom-3">
+                      The school workforce census collects data on teaching and support staff in state-funded
+                      schools in England once a year.
+                    </p>
+                    <p class="govuk-body-s">Due {{ "2026-12-04" | govukDate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                      <a
+                        class="govuk-link govuk-link--no-visited-state"
+                        href="./compliance/spring-census-details?censusStatus=No Data"
+                      >
+                        Spring school census 2027</a
+                      >
+                    </h4>
+                    {% if data['userType'] == 'singleSchool' %}
+                    <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-3">No_Data</strong>
+                    {% endif %}
+                    <p class="govuk-body-s govuk-!-margin-bottom-3">
+                      The school census collects pupil and school data from state-funded schools three times a
+                      year.
+                    </p>
+                    <p class="govuk-body-s">Due {{ "2027-02-10" | govukDate }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half govuk-grid-column-group">
+          <div class="govuk-grid-column-group-header">
+            <h3 class="govuk-heading-s">Action later</h3>
+          </div>
+          <div class="govuk-grid-row govuk-grid-row--flex-container">
+            <div class="govuk-grid-column-group-content">
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                      <a
+                        class="govuk-link govuk-link--no-visited-state"
+                        href="./compliance/summer-census-details?censusStatus=No Data"
+                      >
+                        Summer school census 2027</a
+                      >
+                    </h4>
+                    {% if data['userType'] == 'singleSchool' %}
+                    <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-3">No_Data</strong>
+                    {% endif %}
+                    <p class="govuk-body-s govuk-!-margin-bottom-3">
+                      The school census collects pupil and school data from state-funded schools three times a
+                      year.
+                    </p>
+                    <p class="govuk-body-s">Due {{ "2027-06-16" | govukDate }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+    <section class="govuk-!-margin-bottom-8" id="past" hidden>
+      <h2 class="govuk-heading-m">Past activities</h2>
+      <p class="govuk-body">View activities from the previous 12 months where the deadline has passed.</p>
+      <div class="govuk-grid-row govuk-grid-row--equal-height now-next" style="margin: 0">
+        <div class="govuk-grid-column-one-half govuk-grid-column-group">
+          <div class="govuk-grid-column-group-header">
+            <h3 class="govuk-heading-s">Previous 12 months</h3>
+          </div>
+          <div class="govuk-grid-row govuk-grid-row--flex-container">
+            <div class="govuk-grid-column-group-content">
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <div class="govuk-grid-row">
+                      <div
+                        class="{% if data['userType'] == 'singleSchool' %}govuk-grid-column-two-thirds{% else %}govuk-grid-column-full{% endif %}"
+                      >
+                        <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                          <a
+                            class="govuk-link govuk-link--no-visited-state"
+                            href="./compliance-closed/census-details?censusStatus=Authorised"
+                          >
+                            Autumn school census 2026
+                          </a>
+                        </h4>
+                        <p class="govuk-body-s govuk-!-margin-bottom-3">
+                          The school census collects pupil and school data from state-funded schools three
+                          times a year.
+                        </p>
+
+                        <p class="govuk-body-s govuk-!-margin-bottom-0">Due {{ "2026-10-28" | govukDate }}</p>
+                      </div>
+
+                      {% if data['userType'] == 'singleSchool' %}
+                      <div class="govuk-grid-column-one-third">
+                        <strong class="govuk-tag govuk-tag--green"> Authorised </strong>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="govuk-grid-row govuk-grid-row--equal-height" style="margin: 0">
+        <div class="govuk-grid-column-one-half govuk-grid-column-group">
+          <div class="govuk-grid-column-group-header">
+            <h3 class="govuk-heading-s">Previous 12 months</h3>
+          </div>
+          <div class="govuk-grid-row govuk-grid-row--flex-container">
+            <div class="govuk-grid-column-group-content">
+              <div class="dfe-grid-container now-next">
+                <div class="dfe-card dfe-card--white-background dfe-card--small">
+                  <div class="dfe-card-container govuk-!-margin-bottom-0">
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-3">
+                      <a
+                        class="govuk-link govuk-link--no-visited-state"
+                        href="./compliance-closed/census-details?censusStatus=Authorised"
+                      >
+                        Autumn school census 2026</a
+                      >
+                    </h4>
+                    {% if data['userType'] == 'singleSchool' %}
+                    <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Authorised</strong>
+                    {% endif %}
+                    <p class="govuk-body-s govuk-!-margin-bottom-3">
+                      The school census collects pupil and school data from state-funded schools three times a
+                      year.
+                    </p>
+                    <p class="govuk-body-s">Due {{ "2026-10-28" | govukDate }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.moj-sub-navigation__link')
+    const upcoming = document.getElementById('upcoming')
+    const past = document.getElementById('past')
+    function showTab(tab) {
+      upcoming.hidden = true
+      past.hidden = true
+      tabs.forEach(function (link) {
+        link.removeAttribute('aria-current')
+      })
+      if (tab === 'past') {
+        past.hidden = false
+        tabs[1].setAttribute('aria-current', 'page')
+      } else {
+        upcoming.hidden = false
+        tabs[0].setAttribute('aria-current', 'page')
+      }
+    }
+    tabs.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault()
+        const tab = link.getAttribute('href').replace('#', '')
+        history.replaceState(null, '', '#' + tab)
+        showTab(tab)
+      })
+    })
+    showTab(window.location.hash === '#past' ? 'past' : 'upcoming')
+  })
+</script>
+{% endblock %} {% block footer %} {% include "./includes/footer.html" %} {% endblock %}

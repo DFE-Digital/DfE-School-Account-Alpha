@@ -1,10 +1,11 @@
-{% if data['overView'] != 'true' %}
+{% if censusType == "autumn" or censusType == "spring" or censusType == "summer" %} {% if data['overView'] !=
+'true' %} {% if censusType != "summer" %}
 <form action="census-details" method="post">
   <div class="govuk-button-group">
     <button type="submit" class="govuk-button" data-module="govuk-button">Go to COLLECT</button>
   </div>
 </form>
-{% endif %}
+{% endif %} {% endif %}
 <h2 class="govuk-heading-m">Guidance</h2>
 <p class="govuk-body">The following links open in a new tab.</p>
 <ul class="govuk-task-list">
@@ -65,3 +66,100 @@
     </div>
   </li>
 </ul>
+{% elseif censusType == "workforce" %} {% if data['overView'] != 'true' %}
+<form action="census-details" method="post">
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">Go to COLLECT</button>
+  </div>
+</form>
+{% endif %}
+<h2 class="govuk-heading-m">Guidance</h2>
+<p class="govuk-body">The following links open in a new tab.</p>
+<ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a
+        class="govuk-link govuk-task-list__link govuk-link--no-visited-state"
+        rel="noreferrer noopener"
+        href="https://www.gov.uk/guidance/school-workforce-census"
+        target="_blank"
+        aria-describedby="guidance-details-1-hint"
+      >
+        School workforce census: guide to submitting data
+        <span class="govuk-visually-hidden">(opens in new tab)</span>
+      </a>
+      <div id="guidance-details-1-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">
+          An overview with links to detailed guides. It explains who is responsible for submitting and
+          approving census returns, and what to do if you cannot access COLLECT.
+        </p>
+        <p class="govuk-body-s">Last updated: {{ "2026-10-28" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a
+        class="govuk-link govuk-task-list__link govuk-link--no-visited-state"
+        rel="noreferrer noopener"
+        href="https://assets.publishing.service.gov.uk/media/6ae1a43b16428df53760627e/School_Workforce_Census_Guide_2026.pdf"
+        target="_blank"
+        aria-describedby="guidance-details-1-hint"
+      >
+        School workforce census guide 2026 (PDF, 1.1 MB, 74 pages)
+        <span class="govuk-visually-hidden">(opens in new tab)</span>
+      </a>
+      <div id="guidance-details-1-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">
+          The full guide for schools, explaining which staff to include, what each data item means, and how to
+          resolve errors and queries.
+        </p>
+        <p class="govuk-body-s">Last updated: {{ "2026-10-28" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a
+        class="govuk-link govuk-task-list__link govuk-link--no-visited-state"
+        rel="noreferrer noopener"
+        href="https://assets.publishing.service.gov.uk/media/6ae9dafb0b4ef57b15121f10/School_workforce_2026_-_minimum_notepad_entries_for_queries_on_the_school_workforce_census.pdf"
+        target="_blank"
+        aria-describedby="guidance-details-1-hint"
+      >
+        School workforce minimum notepad entries (PDF, 384 KB, 20 pages)
+        <span class="govuk-visually-hidden">(opens in new tab)</span>
+      </a>
+      <div id="guidance-details-1-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">
+          A list of the queries COLLECT may raise about your return, and how DfE expects you to respond to
+          them.
+        </p>
+        <p class="govuk-body-s">Last updated: {{ "2026-11-06" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a
+        class="govuk-link govuk-task-list__link govuk-link--no-visited-state"
+        rel="noreferrer noopener"
+        href="https://assets.publishing.service.gov.uk/media/5d3ade7aed915d0d0446889e/Collect_guide_for_schools_July-2019.pdf"
+        target="_blank"
+        aria-describedby="guidance-details-2-hint"
+      >
+        COLLECT guide for schools (PDF, 2.03 MB, 27 pages)
+        <span class="govuk-visually-hidden">(opens in new tab)</span>
+      </a>
+      <div id="guidance-details-2-hint" class="govuk-task-list__hint">
+        <p class="govuk-body">Guide for schools submitting data using COLLECT.</p>
+        <p class="govuk-body-s">Last updated: {{ "2023-10-31" | govukDate }}</p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+{% endif %}
